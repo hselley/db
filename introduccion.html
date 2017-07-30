@@ -68,18 +68,175 @@
   <section class="main container">
 
     <article class="tema clearfix">
-      <h2>Titulo</h2>
+      <h2>Definición de un sistema de bases de datos</h2>
+      <p class="post-contenido text-justify">
+        Las bases de datos son esenciales en cualquier negocio. Ya sea que visitemos un sitio grande como Google, Yahoo, Amazon, etc.
+        o pequeños sitios que proporcionen información, existe una base de datos detrás que provee la información solicitada.
+      </p>
+      <p class="post-contenido text-justify">
+        En términos generales, una base de datos es un repositorio donde se almacena información. Por ejemplo, un directorio telefónico,
+        una agenda, un libro son una base de datos. Todos estos ejemplos deben tener un mecanismo basado en una metodología para poder
+        tener acceso a la información que contiene.
+      </p>
+      <p class="post-contenido text-justify">
+        El poder de las bases de datos viene de un cuerpo de conocimiento y tecnología que ha sido desarrollado por varias décadas y
+        encarnado en software especializado llamado “Sistema de Administración de Bases de Datos (database system administration)”,
+        o DBMS, coloquialmente conocido como "sistema de base de datos". Un DBMS es una poderosa herramienta para crear y administrar
+        grandes cantidades de información eficientemente, y permitir que persistan de forma segura por largos periodos de tiempo.
+        Estos sistemas son uno de los software más complejos que existen.
+      </p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
     </article>
+
     <article class="tema clearfix">
+      <h2>Modelos de datos</h2>
       <p class="post-contenido text-justify">
-        contenido
+        Un modelo de base de datos es un tipo de modelo de datos que determina la estructura lógica de una base de datos y de manera
+        fundamental determina el modo de almacenar, organizar y manipular los datos. Estructura los datos de acuerdo a una metodología
+        concreta.
       </p>
       <p class="post-contenido text-justify">
+        En una primera aproximación podemos decir que un Modelo de Datos (MD) es un conjunto de conceptos que permiten describir, a
+        distintos niveles de abstracción, la estructura de una base de datos, a la cual denominamos esquema.
       </p>
       <p class="post-contenido text-justify">
+        Podemos definir, de forma más precisa, un modelo de datos como "<em>un conjunto de conceptos, reglas y convenciones que nos permiten
+          describir y manipular (consultar y actualizar) los datos de un cierto mundo real que deseamos almacenar en la base de datos</em>".
       </p>
-      <p class="post-contenido text-justify"></p>
-      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify">
+        Entre los modelos lógicos comunes para bases de datos se encuentran:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">Modelo jerárquico</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo en red</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo relacional</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo entidad–relación</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo entidad–relación extendido</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo de objetos</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo documental</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo entidad–atributo–valor</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo en estrella</p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Los modelos físicos de datos incluyen:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">índice invertido</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">fichero plano</p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Otros modelos lógicos pueden ser:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">modelo asociativo</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">modelo multidimensional</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">modelo multivalor</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">modelo semántico</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">base de datos XML</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">grafo etiquetado</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Triplestore</p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sistema de Gestión de Base de Datos</h2>
+      <p class="post-contenido text-justify">
+        Un sistema de gestión de bases de datos (SGBD) consiste en una colección de datos interrelacionados y un conjunto de programas para
+        acceder a esos datos. El objetivo primordial de un SGBD es proporcionar un entorno que sea a la vez conveniente y eficiente para
+        ser utilizado al extraer y almacenar información.
+      </p>
+      <p class="post-contenido text-center">
+        <em>"El sistema de gestión de la base de datos (SGBD) es una aplicación que permite a los usuarios definir, crear y mantener la base de
+          datos, y proporcionar acceso controlado a la misma".</em>
+      </p>
+      <p class="post-contenido text-justify">
+        SGBD es un conjunto de herramientas que sirven para definir, construir y manipular una base de datos. Dentro de las funciones que se
+        encarga un SGBD son:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text justify">
+            Deben incluir un control de concurrencia, es decir, permitir acceso “simultáneo” a la base. Controlar la concurrencia implica que
+            si varios usuarios acceden a la base de datos, la actualización de los datos se haga de forma controlada.</p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Encargarse de cumplir las reglas de integridad y redundancias.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Capacidad de realizar copias de seguridad y de recuperación de datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Suministrar múltiples interfaces de usuario.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Representar relaciones complejas entre los datos.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Características de un SGBD.
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            Permite crear y gestionar bases de datos de forma fácil, cómoda y rápida.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Ofrecer una gran flexibilidad para el trabajo con base de datos relacionales.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Ofrecer un ambiente agradable dado por su interfaz.
+          </p>
+        </li>
+      </ul>
     </article>
 
   </section>
