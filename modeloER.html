@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Modelo Entidad/Relación</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="">Dinámica del Modelo Relacional</a></li>
+              <li><a href="">Teoría de Normalización</a></li>
+              <li><a href="">Lenguaje SQL</a></li>
+              <li><a href="">HTML5 + PHP</a></li>
+              <li><a href="">Diseño de una BD</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h2>Introducción</h2>
+      <p class="post-contenido text-justify">
+        Una de las mayores dificultades que existen a la hora de diseñar una base de datos es que el diseñador la concibe pensando
+        en el modelo de datos con el que va a trabajar la máquina. Esto conlleva a perder la visión conceptual del problema, quedando
+        el diseño influido (contaminado) por cuestiones de implementación, de modo que el diseño es inválido cuando se implanta la
+        base de datos en otro sistema.
+      </p>
+      <p class="post-contenido text-justify">
+        El Modelo Entidad Relación (MER), propuesto por Peter P. Chen, presenta una vista unificada de los datos, centrándose en la
+        estructura lógica y abstracta de los datos, como representación del mundo real, con independencia de consideraciones de tipo físico.
+      </p>
+      <p class="post-contenido text-justify">
+        Como su nombre lo índica, el MER se basa en entidades (cualquier objeto de interés) que se interrelacionan o asocian entre sí.
+      </p>
+      <p class="post-contenido text-justify">
+        MER tiene dos tipos de propiedades:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Estáticas:</b> describen la estructura del Universo de Discurso y apenas varían en el tiempo.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Dinámicas:</b> permiten el paso de un estado a otro, ejecutando operaciones sobre los datos almacenados en la estructura; se
+            corresponden con la naturaleza evolutiva del mundo real.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        La representación gráfica de un tipo de entidad es un rectángulo etiquetado con el nombre de entidad.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Entidades</h2>
+      <p class="post-contenido text-justify">
+        Una entidad es "una persona, lugar, cosa, concepto o suceso, real o abstracto, de interés para la empresa". Es aquel objeto acerca del cual
+        queremos almacenar información en la base de datos.
+      </p>
+      <p class="post-contenido text-justify">
+        La representación gráfica de un tipo de entidad es un rectángulo etiquetado con el nombre de entidad.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/entidad.png" alt="Ejemplos de Entidades" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.1. Ejemplos de Entidad</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Existen dos clases de entidad:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Regulares.</b> Las ocurrencias de un tipo de entidad regular tienen existencia propia, es decir, existen por sí mismas.</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Débiles.</b> La existencia de cada ocurrencia de un tipo de entidad débil depende de la existencia de la
+            ocurrencia del tipo de entidad regular del cual aquella depende, es decir, si se elimina una ocurrencia del tipo de entidad regular, desaparecen
+            también con ella todas las ocurrencias de la entidad débil dependientes de la misma. Se representa con dos rectángulos concéntricos con su nombre
+            en el interior.</p>
+        </li>
+      </ul>
+      <div class="thumbnail">
+        <img src="img/modeloER/claseEntidad.png" alt="Clase de Entidad" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.2. Clase de Entidad</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Relaciones</h2>
+      <p class="post-contenido text-justify">
+        Definimos la relación como la asociación o correspondencia entre entidades.
+      </p>
+      <p class="post-contenido text-justify">
+        Llamamos tipo de relación a la estructura genérica del conjunto de relaciones existentes entre dos o más tipos de entidad, mientras que la ocurrencia
+        de una relación será la vinculación existente entre las ocurrencias concretas de cada uno de los tipos de entidad que intervienen en la relación.
+      </p>
+      <p class="post-contenido text-justify">
+        Por ejemplo, el tipo de entidad AUTOR se relaciona con el tipo de entidad DOCUMENTO mediante el tipo de relación <b>Escribe</b>; una ocurrencia de esta
+        relación es por ejemplo: <em>"C.J. Date ha escrito el documento Introducción a los Sistemas de Bases de Datos."</em>
+      </p>
+      <p class="post-contenido text-justify">
+        Se representa la relación mediante un rombo etiquetado con el nombre, unido mediante arcos a los tipos de entidad que asocia.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/relacion.png" alt="Relacion" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.3. Ejemplo de Relación entre Entidades</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Características de la Relación:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Nombre:</b> Por el que identificamos de forma única el tipo de relación y mediante el cual lo referenciamos
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Grado:</b> Número de tipos de entidad que participan en un tipo de relación. Puede ser de grado 2 (binarias) cuando asocian dos tipos de entidad,
+            de grado 3 (ternarias) cuando asocian tres tipos de entidad, y en general de grado <em>n</em>.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Tipo de Correspondecia:</b> Número máximo de ocurrencias de un tipo de entidad que pueden intervenir por cada ocurrencia del otro tipo de entidad
+            asociado en la relación. El tipo de correspondencia es <b>1:1</b> cuando en la relación sólo puede aparecer, como máximo, una ocurrencia del tipo de entidad
+            por cada ocurrencia del otro. Será <b>1:N</b> si para uno de los tipos de entidad puede haber un número indefinido (mayor que 1) de ocurrencias. Será
+            <b>N:M</b> si esto último ocurre para ambos tipos de entidad. Para representarlo gráficamente, se puede poner una etiqueta que lo indique al lado del
+            rombo que representa el tipo de relación o una punta de flecha hacia el tipo de entidad que participa con más de una ocurrencia en la relación.
+          </p>
+        </li>
+      </ul>
+      <div class="thumbnail">
+        <img src="img/modeloER/correspondencia1.png" alt="Ejemplo Correspondencia" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.4. Ejemplo Tipos de Correspondencia</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Entre dos tipos de entidad puede existir más de un tipo de relación, por ejemplo:
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/entidadRelacion1.png" alt="Ejemplo Correspondencia" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.5. Ejemplo de Entidad con más de una Relación</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Atributo</h2>
+      <p class="post-contenido tetx-justify">
+        Es cada una de las propiedades o características que tiene un tipo de entidad o de relación. Así, el tipo de entidad <b>AUTOR</b> tiene como atributos
+        el <em>Nombre</em>, la <em>Nacionalidad</em>, la <em>Fecha_nac</em>, la <em>Bibliografía</em>, etc.; y los atributos del tipo de entidad <b>DOCUMENTO</b>
+        son, entre otros, <em>Título</em> y <em>Resumen</em>. El tipo de relación <b>Escribe</b> entre <b>AUTOR</b> y <b>DOCUMENTO</b> tiene como atributo
+        <em>Orden_de_firma</em>.
+      </p>
+      <p class="post-contenido tetx-justify">
+        El conjunto de posibles valores que puede tomar un atributo recibe el nombre de <b>dominio</b>. El dominio tiene un nombre y una existencia propia con
+        independencia de cualquier atributo o entidad. Por ejemplo, podemos definir un dominio de <b>Nacionalidades</b>, cuyos valores serán mexicana, francesa,
+        italiana, etc. El atributo <em>Nacionalidad</em> de <b>AUTOR</b> estará definido sobre este dominio y tomará de él sus valores. La existencia del
+        atributo <em>Nacionalidad</em> va unida a la existencia del tipo de entidad <b>AUTOR</b>, mientras que el dominio <em>Nacionalidades</em> existe por sí mismo.
+      </p>
+      <p class="post-contenido tetx-justify">
+        El dominio se representa con un círculo u óvalo en cuyo interior aparece su nombre, mientras que el nombre del atributo se escribe sobre el arco que une el
+        dominio con el tipo  de entidad o de relación a la que pertenece dicho atributo.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/atributo.png" alt="Ejemplo de Atributo" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.6. Ejemplo de Atributo</p>
+        </div>
+      </div>
+      <p class="post-contenido tetx-justify">
+        Entre todos los atributos de un tipo de entidad debemos elegir uno o varios que identifiquen unívoca o mínimamente cada una de las ocurrencias de ese tipo
+        de entidad (atributo principal). Puede que exista más de un atributo que cumple con esta condición (atributo identificador candidato), de los cuales se elige
+        uno como principal y los otros como alternativos.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/tiposAtributo.png" alt="Tipos de Atributo" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.7. Tipos de Atributo</p>
+        </div>
+      </div>
+      <p class="post-contenido tetx-justify">
+        Tal como en los tipos de entidad, los tipos de relación pueden tener también atributos. Por ejemplo.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/atributosEntidad.png" alt="Entidades con varios Atributos" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.8. Entidades con varios Atributos</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Cardinalidad</h2>
+      <p class="post-contenido tetx-justify">
+        Definimos las cardinalidades máxima y mínima de los tipos de entidad participantes en un tipo de relación como el número máximo y mínimo de ocurrencias de un
+        tipo de entidad que pueden estar relacionadas con una ocurrencia del otro, y otros tipos de entidad que participan en el tipo de relación. Su representación
+        gráfica es una etiqueta del tipo (0, 1), (1, 1), (0, n) ó (1, n).
+      </p>
+      <p class="post-contenido tetx-justify">
+        Por ejemplo, en la siguiente figura, la etiqueta (1, n) en <b>DOCUMENTO</b> significa que una ocurrencia de <b>AUTOR</b> puede estar vinculada con 1, 2, 3, ...,
+        ó <em>n</em> ocurrencias de <b>DOCUMENTO</b> en el tipo de relación <b>Escribe</b>; y la etiqueta (0, n) en <b>AUTOR</b> significa que una ocurrencia de
+        <b>DOCUMENTO</b> puede estar vinculada con 0, 1, 2, ... ó <em>n</em> ocurrencias de <b>AUTOR</b>. Es decir, un autor escribe como mínimo (1) documento
+        y como máximo muchos documentos (n), mientras que un documento puede ser escrito por ningún autor (0) (si es anónimo) o por muchos (n).
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/cardinalidad.png" alt="Ejemplo de Cardinalidad" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.9. Ejemplo de Cardinalidad</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Generalización y Herencia</h2>
+      <p class="post-contenido tetx-justify">
+        La generalización es el tipo de relación que existe entre un tipo de entidad y los tipos de entidad más específicos que dependen de él. En el mundo real es
+        muy habitual la descomposición de un tipo de entidad, creándose de esta forma una jerarquía de tipos de entidad donde se puede distinguir un <b>supertipo</b>
+        del cual dependen varios <b>subtipos</b>. La abstracción correspondiente a este tipo de relación entre entidades se denomina <b>ES_UN</b> (IS_A en inglés).
+      </p>
+      <p class="post-contenido tetx-justify">
+        Para la representación gráfica utilizamos un triángulo invertido, con la base paralela al rectángulo que representa el supertipo y conectado a éste y a los
+        subtipos. Las cardinalidades son siempre (1, 1) en el supertipo y (0, 1) en los subtipos.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/generalizacion.png" alt="Ejemplo de Generalización" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.10. Ejemplo de Generalización</p>
+        </div>
+      </div>
+      <p class="post-contenido tetx-justify">
+        Una de las características más importantes de las jerarquías es la herencia, por la cual, los atributos de un supertipo son heredados por sus subtipos.
+        Así por ejemplo, vemos en el ejemplo que tanto un libro como un artículo son documentos, por lo que los tipos de entidad <b>ARTÍCULO</b> y <b>LIBRO</b>
+        poseerán (heredarán) todos los atributos del tipo de entidad <b>DOCUMENTO</b>.
+      </p>
+    </article>
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

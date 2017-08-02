@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Modelo Relacional: Estático</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="">Dinámica del Modelo Relacional</a></li>
+              <li><a href="">Teoría de Normalización</a></li>
+              <li><a href="">Lenguaje SQL</a></li>
+              <li><a href="">HTML5 + PHP</a></li>
+              <li><a href="">Diseño de una BD</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h2>Introducción</h2>
+      <p class="post-contenido text-justify">
+        La introducción realizada por Eduard "Ted" Codd, muy a finales de los sesenta, de la teoría matemática de las relaciones en el campo de las bases de datos supuso
+        un importante paso en la investigación de los SGBC, suministrando un sólido fundamento teórico para el desarrollo, dentro de este enfoque relacional de nuevos
+        sistemas.
+      </p>
+      <p class="post-contenido text-justify">
+        El trabajo publicado por Codd en ACM presenta un nuevo modelo de datos que perseguía una serie de objetivos, muchos de ellos comunes a otros modelos, que se pueden
+        resumir en los siguientes:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify"><b>Independencia física:</b>
+            El modo en que se almacenan los datos no debe influir en su manipulación lógica y, por tanto, los usuarios que acceden a esos datos no han de modificar sus
+            programas por cambios en el almacenamiento físico.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify"><b>Independencia lógica:</b>
+            Añadir, eliminar o modificar cualquier elemento de la base de datos no debe repercutir en los programas y/o usuarios que están accediendo a subconjuntos
+            parciales de los mismos (vistas).
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify"><b>Flexibilidad:</b>
+            En el sentido de poder ofrecer a cada usuario los datos de la forma más adecuada a la correspondiente aplicación.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify"><b>Uniformidad:</b>
+            Las estructuras lógicas de los datos presentan un aspecto uniforme (tablas), lo que facilita la concepción y manipulación de la base de datos por parte de
+            los usuarios.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify"><b>Sencillez:</b>
+            Las características anteriores, así como unos lenguajes de usuario muy sencillos, producen como resultado que el modelo de datos relacional sea fácil de
+            comprender y de utilizar por parte del usuario final.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        La aparición del modelo relacional representa un verdadero hito en el desarrollo de las bases de datos, ya que marca tres etapas:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify"><b>La pre relacional -primera generación de bases de datos-</b>
+            en la que los SGBD se soportan en los modelos Codasyl y Jerárquico.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify"><b>La relacional -segunda generación de bases de datos-</b>
+            en la que los sistemas relacionales  se van aproximando a su madurez y los productos basados en este modelo van desplazando poco a poco a los sistemas de
+            primera generación hasta conseguir una mayor cuota en el mercado de las bases de datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify"><b>La post relacional -tercera generación de las bases de datos-</b> en la que aparecen otros modelos de datos, en
+            especial los orientados al objeto, que están en estos momentos intentando abrirse un hueco en el mercado de las bases de datos. Sin embargo, casi nadie
+            se atreve a vaticinar, al menos a corto plazo, una sustitución de los sistemas relacionales por sistemas basados en otros modelos.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Estructura del Modelo Relacional</h2>
+      <p class="post-contenido text-justify">
+        La relación es el elemento básico del modelo relacional, y se puede representar como una tabla.
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="active">
+              <th class="textoTabla">atributo 1</th>
+              <th class="textoTabla">atributo 2</th>
+              <th class="textoTabla">...</th>
+              <th class="textoTabla">atributo n</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">...</td>
+              <td class="textoTabla">XXX</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">...</td>
+              <td class="textoTabla">XXX</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">...</td>
+              <td class="textoTabla">XXX</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">XXX</td>
+              <td class="textoTabla">...</td>
+              <td class="textoTabla">XXX</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="text-center">Tabla 3.1. Representación de una relación en forma de tabla</h3>
+
+      <p class="post-contenido text-justify">
+        En ella podemos distinguir <b>nombre</b> (puede haber relaciones, como aquellas que se obtienen como resultado de una consulta, que no tienen nombre), un conjunto
+        de columnas, denominadas <b>atributos</b>, que representan propiedades de la tabla y que también están caracterizadas por su nombre, y un conjunto de filas llamadas
+        <b>tuplas</b>, que contienen los valores que toma cada uno de los atributos para cada elemento de la relación.
+      </p>
+      <p class="post-contenido text-justify">
+        En la Figura 3.1 se representa la relación <b>AUTOR</b>, en donde aparece la estructura del modelo relacional. En ella podemos observar el <b>nombre</b> de la relación
+        (<em>AUTOR</em>); los <b>atributos</b> (<em>Nombre</em>, <em>Nacionalidad</em> e <em>Institución</em>); los <b>dominios</b> (de donde los atributos toman sus valores;
+        varios atributos pueden tomar valores del mismo dominio); las <b>tuplas</b> (cada una de las cuales contiene los valores que toma el nombre, la nacionalidad y la
+        institución para un determinado autor); el <b>grado</b> (número de atributos); y la <b>cardinalidad</b> (número de tuplas).
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloRelacional/ejemploRelacion.png" alt="Representación de la relación autor" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3.1. Representación de la relación autor</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Insistimos que una relación se puede representar como una tabla, aunque tiene una serie de elementos característicos que la distinguen de la tabla, ya que no se
+        admiten filas duplicadas, las filas y las columnas no están ordenadas y es plana, es decir, que el cruce de una fila y una columna sólo puede haber un valor
+        (no se admiten atributos multivariados). Se trata de restricciones inherentes al modelo que más adelante analizaremos.
+      </p>
+      <p class="post-contenido text-justify">
+        En una tabla se puede distinguir una cabecera que define la estructura de la tabla; es decir, sus atributos con los dominios subyacentes, y un cuerpo que está
+        formado por un conjunto de tuplas que varían con el tiempo.
+      </p>
+      <p class="post-contenido text-justify">
+        Esta representación de la relación como una tabla ha sido el origen de que los productos relacionales y los usuarios utilicen habitualmente el nombre de <em>tabla</em>
+        (en principio ajeno a la teoría relacional) para denominar las relaciones y, como consecuencia de ello, se llame <em>filas</em> a las tuplas y <em>columnas</em> a
+        los atributos; si bien, la terminología es irrelevante y un producto no es más o menos relacional por utilizar una u otra terminología.
+      </p>
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr class="active">
+              <th class="textoTabla">Relación</th>
+              <th class="textoTabla">Tabla</th>
+              <th class="textoTabla">Fichero</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="textoTabla">Tupla</td>
+              <td class="textoTabla">Fila</td>
+              <td class="textoTabla">Registro</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Atributo</td>
+              <td class="textoTabla">Columnas</td>
+              <td class="textoTabla">Campo</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Grado</td>
+              <td class="textoTabla"># Columnas</td>
+              <td class="textoTabla"># Campos</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Cardinalidad</td>
+              <td class="textoTabla"># Filas</td>
+              <td class="textoTabla"># Registros</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="text-center">Tabla 3.2. Ejemplo de la representación de una relación en forma de tabla</h3>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Dominio y atributo</h2>
+      <p class="post-contenido text-justify">
+        Un dominio D es un conjunto finito de valores homogéneos y atómicos V<sub>1</sub>, V<sub>2</sub>, ..., V<sub>n</sub>, caracterizado por un nombre; decimos
+        valores <b>homogéneos</b> porque son todos del mismo tipo, y <b>atómicos</b> porque son indivisibles en lo que al modelo se refiere, es decir, si se
+        descompusieran, perderían la semántica a ellos asociada.
+      </p>
+      <p class="post-contenido text-justify">
+        Todo dominio debe tener un nombre, por el cual nos podemos referir a él, y un tipo de datos.
+      </p>
+      <p class="post-contenido text-justify">
+        Un <b>atributo</b> A es el papel que juega un determinado dominio D en una relación; se dice que D es el dominio de A y se denota como dom(A). Así el atributo
+        <b>Nacionalidad</b> habla de <b>AUTOR</b>, definido sobre el dominio de <b><em>Nacionalidades</em></b>, nos indica que dicho dominio tiene el papel de
+        nacionalidad del autor en la referida tabla.
+      </p>
+      <p class="post-contenido text-justify">
+        Un <b>dominio compuesto</b> se puede definir como una combinación de dominios simples a la que se pueden aplicar ciertas restricciones de integridad. Por ejemplo,
+        un usuario puede necesitar manejar, además de los tres dominios <em>Día</em>, <em>Mes</em> y <em>Año</em>, un dominio compuesto por ellos denominado <em>Fecha</em>.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Definición formal de Relación</h2>
+      <p class="post-contenido text-justify">
+        Matemáticamente, una <b>relación</b> definida sobre los n dominios D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, ..., D<sub>n</sub> no necesariamente distintos, es
+        un subconjunto del producto cartesiano de estos dominios, donde cada elemento de la relación (<em>tupla</em>) es una serie de n valores ordenados.
+      </p>
+      <p class="post-contenido text-justify">
+        <b>Nombre</b>: Las relaciones se identifican por un nombre; si bien ciertas relaciones que no necesitan identificarse (por ejemplo, resultados intermedios).
+      </p>
+      <p class="post-contenido text-justify">
+        <b>Cabecera de relación</b>: Conjunto de <em>n</em> pares atributo-dominio subyacente { ( A<sub>i</sub> : D<sub>i</sub> ) }<sub>i=1</sub><sup>n</sup> donde
+        <em>n</em> es el <b>grado</b>; se corresponde con la primera fila cuando la relación se percibe como una tabla. El conjunto A de atributos sobre los que se
+        define la relación se llama <b>contexto</b> de la misma.
+      </p>
+      <p class="post-contenido text-justify">
+        <b>Cuerpo de la relación</b>: Conjunto de <em>m</em> tuplas {t<sub>1</sub>, t<sub>2</sub>, t<sub>3</sub>, ..., t<sub>m</sub>}, donde cada tupla es un conjunto
+        de <em>n</em> pares atributo-valor { ( A<sub>i</sub> : V<sub>ij</sub> ) }, siendo V<sub>ij</sub> el valor <em>j</em> del dominio D<sub>i</sub> asociado al atributo
+        A<sub>i</sub>; el número de tuplas <em>m</em> es la <b>cardinalidad</b>. Así como la cabecera de la relación es invariante, su cuerpo varía en el transcurso del
+        tiempo, al igual que la cardinalidad.
+      </p>
+      <p class="post-contenido text-justify">
+        El esquema de relación estará construido por el nombre R -si existe- y la cabecera, que se denota:
+      </p>
+      <p class="post-contenido text-center">
+        R ( { A<sub>i</sub> : D<sub>i</sub> }<sub>i=1</sub><sup>n</sup> )
+      </p>
+      <p class="post-contenido text-justify">
+        El estado de relación r(R), al que denominaremos simplemente relación, está constituido por el esquema y el cuerpo de la relación:
+      </p>
+      <p class="post-contenido text-center">
+         &lt;esquema, cuerpo&gt;
+      </p>
+      <p class="post-contenido text-justify">
+        siendo el cuerpo el conjunto de tuplas que, en un instante dado, satisface el correspondiente esquema de relación.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloRelacional/esquemaRelacion.png" alt="Ejemplo del Esquema de Relación" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3.2. Ejemplo del Esquema de Relación</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Una base de datos relacionales una base de datos percibida por los usuarios como una colección de relaciones que varían con el tiempo, es decir, una colección de
+        variables de relación.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Clases de Relación</h2>
+      <p class="post-contenido text-justify">
+        Existen diversas clasificaciones de las relaciones. En primer lugar, dividiremos las  relaciones en nominadas y sin nombre. Las relaciones nominadas pueden ser:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Persistentes</b>: Son aquellas relaciones cuya definición permanece en la base de datos, borrandose solamente mediante una acción explícita del usuario. Las
+            relaciones persistentes se dividen en:
+          </p>
+          <ul>
+            <li>
+              <p class="post-contenido text-justify">
+                <b>Relaciones base</b>. Existen por sí mismas, no en función de otras relaciones.
+              </p>
+            </li>
+            <li>
+              <p class="post-contenido text-justify">
+                <b>Vistas</b>. Son relaciones derivadas que se definen dando un nombre a una expresión de consulta.
+              </p>
+            </li>
+            <li>
+              <p class="post-contenido text-justify">
+                <b>Instantáneas</b>. Son relaciones derivadas al igual que las vistas, es decir, se definen en términos de otras relaciones nominadas, pero tienen datos
+                propios almacenados, los cuales son el resultado de ejecutar la consulta especificada o de guardar una relación base.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Temporales</b>. A diferencia de las relaciones persistentes, una relación temporal desaparece de la base de datos en un cierto momento sin necesidad
+            de una acción o de borrado específica del usuario.
+          </p>
+        </li>
+      </ul>
+      <div class="thumbnail">
+        <img src="img/modeloRelacional/clasesDeRelacion.png" alt="Clases de Relación" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3.3. Clases de Relación</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Claves</h2>
+      <p class="post-contenido text-justify">
+        Una <b>clave candidata</b> de una relación es un conjunto de atributos que identifican unívoca y mínimamente cada tupla de la relación. Por la propia definición
+        de relación, siempre hay, al menos, una clave candidata, ya que al ser una relación siempre tiene que identificar unívocamente a una tupla. Por ejemplo, la
+        relación <b>AUTOR</b> tiene una clave candidata: el atributo <b>Nombre</b>, ya que suponemos que no existen dos autores con el mismo nombre.
+      </p>
+      <p class="post-contenido text-justify">
+        Una relación puede tener más de una clave candidata, entre las cuales se debe distinguir:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Clave primaria:</b> es aquella clave candidata que el usuario escogerá, por consideraciones ajenas al modelo relacional, para identificar las tuplas de
+            la relación. Cuando solo existe una clave candidata, ésta será la clave primaria.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Claves alternativas:</b> son aquellas claves candidatas que no han sido escogidas como clave primaria.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Restricciones inherentes</h2>
+      <p class="post-contenido text-justify">
+        Los modelos de datos tienen restricciones que impone el mismo modelo, el cual no admite ciertas estructuras: son las restricciones inherentes, que no son
+        definidas por los usuarios sino obligadas por el propio modelo, lo que le quita flexibilidad a la hora de representar el mundo real.
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            No hay dos tuplas iguales.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            El orden de las tuplas no es significativo.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            El orden de los atributos no es significativo.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Cada atributo sólo puede tomar un único valor del dominio sobre el que está definido, no admitiendo por tanto los grupos repetidos.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Toda relación debe estar normalizada, en caso contrario no es realmente una relación.
+      </p>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="active">
+              <th class="textoTabla">Nombre</th>
+              <th class="textoTabla">Nacionalidad</th>
+              <th class="textoTabla">Instituto</th>
+              <th class="textoTabla">Idiomas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="textoTabla">Date, C.J.</td>
+              <td class="textoTabla">Norteamericana</td>
+              <td class="textoTabla">Relational Institute</td>
+              <td class="textoTabla">Inglés, Español</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Codd, E.F.</td>
+              <td class="textoTabla">Norteamericana</td>
+              <td class="textoTabla">Rlational Institute</td>
+              <td class="textoTabla">Inglés</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Ceri, S.</td>
+              <td class="textoTabla">Italiana</td>
+              <td class="textoTabla">Politénico de Milán</td>
+              <td class="textoTabla">Italiano, Inglés</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Slator, F.</td>
+              <td class="textoTabla">Española</td>
+              <td class="textoTabla">U.P.C.</td>
+              <td class="textoTabla">Español, Catalán</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="text-center">Tabla 3.3. Tabla AUTOR1 no normalizada, por lo tanto no es una relación</h3>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="active">
+              <th class="textoTabla">Nombre</th>
+              <th class="textoTabla">Nacionalidad</th>
+              <th class="textoTabla">Instituto</th>
+              <th class="textoTabla">Idiomas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="textoTabla">Date, C.J.</td>
+              <td class="textoTabla">Norteamericana</td>
+              <td class="textoTabla">Relational Institute</td>
+              <td class="textoTabla">Inglés</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Date, C.J.</td>
+              <td class="textoTabla">Norteamericana</td>
+              <td class="textoTabla">Relational Institute</td>
+              <td class="textoTabla">Español</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Codd, E.F.</td>
+              <td class="textoTabla">Norteamericana</td>
+              <td class="textoTabla">Rlational Institute</td>
+              <td class="textoTabla">Inglés</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Ceri, S.</td>
+              <td class="textoTabla">Italiana</td>
+              <td class="textoTabla">Politénico de Milán</td>
+              <td class="textoTabla">Italiano</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Ceri, S.</td>
+              <td class="textoTabla">Italiana</td>
+              <td class="textoTabla">Politénico de Milán</td>
+              <td class="textoTabla">Inglés</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Slator, F.</td>
+              <td class="textoTabla">Española</td>
+              <td class="textoTabla">U.P.C.</td>
+              <td class="textoTabla">Español</td>
+            </tr>
+            <tr>
+              <td class="textoTabla">Slator, F.</td>
+              <td class="textoTabla">Española</td>
+              <td class="textoTabla">U.P.C.</td>
+              <td class="textoTabla">Catalán</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h5 class="text-center">Tabla 3.4. Relación obtenida normalizando la tabla AUTOR1</h3>
+
+      <p class="post-contenido text-justify">
+        Existe otra restricción inherente que es la regla de integridad de entidad, la cual impone que: "Ningún atributo que forme parte de la clave primaria de una
+        relación puede tomar un valor nulo".
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Restricciones semánticas</h2>
+      <p class="post-contenido text-justify">
+        Dentro del contexto relacional, como en otros modelos de datos, existen restricciones semánticas o de usuario, que son facilidades que el modelo ofrece a
+        los usuarios a fin de que estos puedan reflejar en el esquema, lo más fielmente posible, la semántica del mundo real.
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Llave primaria.</b> Permite declarar un atributo o un conjunto de atributos como clave primaria de una relación, por lo que sus valores no se podrán
+            repetir ni se admitirán los nulos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Unicidad.</b> Mediante la cual se indica que los valores de un conjunto de atributos no pueden repetirse en una relación. Permite la definición de
+            claves alternativas.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Obligatoriedad</b> de uno o más atributos, con lo que se indica que el conjunto de atributos no admite valores nulos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Integridad referencial.</b> Si la relación R<sub>2</sub> (relación que referencia) tiene un descriptor que es una clave candidata de la relación R<sub>1</sub>
+            (relación referenciada), todo valor de dicho descriptor debe concordar con un valor de la clave candidata referenciada de R<sub>1</sub> o bien ser nulo.
+          </p>
+        </li>
+      </ul>
+      <div class="thumbnail">
+        <img src="img/modeloRelacional/llaveForanea.png" alt="Llave ajena de la tabla LIBRO que referencia a EDITORIAL" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3.4. Llave ajena de la tabla LIBRO que referencia a EDITORIAL</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        En la figura 3.5 se muestra una forma de representar las llaves ajenas.
+      </p>
+      <p class="post-contenido text-justify">
+        En el ejemplo 1, el atributo <b>Editorial</b> de la relación <b>LIBRO</b> es la clave ajena que referencia a <b>EDITORIAL</b>, de modo que sus valores deben concordar
+        con la clave primaria de la relación <b>EDITORIAL</b> o bien ser nulos (los libros deben pertenecer a una editorial existente o, si se desconoce la editorial, tendrán
+        valor nulo para ese atributo).
+      </p>
+      <p class="post-contenido text-justify">
+        En el ejemplo 2, la relación <b>ESCRIBE</b> posee dos claves ajenas: Nombre que referencia a la relación <b>AUTOR</b> y <b>Cod_Libro</b> que referencia a la relación
+        <b>LIBRO</b>. En este caso ninguna de las dos llaves ajenas puede tomar valores nulos, ya que forman parte de la llave primaria de la relación <b>ESCRIBE</b>.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloRelacional/ejemploLlaveForanea.png" alt="Ejemplos de llaves ajenas" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3.5. Ejemplos de llaves ajenas</p>
+        </div>
+      </div>
+    </article>
+
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -78,6 +78,11 @@ article {
   text-align: center;
 }
 
+/* Texto en las descripciones de las figuras */
+p.caption {
+  font-size: 0.85em;
+}
+
 .social {
 /*	position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
 /*	left: 0; /* Establecemos la barra en la izquierda */
