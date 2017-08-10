@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Dinámica del Modelo Relacional</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
+              <li><a href="">Teoría de Normalización</a></li>
+              <li><a href="">Lenguaje SQL</a></li>
+              <li><a href="">HTML5 + PHP</a></li>
+              <li><a href="">Diseño de una BD</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1mh27L3bGl8zVu5V390R73A03R5sr0Hc9n4K6mL4wLBc/edit?usp=sharing" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h2>Introducción</h2>
+
+      <p class="post-contenido text-justify">
+        El modelo relacional, como todo modelo de datos, lleva asociado a su parte estática (estructura y restricciones) una dinámica que permite la transformación
+        entre estados de la base de datos. Esta transformación de un estado origen a un estado objetivo se realiza aplicando un conjunto de operadores, mediante los
+        cuales se llevan a cabo las siguientes operaciones:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">Inserción de tuplas</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Borrado de tuplas</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modificación de tuplas</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Consulta</p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Si O es un operador, el paso de un estado origen de la base de datos (BDi) a un estado objetivo (BDj) se puede expresar:
+      </p>
+      <p class="codigo">
+        <br>
+        O(BD<sub>i</sub>) = BD<sub>j</sub>
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        La dinámica del modelo relacional actúa sobre conjuntos de tuplas y se expresa mediante lenguajes de manipulación relacionales que asocian una sintaxis
+        concreta a las operaciones. Los lenguajes relacionales, por tanto, operan también sobre conjuntos de tuplas, es decir, no son lenguajes de navegación sino
+        de especificación, y se dividen en dos tipos:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Algebraicos: </b>se caracterizan porque los cambios de estado se especifican mediante operaciones, cuyos operandos son relaciones y cuyo resultado
+            es otra relación. Genéricamente se conoce como <b>álgebra relacional</b>.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Predicativos:</b> donde los cambios de estado se especifican mediante predicados que definen el estado objetivo sin indicar las operaciones como
+            cálculo relacional y se dividen en dos tipos:
+          </p>
+          <ul>
+            <li>
+              <p class="post-contenido text-justify">orientados a tuplas</p>
+            </li>
+            <li>
+              <p class="post-contenido text-justify">orientados a dominios</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Álgebra relacional</h2>
+      <p class="post-contenido text-justify">
+        La dinámica del modelo relacional, en lo que al álgebra se refiere, la constituye una colección de operadores de alto nivel que, aplicados a las relaciones,
+        dan como resultado nuevas relaciones. Sean R y R’ dos relaciones y O un operador cualquiera del álgebra relacional. Una operación del álgebra relacional
+        consiste en aplicar O a la relación R, obteniéndose R’. Al ser el resultado de la operación otra relación, se cumple con la propiedad de cierre (cerradura),
+        es decir, si O<sub>1</sub>, O<sub>2</sub>, ..., O<sub>n</sub> representan operadores, se cumple:
+      </p>
+
+      <p class="codigo">
+        <br>
+        O<sub>n</sub>(..(O<sub>2</sub>(O<sub>1</sub>(R)))) = R'
+        <br><br>
+      </p>
+
+      <p class="post-contenido text-justify">
+        Los operadores del álgebra son siempre relaciones y los operadores se aplican, por tanto, a relaciones a fin de formular consultas a la base de datos. Codd
+        definió ocho operadores para el álgebra relacional, divididos en dos grupos de cuatro:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            Los operadores tradicionales de conjuntos: unión, intersección, diferencia y producto cartesiano.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Los operadores relacionales especiales: restricción, proyección, combinación y división.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        A parte de esta clasificación, los operadores se pueden dividir también en operadores primitivos y operadores derivados:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            Los operadores primitivos son los operadores esenciales que no pueden obtenerse de otros (sin ellos, el álgebra relacional no sería un lenguaje completo).
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Los operadores derivados se pueden obtener aplicando varios de los operadores primitivos. Podríamos prescindir de ellos, ya que no aportan nada nuevo;
+            sin embargo, son muy útiles y simplifican muchas operaciones habituales.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Otra posible clasificación, atendiendo al número de operandos de cada operador, los divide en:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Unarios. </b>Si el operador tiene una única relación como operando.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Binarios. </b>Si el operador tiene dos relaciones como operandos.
+          </p>
+        </li>
+      </ul>
+    <!-- </article>
+
+    <article class="tema clearfix"> -->
+      <br>
+      <h3>Operación de asignación y renombrado de atributos</h3>
+
+      <p class="post contenido text-justify">
+        Antes de empezar a definir los operadores del álgebra relacional, vamos a introducir una operación auxiliar: la asignación, mediante la cual también se
+        puede llevar a cabo el renombrado de atributos. La operación de asignación se utiliza para almacenar el resultado de una consulta en una nueva relación
+        o para denominar resultados intermedios cuando se desea dividir una única operación compleja en una secuencia de operaciones más simples; también se
+        emplea para asignar un nombre a una relación existente. El símbolo con el que se suele representar la operación asignación es una flecha que señala
+        hacia la nueva relación a la que se asignará el resultado de la operación:
+      </p>
+
+      <p class="codigo">
+        <br>
+        RELACION_NUEVA &lt;- O(R)
+        <br>
+        <br>
+      </p>
+
+      <p class="post contenido text-justify">
+        O(R) es el resultado de una o más operaciones algebraicas; aunque también podría aplicarse este operador para almacenar una relación en otra con distinto
+        nombre:
+      </p>
+
+      <p class="codigo">
+        <br>
+        R' &lt;- R
+        <br>
+        <br>
+      </p>
+
+      <p class="post contenido text-justify">
+        La operación de renombrado consiste en asignar nuevos nombres a los atributos de una relación, es una operación necesaria en ciertos casos en los que
+        intervienen operadores binarios, y a veces es preciso cambiar los nombres de los atributos de las relaciones de los operandos. La forma de llevar a cabo
+        el renombrado de los atributos es realizando una operación de asignación en la cual se especifican los nombres de los atributos de la relación que se
+        encuentra a la izquierda del símbolo de asignación:
+      </p>
+
+      <p class="codigo">
+        <br>
+        RELACION_NUEVA(A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>n</sub>) &lt;- O(R)
+        <br>
+        <br>
+      </p>
+
+      <p class="post contenido text-justify">
+        Ejemplo:
+      </p>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th class="textoTabla">Nombre</th>
+            <th class="textoTabla">Nacionalidad</th>
+            <th class="textoTabla">Organización</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textoTabla">Date, C.J.</td>
+            <td class="textoTabla">Norteamericana</td>
+            <td class="textoTabla">Relational Institute</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Saltor, F.</td>
+            <td class="textoTabla">Española</td>
+            <td class="textoTabla">U.P.C.</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Ceri, S.</td>
+            <td class="textoTabla">Italiana</td>
+            <td class="textoTabla">Politécnico de Milán</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="post contenido text-justify"></p>
+      <p class="post contenido text-justify"></p>
+      <p class="post contenido text-justify"></p>
+      <p class="post contenido text-justify"></p>
+      <p class="post contenido text-justify"></p>
+      <p class="post contenido text-justify"></p>
+    </article>
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

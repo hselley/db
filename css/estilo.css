@@ -134,6 +134,16 @@ p.caption {
   src: url(../../css/ubuntu-font-family/UbuntuMono-R.ttf);
 }
 
+p.codigo {
+  font-family: "miFuenteCodigo";
+  font-size: 1.2em;
+  text-align: center;
+  /*background-color: #3a3a3a;*/
+  background-color: #3e3e3e;
+  color: white;
+  border-radius: 5px;
+}
+
 /* Estilo para el pseudocódigo y código Gambas */
 pre {
   font-family: "miFuenteCodigo";
