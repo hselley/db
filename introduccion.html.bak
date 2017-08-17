@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Introducción a las Bases de Datos</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
+              <li><a href="">Teoría de Normalización</a></li>
+              <li><a href="">Lenguaje SQL</a></li>
+              <li><a href="">HTML5 + PHP</a></li>
+              <li><a href="">Diseño de una BD</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1mh27L3bGl8zVu5V390R73A03R5sr0Hc9n4K6mL4wLBc/edit?usp=sharing" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h2>Definición de un sistema de bases de datos</h2>
+
+      <p class="post-contenido text-justify">
+        El término de bases de datos fue escuchado por primera vez en 1963, en un simposio celebrado en California, USA. Una base de datos se
+        puede definir como un conjunto de información relacionada que se encuentra agrupada ó estructurada, es decir, una base de datos como
+        una serie de datos organizados y relacionados entre sí.
+      </p>
+      <p class="post-contenido text-justify">
+        En términos generales, una base de datos es un repositorio donde se almacena información. Por ejemplo, un directorio telefónico,
+        una agenda, un libro son una base de datos. Todos estos ejemplos deben tener un mecanismo basado en una metodología para poder
+        tener acceso a la información que contiene.
+      </p>
+      <p class="post-contenido text-justify">
+        Desde el punto de vista informático, la base de datos es un sistema formado por un conjunto de datos almacenados en discos que
+        permiten el acceso directo a ellos y un conjunto de programas que manipulen ese conjunto de datos.
+      </p>
+      <p class="post-contenido text-justify">
+        Las bases de datos son esenciales en cualquier negocio. Ya sea que visitemos un sitio grande como Google, Yahoo, Amazon, etc.
+        o pequeños sitios que proporcionen información, existe una base de datos detrás que provee la información solicitada.
+      </p>
+      <p class="post-contenido text-justify">
+        El poder de las bases de datos viene de un cuerpo de conocimiento y tecnología que ha sido desarrollado por varias décadas y
+        encarnado en software especializado llamado “Sistema de Administración de Bases de Datos (database system administration)”,
+        o DBMS, coloquialmente conocido como "sistema de base de datos". Un DBMS es una poderosa herramienta para crear y administrar
+        grandes cantidades de información eficientemente, y permitir que persistan de forma segura por largos periodos de tiempo.
+        Estos sistemas son uno de los software más complejos que existen.
+      </p>
+      <p class="post-contenido text-justify">
+        Entre las principales características de los sistemas de base de datos podemos mencionar:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            Independencia lógica y física de los datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Redundancia mínima.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Acceso concurrente por parte de múltiples usuarios.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Integridad de los datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Consultas complejas optimizadas.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Seguridad de acceso y auditoría.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Respaldo y recuperación.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Acceso a través de lenguajes de programación estándar.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Modelos de datos</h2>
+      <p class="post-contenido text-justify">
+        Un modelo de base de datos es un tipo de modelo de datos que determina la estructura lógica de una base de datos y de manera
+        fundamental determina el modo de almacenar, organizar y manipular los datos. Estructura los datos de acuerdo a una metodología
+        concreta.
+      </p>
+      <p class="post-contenido text-justify">
+        En una primera aproximación podemos decir que un Modelo de Datos (MD) es un conjunto de conceptos que permiten describir, a
+        distintos niveles de abstracción, la estructura de una base de datos, a la cual denominamos esquema.
+      </p>
+      <p class="post-contenido text-justify">
+        Podemos definir, de forma más precisa, un modelo de datos como "<em>un conjunto de conceptos, reglas y convenciones que nos permiten
+          describir y manipular (consultar y actualizar) los datos de un cierto mundo real que deseamos almacenar en la base de datos</em>".
+      </p>
+      <p class="post-contenido text-justify">
+        Entre los modelos lógicos comunes para bases de datos se encuentran:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">Modelo jerárquico</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo en red</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo relacional</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo entidad–relación</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo entidad–relación extendido</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo de objetos</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo documental</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo entidad–atributo–valor</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Modelo en estrella</p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Los modelos físicos de datos incluyen:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">índice invertido</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">fichero plano</p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Otros modelos lógicos pueden ser:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">modelo asociativo</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">modelo multidimensional</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">modelo multivalor</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">modelo semántico</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">base de datos XML</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">grafo etiquetado</p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">Triplestore</p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sistema de Gestión de Base de Datos</h2>
+      <p class="post-contenido text-justify">
+        Un sistema de gestión de bases de datos (SGBD) consiste en una colección de datos interrelacionados y un conjunto de programas para
+        acceder a esos datos. El objetivo primordial de un SGBD es proporcionar un entorno que sea a la vez conveniente y eficiente para
+        ser utilizado al extraer y almacenar información.
+      </p>
+      <p class="post-contenido text-center">
+        <em>"El sistema de gestión de la base de datos (SGBD) es una aplicación que permite a los usuarios definir, crear y mantener la base de
+          datos, y proporcionar acceso controlado a la misma".</em>
+      </p>
+      <p class="post-contenido text-justify">
+        SGBD es un conjunto de herramientas que sirven para definir, construir y manipular una base de datos. Dentro de las funciones que se
+        encarga un SGBD son:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text justify">
+            Deben incluir un control de concurrencia, es decir, permitir acceso “simultáneo” a la base. Controlar la concurrencia implica que
+            si varios usuarios acceden a la base de datos, la actualización de los datos se haga de forma controlada.</p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Encargarse de cumplir las reglas de integridad y redundancias.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Capacidad de realizar copias de seguridad y de recuperación de datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Suministrar múltiples interfaces de usuario.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text justify">
+            Representar relaciones complejas entre los datos.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Características de un SGBD.
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            Permite crear y gestionar bases de datos de forma fácil, cómoda y rápida.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Ofrecer una gran flexibilidad para el trabajo con base de datos relacionales.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Ofrecer un ambiente agradable dado por su interfaz.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Vantajas de los SGBD:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Control sobre la redundancia de datos:</b> Los sistemas de ficheros almacenan varias copias de los mismos datos en ficheros distintos. Esto hace que
+            se desperdicie espacio de almacenamiento, además de provocar la falta de consistencia de datos. En los sistemas de bases de datos todos estos ficheros
+            están integrados, por lo que no se almacenan varias copias de los mismos datos. Sin embargo, en una base de datos no se puede eliminar la redundancia
+            completamente, ya que en ocasiones es necesaria para modelar las relaciones entre los datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Consistencia de datos:</b> Eliminando o controlando las redundancias de datos se reduce en gran medida el riesgo de que haya inconsistencias. Si un
+            dato está almacenado una sola vez, cualquier actualización se debe realizar sólo una vez, y está disponible para todos los usuarios inmediatamente. Si
+            un dato está duplicado y el sistema conoce esta redundancia, el propio sistema puede encargarse de garantizar que todas las copias se mantienen
+            consistentes.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Compartir datos:</b> En los sistemas de ficheros, los ficheros pertenecen a las personas o a los departamentos que los utilizan. Pero en los sistemas
+            de bases de datos, la base de datos pertenece a la empresa y puede ser compartida por todos los usuarios que estén autorizados.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mantenimiento de estándares:</b> Gracias a la integración es más fácil respetar los estándares necesarios, tanto los establecidos a nivel de la empresa
+            como los nacionales e internacionales. Estos estándares pueden establecerse sobre el formato de los datos para facilitar su intercambio, pueden ser
+            estándares de documentación, procedimientos de actualización y también reglas de acceso.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mejora en la integridad de datos:</b> La integridad de la base de datos se refiere a la validez y la consistencia de los datos almacenados. Normalmente,
+            la integridad se expresa mediante restricciones o reglas que no se pueden violar. Estas restricciones se pueden aplicar tanto a los datos, como a sus relaciones,
+            y es el SGBD quien se debe encargar de mantenerlas.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mejora en la seguridad:</b> La seguridad de la base de datos es la protección de la base de datos frente a usuarios no autorizados. Sin unas buenas medidas de
+            seguridad, la integración de datos en los sistemas de bases de datos hace que éstos sean más vulnerables que en los sistemas de ficheros.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mejora en la accesibilidad a los datos:</b> Muchos SGBD proporcionan lenguajes de consultas o generadores de informes que permiten al usuario hacer cualquier
+            tipo de consulta sobre los datos, sin que sea necesario que un programador escriba una aplicación que realice tal tarea.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mejora en la productividad:</b> El SGBD proporciona muchas de las funciones estándar que el programador necesita escribir en un sistema de ficheros. A nivel
+            básico, el SGBD proporciona todas las rutinas de manejo de ficheros típicas de los programas de aplicación. El hecho de disponer de estas funciones permite al
+            programador centrarse mejor en la función específica requerida por los usuarios, sin tener que preocuparse de los detalles de implementación de bajo nivel.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mejora en el mantenimiento:</b> En los sistemas de ficheros, las descripciones de los datos se encuentran inmersas en los programas de aplicación que los
+            manejan. Esto hace que los programas sean dependientes de los datos, de modo que un cambio en su estructura, o un cambio en el modo en que se almacena en disco,
+            requiere cambios importantes en los programas cuyos datos se ven afectados. Sin embargo, los SGBD separan las descripciones de los datos de las aplicaciones.
+            Esto es lo que se conoce como independencia de datos, gracias a la cual se simplifica el mantenimiento de las aplicaciones que acceden a la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Aumento de la concurrencia:</b> En algunos sistemas de ficheros, si hay varios usuarios que pueden acceder simultáneamente a un mismo fichero, es posible
+            que el acceso interfiera entre ellos de modo que se pierda información o se pierda la integridad. La mayoría de los SGBD gestionan el acceso concurrente a
+            la base de datos y garantizan que no ocurran problemas de este tipo.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Mejora en los servicios de copias de seguridad:</b> Muchos sistemas de ficheros dejan que sea el usuario quien proporcione las medidas necesarias para
+            proteger los datos ante fallos en el sistema o en las aplicaciones. Los usuarios tienen que hacer copias de seguridad cada día, y si se produce algún fallo,
+            utilizar estas copias para restaurarlos. En este caso, todo el trabajo realizado sobre los datos desde que se hizo la última copia de seguridad se pierde
+            y se tiene que volver a realizar. Sin embargo, los SGBD actuales funcionan de modo que se minimiza la cantidad de trabajo perdido cuando se produce un fallo.
+          </p>
+        </li>
+      </ul>
+
+      <p class="post-contenido text-justify">Desventajas de los SGBD:</p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Complejidad:</b> Los SGBD son conjuntos de programas que pueden llegar a ser complejos con una gran funcionalidad. Es preciso comprender muy bien esta
+            funcionalidad para poder realizar un buen uso de ellos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Coste del equipamiento adicional:</b> Tanto el SGBD, como la propia base de datos, pueden hacer que sea necesario adquirir más espacio de almacenamiento.
+            Además, para alcanzar las prestaciones deseadas, es posible que sea necesario adquirir una máquina más grande o una máquina que se dedique solamente al SGBD.
+            Todo esto hará que la implantación de un sistema de bases de datos sea más cara.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            <b>Vulnerable a los fallos:</b> El hecho de que todo esté centralizado en el SGBD hace que el sistema sea más vulnerable ante los fallos que puedan producirse.
+            Es por ello que deben tenerse copias de seguridad (Backup).
+          </p>
+        </li>
+      </ul>
+    </article>
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

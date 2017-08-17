@@ -67,313 +67,127 @@
 
   <section class="main container">
 
-    <article class="tema clearfix">
-      <h2>Definición de un sistema de bases de datos</h2>
 
-      <p class="post-contenido text-justify">
-        El término de bases de datos fue escuchado por primera vez en 1963, en un simposio celebrado en California, USA. Una base de datos se
-        puede definir como un conjunto de información relacionada que se encuentra agrupada ó estructurada, es decir, una base de datos como
-        una serie de datos organizados y relacionados entre sí.
+
+    <article class="tema clearfix">
+      <h2>Datos vs. Información</h2>
+      <p class="text-justify">
+        Para poder entender a fondo lo que significa diseñar una base de datos, es necesario saber la diferencia entre datos e información. Los <b>datos</b>
+        son hechos en <em>crudo</em>, esto significa que estos hechos aún no han sido procesados para revelar su significado.
       </p>
-      <p class="post-contenido text-justify">
-        En términos generales, una base de datos es un repositorio donde se almacena información. Por ejemplo, un directorio telefónico,
-        una agenda, un libro son una base de datos. Todos estos ejemplos deben tener un mecanismo basado en una metodología para poder
-        tener acceso a la información que contiene.
+      <p class="text-justify">
+        Por otro lado, la <b>información</b> es el resultado de procesar los datos crudos, de manera que se revela su significado.
       </p>
-      <p class="post-contenido text-justify">
-        Desde el punto de vista informático, la base de datos es un sistema formado por un conjunto de datos almacenados en discos que
-        permiten el acceso directo a ellos y un conjunto de programas que manipulen ese conjunto de datos.
-      </p>
-      <p class="post-contenido text-justify">
-        Las bases de datos son esenciales en cualquier negocio. Ya sea que visitemos un sitio grande como Google, Yahoo, Amazon, etc.
-        o pequeños sitios que proporcionen información, existe una base de datos detrás que provee la información solicitada.
-      </p>
-      <p class="post-contenido text-justify">
-        El poder de las bases de datos viene de un cuerpo de conocimiento y tecnología que ha sido desarrollado por varias décadas y
-        encarnado en software especializado llamado “Sistema de Administración de Bases de Datos (database system administration)”,
-        o DBMS, coloquialmente conocido como "sistema de base de datos". Un DBMS es una poderosa herramienta para crear y administrar
-        grandes cantidades de información eficientemente, y permitir que persistan de forma segura por largos periodos de tiempo.
-        Estos sistemas son uno de los software más complejos que existen.
-      </p>
-      <p class="post-contenido text-justify">
-        Entre las principales características de los sistemas de base de datos podemos mencionar:
+      <p class="text-justify">
+        Los datos son la base de la información que, a su vez, es el cimiento del conocimiento.
       </p>
       <ul>
         <li>
-          <p class="post-contenido text-justify">
-            Independencia lógica y física de los datos.
-          </p>
+          <p class="text-justify">Los datos constituyen las piezas con las cuales se construye la información.</p>
         </li>
         <li>
-          <p class="post-contenido text-justify">
-            Redundancia mínima.
-          </p>
+          <p class="text-justify">La información es obtenida al procesar los datos.</p>
         </li>
         <li>
-          <p class="post-contenido text-justify">
-            Acceso concurrente por parte de múltiples usuarios.
-          </p>
+          <p class="text-justify">La información es utilizada para revelar el significado de los datos.</p>
         </li>
         <li>
-          <p class="post-contenido text-justify">
-            Integridad de los datos.
-          </p>
+          <p class="text-justify">La certeza y relevancia de la información es clave para el proceso de decisión.</p>
         </li>
         <li>
-          <p class="post-contenido text-justify">
-            Consultas complejas optimizadas.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            Seguridad de acceso y auditoría.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            Respaldo y recuperación.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            Acceso a través de lenguajes de programación estándar.
-          </p>
+          <p class="text-justify">Tomar buenas decisiones es un factor clave para la supervivencia en un mundo globalizado.</p>
         </li>
       </ul>
     </article>
 
     <article class="tema clearfix">
-      <h2>Modelos de datos</h2>
-      <p class="post-contenido text-justify">
-        Un modelo de base de datos es un tipo de modelo de datos que determina la estructura lógica de una base de datos y de manera
-        fundamental determina el modo de almacenar, organizar y manipular los datos. Estructura los datos de acuerdo a una metodología
-        concreta.
-      </p>
-      <p class="post-contenido text-justify">
-        En una primera aproximación podemos decir que un Modelo de Datos (MD) es un conjunto de conceptos que permiten describir, a
-        distintos niveles de abstracción, la estructura de una base de datos, a la cual denominamos esquema.
-      </p>
-      <p class="post-contenido text-justify">
-        Podemos definir, de forma más precisa, un modelo de datos como "<em>un conjunto de conceptos, reglas y convenciones que nos permiten
-          describir y manipular (consultar y actualizar) los datos de un cierto mundo real que deseamos almacenar en la base de datos</em>".
-      </p>
-      <p class="post-contenido text-justify">
-        Entre los modelos lógicos comunes para bases de datos se encuentran:
+      <h2>Bases de Datos</h2>
+      <p class="text-justify">
+        Una base de datos es una estructura computacional compartida e integrada que almacena un conjunto de:
       </p>
       <ul>
         <li>
-          <p class="post-contenido text-justify">Modelo jerárquico</p>
+          <p class="text-justify">Datos, esto es, hechos en <em>crudo</em> relevantes para el usaurio.</p>
         </li>
         <li>
-          <p class="post-contenido text-justify">Modelo en red</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo relacional</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo entidad–relación</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo entidad–relación extendido</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo de objetos</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo documental</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo entidad–atributo–valor</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Modelo en estrella</p>
+          <p class="text-justify">Metadatos, es decir, datos acerca de los datos. A través de los metadatos los datos son administrados
+          y almacenados.</p>
         </li>
       </ul>
-      <p class="post-contenido text-justify">
-        Los modelos físicos de datos incluyen:
+      <p class="text-justify">
+        Los metadatos proporcionan una descripción de las características de los datos y un conjunto de relaciones que enlazan los
+        datos encontrados en la base de datos. Por ejemplo, el metadato almacena información como el nombre de cada elemento, tipo de
+        dato (numérico, texto, etc.) para cada elemento, puede ser nulo o no, etc. Dadas las características de los metadatos, las
+        bases de datos suelen ser conocidas como "conjunto de datos auto-descriptivos".
       </p>
-      <ul>
-        <li>
-          <p class="post-contenido text-justify">índice invertido</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">fichero plano</p>
-        </li>
-      </ul>
-      <p class="post-contenido text-justify">
-        Otros modelos lógicos pueden ser:
-      </p>
-      <ul>
-        <li>
-          <p class="post-contenido text-justify">modelo asociativo</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">modelo multidimensional</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">modelo multivalor</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">modelo semántico</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">base de datos XML</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">grafo etiquetado</p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">Triplestore</p>
-        </li>
-      </ul>
     </article>
 
     <article class="tema clearfix">
-      <h2>Sistema de Gestión de Base de Datos</h2>
-      <p class="post-contenido text-justify">
-        Un sistema de gestión de bases de datos (SGBD) consiste en una colección de datos interrelacionados y un conjunto de programas para
-        acceder a esos datos. El objetivo primordial de un SGBD es proporcionar un entorno que sea a la vez conveniente y eficiente para
-        ser utilizado al extraer y almacenar información.
+      <h2>Sistema de Gestión de Bases de Datos</h2>
+      <p class="text-justify">
+        Un <b>Sistema de Gestión de Bases de Datos</b> (SGBD) es un conjunto de programas que administra la estructura de la base de
+        datos y controla el acceso a los datos almacenados en la base.
       </p>
-      <p class="post-contenido text-center">
-        <em>"El sistema de gestión de la base de datos (SGBD) es una aplicación que permite a los usuarios definir, crear y mantener la base de
-          datos, y proporcionar acceso controlado a la misma".</em>
+      <p class="text-justify">
+        El SGBD sirve como un intermediario entre el usuario y la base de datos. La estructura de la base de datos se almacena como un
+        conjunto de archivos y la única forma de tener acceso a esos archivos es a través del SGBD. El SGBD recibe todas las solicitudes
+        y las traduce en las operaciones requeridas para completar esas solicitudes.
       </p>
-      <p class="post-contenido text-justify">
-        SGBD es un conjunto de herramientas que sirven para definir, construir y manipular una base de datos. Dentro de las funciones que se
-        encarga un SGBD son:
+      <p class="text-justify">
+        Tener un SGBD entre el usuario y la base de datos ofrece diversas ventajas. En primer lugar, el SGBD permite que los datos puedan
+        ser compartidos tanto a aplicaciones como usuarios. En segundo lugar, el SGBD las vistas de usuario de los datos en un único
+        repositorio de datos. Las ventajas más relevantes se describen a continuación.
       </p>
+      <h2>Ventajas de los SGBD</h2>
       <ul>
         <li>
-          <p class="post-contenido text justify">
-            Deben incluir un control de concurrencia, es decir, permitir acceso “simultáneo” a la base. Controlar la concurrencia implica que
-            si varios usuarios acceden a la base de datos, la actualización de los datos se haga de forma controlada.</p>
-        </li>
-        <li>
-          <p class="post-contenido text justify">
-            Encargarse de cumplir las reglas de integridad y redundancias.
+          <p class="text-justify">
+            <b>Compartición de datos mejorada. </b>Los SGBD ayudan a crear un ambiente en el cual los usuarios tienen mejor acceso
+            a datos mejor administrados.
           </p>
         </li>
         <li>
-          <p class="post-contenido text justify">
-            Capacidad de realizar copias de seguridad y de recuperación de datos.
+          <p class="text-justify">
+            <b>Seguridad de los datos mejorada. </b>Mientras más usuarios tienen acceso a los datos, mayor será el riesgo de que haya
+            una brecha de seguridad. Un SGBD proporciona una infraestructura para una mejor privacidad de los datos y mejores
+            políticas de seguridad.
           </p>
         </li>
         <li>
-          <p class="post-contenido text justify">
-            Suministrar múltiples interfaces de usuario.
+          <p class="text-justify">
+            <b>Mejor integración de los datos. </b>Amplio acceso a datos mejor administrados permite una vista clara e integrada de
+            las operaciones en una escala mayor.
           </p>
         </li>
         <li>
-          <p class="post-contenido text justify">
-            Representar relaciones complejas entre los datos.
+          <p class="text-justify">
+            <b>Inconsistencia de datos minimizada. </b>La inconsistencia de datos ocurre cuando diferentes versiones de un mismo dato
+            se encuentran en lugares distintos. La probabilidad de una inconsistencia de datos se reduce dramáticamente cuando se
+            utiliza una base de datos diseñada adecuadamente.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Acceso mejorado a los datos. </b>Los SGBD producen respuestas rápidas a consultas específicas. Esta es una característica
+            implícita en el diseño e implementación de los SGBD.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Toma de decisiones mejorada. </b>Datos mejor administrados y acceso mejorado a los datos, hacen posible generar información
+            de mejor calidad, necesaria para tomar una mejor decisión.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Productividad del usuario mejorada. </b>La disponibilidad de los datos, combinado con las herramientas que transforman los
+            datos en información útil, facilitan al usuario el tomar decisiones rápidamente.
           </p>
         </li>
       </ul>
-      <p class="post-contenido text-justify">
-        Características de un SGBD.
+      <p class="text-justify">
+        Estas sólo son algunas ventajas de utilizar un SGBD, más adelante exploraremos algunas otras.
       </p>
-      <ul>
-        <li>
-          <p class="post-contenido text-justify">
-            Permite crear y gestionar bases de datos de forma fácil, cómoda y rápida.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            Ofrecer una gran flexibilidad para el trabajo con base de datos relacionales.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            Ofrecer un ambiente agradable dado por su interfaz.
-          </p>
-        </li>
-      </ul>
-      <p class="post-contenido text-justify">
-        Vantajas de los SGBD:
-      </p>
-      <ul>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Control sobre la redundancia de datos:</b> Los sistemas de ficheros almacenan varias copias de los mismos datos en ficheros distintos. Esto hace que
-            se desperdicie espacio de almacenamiento, además de provocar la falta de consistencia de datos. En los sistemas de bases de datos todos estos ficheros
-            están integrados, por lo que no se almacenan varias copias de los mismos datos. Sin embargo, en una base de datos no se puede eliminar la redundancia
-            completamente, ya que en ocasiones es necesaria para modelar las relaciones entre los datos.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Consistencia de datos:</b> Eliminando o controlando las redundancias de datos se reduce en gran medida el riesgo de que haya inconsistencias. Si un
-            dato está almacenado una sola vez, cualquier actualización se debe realizar sólo una vez, y está disponible para todos los usuarios inmediatamente. Si
-            un dato está duplicado y el sistema conoce esta redundancia, el propio sistema puede encargarse de garantizar que todas las copias se mantienen
-            consistentes.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Compartir datos:</b> En los sistemas de ficheros, los ficheros pertenecen a las personas o a los departamentos que los utilizan. Pero en los sistemas
-            de bases de datos, la base de datos pertenece a la empresa y puede ser compartida por todos los usuarios que estén autorizados.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mantenimiento de estándares:</b> Gracias a la integración es más fácil respetar los estándares necesarios, tanto los establecidos a nivel de la empresa
-            como los nacionales e internacionales. Estos estándares pueden establecerse sobre el formato de los datos para facilitar su intercambio, pueden ser
-            estándares de documentación, procedimientos de actualización y también reglas de acceso.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mejora en la integridad de datos:</b> La integridad de la base de datos se refiere a la validez y la consistencia de los datos almacenados. Normalmente,
-            la integridad se expresa mediante restricciones o reglas que no se pueden violar. Estas restricciones se pueden aplicar tanto a los datos, como a sus relaciones,
-            y es el SGBD quien se debe encargar de mantenerlas.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mejora en la seguridad:</b> La seguridad de la base de datos es la protección de la base de datos frente a usuarios no autorizados. Sin unas buenas medidas de
-            seguridad, la integración de datos en los sistemas de bases de datos hace que éstos sean más vulnerables que en los sistemas de ficheros.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mejora en la accesibilidad a los datos:</b> Muchos SGBD proporcionan lenguajes de consultas o generadores de informes que permiten al usuario hacer cualquier
-            tipo de consulta sobre los datos, sin que sea necesario que un programador escriba una aplicación que realice tal tarea.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mejora en la productividad:</b> El SGBD proporciona muchas de las funciones estándar que el programador necesita escribir en un sistema de ficheros. A nivel
-            básico, el SGBD proporciona todas las rutinas de manejo de ficheros típicas de los programas de aplicación. El hecho de disponer de estas funciones permite al
-            programador centrarse mejor en la función específica requerida por los usuarios, sin tener que preocuparse de los detalles de implementación de bajo nivel.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mejora en el mantenimiento:</b> En los sistemas de ficheros, las descripciones de los datos se encuentran inmersas en los programas de aplicación que los
-            manejan. Esto hace que los programas sean dependientes de los datos, de modo que un cambio en su estructura, o un cambio en el modo en que se almacena en disco,
-            requiere cambios importantes en los programas cuyos datos se ven afectados. Sin embargo, los SGBD separan las descripciones de los datos de las aplicaciones.
-            Esto es lo que se conoce como independencia de datos, gracias a la cual se simplifica el mantenimiento de las aplicaciones que acceden a la base de datos.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Aumento de la concurrencia:</b> En algunos sistemas de ficheros, si hay varios usuarios que pueden acceder simultáneamente a un mismo fichero, es posible
-            que el acceso interfiera entre ellos de modo que se pierda información o se pierda la integridad. La mayoría de los SGBD gestionan el acceso concurrente a
-            la base de datos y garantizan que no ocurran problemas de este tipo.
-          </p>
-        </li>
-        <li>
-          <p class="post-contenido text-justify">
-            <b>Mejora en los servicios de copias de seguridad:</b> Muchos sistemas de ficheros dejan que sea el usuario quien proporcione las medidas necesarias para
-            proteger los datos ante fallos en el sistema o en las aplicaciones. Los usuarios tienen que hacer copias de seguridad cada día, y si se produce algún fallo,
-            utilizar estas copias para restaurarlos. En este caso, todo el trabajo realizado sobre los datos desde que se hizo la última copia de seguridad se pierde
-            y se tiene que volver a realizar. Sin embargo, los SGBD actuales funcionan de modo que se minimiza la cantidad de trabajo perdido cuando se produce un fallo.
-          </p>
-        </li>
-      </ul>
-
       <p class="post-contenido text-justify">Desventajas de los SGBD:</p>
       <ul>
         <li>
@@ -396,6 +210,594 @@
           </p>
         </li>
       </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Clasificación de las Bases de Datos</h2>
+      <p class="text-justify">
+        Un SGBD puede manejar muchos tipos diferentes de bases de datos. Las bases de datos pueden clasificarse por número de usuarios,
+        ubicación de la base de datos y el tipo de uso.
+      </p>
+      <p class="text-justify">
+        El número de usuarios determina si una base de datos es mono-usuario o multi-usuario. Una base de datos es <b>mono-usuario</b> si
+        sólo permite que un usuario a la vez la utilice. Por otro lado, una base de datos es <b>multi-usuario</b> si permite que varios
+        usuarios la utilicen al mismo tiempo. Una base de datos multi-usuario que permite un número máximo de 50 usuarios simultáneos, se
+        le conoce como <b>base de datos de un grupo de trabajo</b>. Si la base multi-usuario permite más de 50 usuarios simultáneos, se le
+        conoce como <b>base de datos empresarial</b>.
+      </p>
+      <p class="text-justify">
+        La ubicación también se utiliza para clasificar las bases de datos. Si una base de datos de encuentra en un sólo lugar, se le
+        conoce como <b>base de datos centralizada</b>. Si la base soporta que los datos se encuentren distribuidos en varios sitios, se
+        le conoce como <b>base de datos distribuida</b>.
+      </p>
+      <p class="text-justify">
+        Una base de datos que está diseñada para almacenar las operaciones diarias de una organización, se le conoce como <b>base de
+        datos transaccional</b> (también conocida como operacional o de producción).  Por otro lado, una <b>base banco de datos</b> está
+        enfocada en el almacenamiento de datos utilizados para generar información requerida para tomar decisiones tácticas o estratégicas.
+      </p>
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered textoTabla">
+          <tbody>
+            <tr>
+              <th colspan="3" class="textoTabla">Número de usuarios</th>
+              <th colspan="2" class="textoTabla">Ubicación</th>
+              <th colspan="2" class="textoTabla">Tipo de uso</th>
+            </tr>
+            <tr>
+              <td rowspan="2">Mono-Usuario</td>
+              <td colspan="2">Multi-Usuario</td>
+              <td rowspan="2">Centralizada</td>
+              <td rowspan="2">Distribuida</td>
+              <td rowspan="2">Transaccional</td>
+              <td rowspan="2">Almacén de Datos</td>
+            </tr>
+            <tr>
+              <td>Grupo de Trabajo</td>
+              <td>Empresarial</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption text-center">Tipos de Bases de Datos</p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Terminología Básica</h2>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="active">
+            <th>Término</th>
+            <th>Definición</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Dato</th>
+            <td>Los datos son hechos en <em>crudo</em>, esto significa que estos hechos aún no han sido procesados para revelar su significado. Los datos
+	          tienen poco significado hasta que se hayan organizado de alguna forma lógica.</td>
+          </tr>
+          <tr>
+            <th>Campo</th>
+            <td>Un caracter o un grupo de caracteres que tienen un significado específico. Un campo se utiliza para definir y almacenar datos.</td>
+          </tr>
+          <tr>
+            <th>Registro</th>
+            <td>Un conjunto conectado lógicamente a uno o más campos que describen una persona, lugar o cosa. Por ejemplo, un campo que constituye un registro
+            de un cliente consiste de: nombre, dirección, número telefónico, fecha de nacimiento, etc.</td>
+          </tr>
+          <tr>
+            <th>Archivo</th>
+            <td>Un conjunto de registros que tienen alguna relación entre si. Por ejemplo, un archivo puede contener datos acerca de los estudiantes inscritos
+            a una Universidad. </td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Dependencia estructural y de datos</h2>
+      <p class="text-justify">
+        Un sistema de archivos posee dependencia estructural, lo que significa que para tener acceso a un archivo se depende de su estructura. Por ejemplo, si se
+        desea agregar un campo será necesario cambiar la estructura en el archivo y modificar los datos si es necesario. Debido a este cambio, los programas que
+        tengan acceso al archivo tendrán que modificarse para poder soportar el cambio. Por el contrario, si hay un cambio en la estructura sin afectar a los
+        programas que tienen acceso al archivo, se dice que existe una <b>dependencia estructural</b>.
+      </p>
+      <p class="text-justify">
+        De manear similar, si en la estructura cambia la característica de un dato (por ejemplo un tipo de dato) y los programas que tienen acceso al archivo no
+        soportan el cambio, se dice que existe una <b>dependencia de datos</b>. Por el contrario, si ante un cambio de alguna característica de los datos los
+        programas que tienen acceso no se ven afectados, se dice que existe <b>independencia de datos</b>.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Redundancia de datos</h2>
+      <p class="text-justify">
+        La redundancia de datos ocurre cuando un dato se encuentra almacenado innecesariamente en más de un lugar a la vez.
+      </p>
+      <p class="text-justify">
+        La redundancia de datos puede ocasionar diversos problemas, tales como:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>Baja seguridad en los datos. </b>Múltiples copias de un dato incrementa la posibilidad de que alguna de ellas sea accedida sin autorización.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Inconsistencia de datos. </b>Existe cuando diferentes valores de un dato se encuentran en diferentes lugares a la vez. Esto ocasionará que
+            los resultados obtenidos sean poco fiables. La inconsistencia de datos también se le conoce como carencia de integridad de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Anomalías en los datos. </b>Ocurre cuando un cambio de un dato no se lleva a cabo en todos los lugares donde la redundancia de datos existe.
+            La anomalía en los datos puede ocurrir al actualizar, insertar o borrar un dato.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Funciones de los SGBD</h2>
+      <p class="text-justify">
+        Un SGBD realiza varias funciones importantes que garantizan la integridad y consistencia de los datos. Cada una de esas funciones se describen a
+        continuación:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>Administración de un diccionario de datos. </b>El SGBD almacena definiciones de los datos y sus relaciones (metadatos) en un <b>diccionario de
+              datos</b>. Cualquier cambio que se haga a la estructura de la base de datos se almacena en el diccionario de datos, de manera que el SGBD se
+              encarga de gestionar los cambios para que las aplicaciones y usuarios no se percaten de la ocurrencia de dicho cambio.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Administración del Almacenamiento de Datos. </b>El SGBD crea y administra estructuras complejas requeridas para el almacenamiento de los datos,
+            liberando al usuario de esta dificil tarea. Un SGBD proporciona almacenamiento de datos, definiciones, reglas de validación de datos, código procedural,
+            estructuras para manejo de audio y video, etc. La administración de datos también es importante para la optimización del rendimiento de la base de datos,
+            la cual determina la eficiencia en términos de almacenamiento y velocidad de acceso.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Presentación y administración de los datos. </b>El SGBD transforma los datos ingresados de acuerdo a la estructura de datos requerida. Esta característica
+            permite que el SGBD almacene los datos en un <em>formato físico</em>, y lo presente al usuario en un <em>formato lógico</em>.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Administración de la seguridad. </b>El SGBD crea un sistema de seguridad que refuerza la seguridad y privacidad de los usuarios. La seguridad determina
+            los usuarios que tienen acceso al sistema, los datos a los que tienen acceso y las operaciones que se les permite realizar (lectura, inserción, supresión o
+            modificación).
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Control de acceso multiusuario. </b>Para proporcionar consistencia e integridad de datos, los SGBD utilizan algoritmos sofisticados que aseguran que
+            múltiples usuarios tengan acceso a la base de datos sin comprometer la integridad de la base.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Administración de Respaldo y Recuperación. </b>El SGBD proporciona respaldo y recuperación de datos para la seguridad e integridad de los datos. La
+            administración de recuperación se encarga de reparar la base de datos luego de una falla, tal como un disco duro defectuoso o un apagón. Esta característica
+            es crucial para mantener la integridad de los datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Administración de la integridad de datos. </b>El SGBD promueve y refuerza reglas de integridad, minimizando la redundancia y maximizando la
+            consistencia. Las relaciones de los datos almacenadas en el diccionario de datos se utiliza para reforzar la integridad de los datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Lenguajes de acceso a la base e interfaces de programación de aplicaciones. </b>El SGBD proporciona acceso a los datos a través de un <b>lenguaje de
+              consulta</b>. Un lenguaje de consulta es un lenguaje no procedural que permite que el usuario solicite lo que se debe hacer sin tener que especificar
+              como se debe hacer. <b>SQL (Structured Query Languaje)</b> es un lenguaje estándar de consulta y acceso a datos soportado por la mayoría de SGBD.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Interfaces de comunicación a la Base de Datos. </b>Los SGBD actuales permiten solicitudes de los usuarios a través de múltiples ambientes de red.
+            Gracias a esto, se puede tener acceso al SGBD desde un navegador web, aplicaciones de escritorio o moviles y prácticamente cualquier dispositivo en Internet.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Componentes de las Bases de Datos</h2>
+      <p class="text-justify">
+        El término sistema de bases de datos se refiere a una organización de componentes que definen y regulan la recolección, almacenamiento, administración y
+        uso de datos dentro del entorno de una base de datos.
+      </p>
+      <p class="text-justify">
+        Los componentes de una base de datos son:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>Hardware. </b>Se refiere a todos los dispositivos físicos del sistema. Por ejemplo: computadoras, discos duros, impresoras, dispositivos de red, etc.
+          </p>
+        </li>
+        <li>
+          <b>Software. </b>
+          <ul>
+            <li>
+              <p class="text-justify"><b>Sistema Operativo. </b>Administra los componentes de hardware y hace posible la ejecución de programas en una computadora. Ejemplos: Windows,
+                macOS, Linux, UNIX, BSD, OS2, AIX, Solaris, etc.</p>
+            </li>
+            <li>
+              <p class="text-justify"><b>SGBD. </b>Sistema de software que administra la base de datos. Ejemplos: Microsoft SQL Server, Oracle MySQL (antes Sun SQL), MariaDB (Open Source),
+                DB2 de IBM, PostgreSQL (Open Source), etc.</p>
+            </li>
+            <li>
+              <p class="text-justify"><b>Aplicaciones y Utilidades. </b>Programas que permiten el acceso y la manipulación de datos del SGBD. Sus funciones pueden ser desde consulta de los
+                datos para generar reportes o hasta para la administración y control del SGBD.</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Personas. </b>Todos los usuarios de la base de datos. Pueden ser:
+            <ul>
+              <li>
+                <p class="text-justify"><b>Administradores del sistema. </b>Supervisan el funcionamiento del sistema.</p>
+              </li>
+              <li>
+                <p class="text-justify">
+                  <b>Administradores de la Base de Datos. </b>Se les conoce como DBA y se encargan de que la base de datos funcione correctamente.
+                </p>
+              </li>
+              <li>
+                <p class="text-justify">
+                  <b>Diseñadores de la base de datos. </b>Se les conoce como arquitectos de la base de datos. Una base de datos bien diseñada
+                  permitirá tener un desempeño óptimo de la misma.
+                </p>
+              </li>
+              <li>
+                <p class="text-justify">
+                  <b>Programadores y analístas de sistema. </b>Diseñan y crean las aplicaciones que interactúan con el sistema de base de datos.
+                </p>
+              </li>
+              <li>
+                <p class="text-justify">
+                  <b>Usuario final. </b>Conjunto de personas que utilizan las aplicaciones para tener acceso a la base de datos. Utilizan la información para
+                  su trabajo, no tienen necesariamente conocimiento de la estructura de la base ni conocimientos técnicos avanzados.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Procedimientos. </b>Instrucciones y reglas que rigen el diseño y uso de un sistema de base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Datos. </b>El término <b>dato</b> se refiere al conjunto de todos los <em>hechos</em> almacenados en la base de datos.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+
+    <article class="tema clearfix">
+      <h2>Porque una Hoja de Cálculo no es una Base de Datos</h2>
+      <p class="text-justify">
+        Una hoja de cálculo permite la creación de múltiples tablas, pero no soporta la función de auto documentación a través de los metadatos, aplicación
+        de tipos de datos o dominios para asegurar la consistencia de datos en una columna, relación entre tablas, restricciones para asegurar la consistencia de los
+        datos entre tablas relacionadas. Muchos usuarios carecen del conocimiento necesario para distinguir las limitaciones de las hojas de cálculo para estas tareas.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Modelo de Datos</h2>
+      <p class="text-justify">
+        El diseño de una base de datos se centra en como se utilizará la estructura de la base de datos para almacenar los datos que introduzca
+        el usuario. El modelado de dato es el primer paso para el diseño, y se refiere al proceso de crear un modelo específico de datos para un
+        determinado problema.
+      </p>
+      <p class="text-justify">
+        Un modelo de datos es una representación relativamente simple, usualmente de forma gráfica, de estructuras de datos complejas del mundo real.
+        El modelo de datos representa estructuras y sus características, asi como relaciones, restricciones, transformaciones -entre otros- con el
+        propósito de representar un el dominio de un problema.
+      </p>
+      <p class="text-justify">
+        El modelado de datos es un proceso iterativo y progresivo. El proceso se inicia con un entendimiento básico del problema, conforme el
+        entendimiento se incrementa, el nivel de detalle del modelo de datos también.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Elementos Básicos del Modelo de Datos</h2>
+      <p class="text-justify">
+        Los bloques básicos de construcción de un modelo de datos son: entidades, atributos, relaciones y restricciones.
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>Entidad. </b>Culaquier cosa acerca de la cual se alamacenan datos. Una entidad representa un tipode objeto del mundo real. FDado que
+            una entidad es representa un tipo particular de objeto las entidades son distinguibles, esto significa que cada ocurrencia de la entidad
+            es única.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Atributo. </b>Un atributo es una característica de una entidad. Un atributo es equivalente a un campo en un sistema de archivos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Relación. </b>Describe una asociación entre entidades. Los modelos de datos utilizan tres tipos de relaciones: uno a muchos (1:M), muchos a muchos
+            (M:N) y uno a uno (1:1).
+          </p>
+          <ul>
+            <li>
+              <p class="text-justify">
+                <b>Uno a muchos (1:M). </b>Un pintor (1) hace muchas pinturas (M), cada pintura es hecha por solo un pintor. La relación "PINTOR hace PINTURA" es 1:M.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                <b>Muchos a muchos (M:M). </b>Un estudiante aprende varias competencias (M), cada competencia puede ser aprendida por varios estudiantes (N).
+                La relación "ESTUDIANTE aprende COMPETENCIA" es M:N.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                <b>Uno a uno (1:1). </b>Una empresa puede requerir que cada una de sus tiendas sea administrada por un solo empleado (gerente), un gerente
+                administra una sola tienda. La relación "EMPLEADO administra TIENDA" es 1:1.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Restricción. </b>Una restricción es una condición que se establece en los datos. Por ejemplo:
+          </p>
+          <ul>
+            <li>
+              <p class="text-justify">Una calificación debe estar entre 0.0 y 10.0.</p>
+            </li>
+            <li>
+              <p class="text-justify">El salario debe estar entre 6,000 y 50,000.</p>
+            </li>
+            <li>
+              <p class="text-justify">Cada clase debe tener solo un profesor.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Los Modelos de Datos</h2>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th>Generación</th>
+            <th>Periodo</th>
+            <th>Modelo de Datos</th>
+            <th>Ejemplos</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p class="text-justify">
+                Primera
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                1960's - 1970's
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Sistema de archivos
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                VMS/VSAM
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Utilizado en los sistemas de mainframe IBM. Administra registros, no relaciones.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="text-justify">
+                Segunda
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                1970's
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Jerárquico y red
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                IMS, ADABAS, IDS-II
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Primeros Sistemas de Bases de Datos. Acceso a la navegación.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="text-justify">
+                Tercera
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Mediados de 1970 al presente
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Relacional
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                DB2, Oracle MySQL, MS SQL Server, MariaDB, PostgreSQL, etc.
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Simplicidad conceptual. Permite modelo Entidad-Relación y modelo Relacional.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="text-justify">
+                Cuarto
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Mediados de 1980 al presente
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Orientado a Objetos. Objeto/Relacional (O/R).
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Versant, Objectivity/DB, DB/2 UDB, Oracle 11g
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">El modelo Objeto/Relacional soporta objetos (tipo de dato). Esquema Estrella.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="text-justify">
+                Siguiente Generación
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Presente al futuro
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                XML, Hybrid DBMS
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                dbXML, Tamino, DB/2 UDB, Oracle 11g, MS SQL Server
+              </p>
+            </td>
+            <td>
+              <p class="text-justify">
+                Soporte de datos no estructurado. El modelo O/R soporta documentos XML. Los SGBD Híbridos añaden objetos (tipos de datos) a las bases de datos relacionales.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Modelo Jerárquico</h2>
+      <p class="text-justify">
+        Fue desarrollado en la década 1960 para administrar grandes cantidades de datos para proyectos de fabricación, tales como el cohete Apollo en 1969.
+      </p>
+      <p class="text-justify">
+        Su estructura lógica básica se representa como un árbol invertido. En esta jerarquía, un nivel superior se percibe como <em>padre</em> del segmento que se encuentra
+        directamente debajo, que se le llama <em>hijo</em>. El modelo jerárquico representa un conjunto de relaciones uno a muchos (1:M) entre un padre y sus hijos.
+      </p>
+
+      <h2>Modelo Relacional</h2>
+      <p class="text-justify">
+        Fue introducido en 1970 por E.F. Codd (de IBM) en su artículo "A Relational Model of Data for Large Shared Databanks" (Communications of the ACM, June 1970,
+        pp. 377−387). El modelo representa un gran avance para los usuarios y diseñadores de las bases de datos.
+      </p>
+      <p class="text-justify">
+        El modelo relacional se fundamenta en el concepto matemático llamado "<b>relación</b>" (en la práctica se le llama tabla). Cada elemento en una relación se le llama
+        <b>tupla</b>. Cada característica de una relación se le llama atributo. El modelo relacional también describe la manipulación de un conjunto de datos basado en
+        conceptos matemáticos.
+      </p>
+
+      <h2>Modelo Entidad Relación</h2>
+      <p class="text-justify">
+        Introducido por Peter Chen en 1976, el modelo ER permite representar gráficamente las entidades y sus relaciones en la estructura de la base de datos.
+      </p>
+      <p class="text-justify">
+        El modelo se basa en los conceptos entidad y relación. Una entidad se representa con un rectángulo y en su interior su nombre. Las relaciones describen
+        una asociación entre datos. La mayoría de las relaciones describen asociaciones entre dos entidades.
+      </p>
+
+      <h2>Modelo Orientado a Objetos (OO)</h2>
+      <p class="text-justify">
+        En el Modelo de Datos Orientado a Objetos (OODM), los datos y relaciones se almacenan en una sola estructura llamada objeto.
+      </p>
+      <p class="text-justify">
+        El modelo de datos OO tiene los siguientes componentes:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">Un <b>objeto</b> es una abstracción de una entidad del mundo real. Un objeto representa solo una ocurrencia de una entidad.</p>
+        </li>
+        <li>
+          <p class="text-justify">Los <b>atributos</b> describen las propiedades de un objeto.</p>
+        </li>
+        <li>
+          <p class="text-justify">Los objetos que comparten características similares se agrupan en <b>clases</b>.</p>
+        </li>
+        <li>
+          <p class="text-justify">Las clases se organizan en <b>jerarquía de clases</b>.</p>
+        </li>
+        <li>
+          <p class="text-justify">La herencia es la capacidad de un objeto de recibir los atributos y métodos de las clases jerarquicamente superiores.</p>
+        </li>
+      </ul>
+
+      <h2>Modelo Objeto/Relacional y XML</h2>
+      <p class="text-justify">
+        Debido a la demanda para representar datos más complejos, se creó el Dodelo de Datos Relacional Extendido (MDRE).
+        Este modelo (MDRE) añade muchas de las características del modelo Orientado a Obetos en una estructura relacional más simple.
+      </p>
+      <p class="text-justify">
+        El MDRE originó una nueva generación de bases de datos relacionales que soportan capacidades Orientadas a Objetos tales como: objetos, tipos de datos
+        extendidos basados en clases y herencia.
+      </p>
+      <p class="text-justify">
+        Debido a una creciente demanda de objetos complejos en un ambiente global gracias al Internet, surgió el Lenguaje de Marcado Extensible (XML) como un
+        estándar para hacer más eficiente el intercambio de datos estructurados, semiestructurados y no estructurados. Debido a que las organizaciones se percataron
+        de la necesidad de manejar una cada vez mayor cantidad de datos no estructurados (documentos, páginas we, correo electrónico, hojas de cálculo, etc.),
+        surgieron entonces las bases de datos XML. Por esta razón, es que el Modelo Objeto/Relacional añadió soporte para XML.
+      </p>
+      <p class="text-justify"></p>
+      <p class="text-justify"></p>
+      <p class="text-justify"></p>
+      <p class="text-justify"></p>
+      <p class="text-justify"></p>
     </article>
 
   </section>
