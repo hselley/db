@@ -69,35 +69,38 @@
 
     <article class="tema clearfix">
       <h2>Introducción</h2>
-      <!-- <p class="post-contenido text-justify">
+      <p class="post-contenido text-justify">
         Una de las mayores dificultades que existen a la hora de diseñar una base de datos es que el diseñador la concibe pensando
         en el modelo de datos con el que va a trabajar la máquina. Esto conlleva a perder la visión conceptual del problema, quedando
         el diseño influido (contaminado) por cuestiones de implementación, de modo que el diseño es inválido cuando se implanta la
         base de datos en otro sistema.
-      </p> -->
+      </p>
       <p class="post-contenido text-justify">
         El Modelo Entidad Relación (MER), propuesto por Peter P. Chen, presenta una vista unificada de los datos, centrándose en la
         estructura lógica y abstracta de los datos, como representación del mundo real, con independencia de consideraciones de tipo físico.
       </p>
       <p class="post-contenido text-justify">
-        El MER representa una base de datos conceptual tal y como es vista por el usuario final.
         Como su nombre lo índica, el MER se basa en entidades (cualquier objeto de interés) que se interrelacionan o asocian entre sí.
       </p>
       <p class="post-contenido text-justify">
-        Existen dos notaciones para representar el Modelo Entidad Relación:
+        MER tiene dos tipos de propiedades:
       </p>
       <ul>
         <li>
-          <p class="text-justify">
-            <b>Chen: </b>Útil para el modelado conceptual.
+          <p class="post-contenido text-justify">
+            <b>Estáticas:</b> describen la estructura del Universo de Discurso y apenas varían en el tiempo.
           </p>
         </li>
         <li>
-          <p class="text-justify">
-            <b>Crow's Foot: </b>Orientado a la implementación.
+          <p class="post-contenido text-justify">
+            <b>Dinámicas:</b> permiten el paso de un estado a otro, ejecutando operaciones sobre los datos almacenados en la estructura; se
+            corresponden con la naturaleza evolutiva del mundo real.
           </p>
         </li>
       </ul>
+      <p class="post-contenido text-justify">
+        La representación gráfica de un tipo de entidad es un rectángulo etiquetado con el nombre de entidad.
+      </p>
     </article>
 
     <article class="tema clearfix">
@@ -107,7 +110,7 @@
         queremos almacenar información en la base de datos.
       </p>
       <p class="post-contenido text-justify">
-        Para ambas notaciones, la representación gráfica de un tipo de entidad es un rectángulo etiquetado con el nombre de entidad.
+        La representación gráfica de un tipo de entidad es un rectángulo etiquetado con el nombre de entidad.
       </p>
       <div class="thumbnail">
         <img src="img/modeloER/entidad.png" alt="Ejemplos de Entidades" class="imgcenter img-rounded img-responsive">
@@ -133,7 +136,53 @@
       <div class="thumbnail">
         <img src="img/modeloER/claseEntidad.png" alt="Clase de Entidad" class="imgcenter img-rounded img-responsive">
         <div class="caption">
-          <p class="caption text-center">Figura 2.2. Entidad Débil</p>
+          <p class="caption text-center">Figura 2.2. Clase de Entidad</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Atributo</h2>
+      <p class="post-contenido tetx-justify">
+        Es cada una de las propiedades o características que tiene un tipo de entidad o de relación. Así, el tipo de entidad <b>AUTOR</b> tiene como atributos
+        el <em>Nombre</em>, la <em>Nacionalidad</em>, la <em>Fecha_nac</em>, la <em>Bibliografía</em>, etc.; y los atributos del tipo de entidad <b>DOCUMENTO</b>
+        son, entre otros, <em>Título</em> y <em>Resumen</em>. El tipo de relación <b>Escribe</b> entre <b>AUTOR</b> y <b>DOCUMENTO</b> tiene como atributo
+        <em>Orden_de_firma</em>.
+      </p>
+      <p class="post-contenido tetx-justify">
+        El conjunto de posibles valores que puede tomar un atributo recibe el nombre de <b>dominio</b>. El dominio tiene un nombre y una existencia propia con
+        independencia de cualquier atributo o entidad. Por ejemplo, podemos definir un dominio de <b>Nacionalidades</b>, cuyos valores serán mexicana, francesa,
+        italiana, etc. El atributo <em>Nacionalidad</em> de <b>AUTOR</b> estará definido sobre este dominio y tomará de él sus valores. La existencia del
+        atributo <em>Nacionalidad</em> va unida a la existencia del tipo de entidad <b>AUTOR</b>, mientras que el dominio <em>Nacionalidades</em> existe por sí mismo.
+      </p>
+      <p class="post-contenido tetx-justify">
+        El dominio se representa con un círculo u óvalo en cuyo interior aparece su nombre, mientras que el nombre del atributo se escribe sobre el arco que une el
+        dominio con el tipo  de entidad o de relación a la que pertenece dicho atributo.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/atributo.png" alt="Ejemplo de Atributo" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.6. Ejemplo de Atributo</p>
+        </div>
+      </div>
+      <p class="post-contenido tetx-justify">
+        Entre todos los atributos de un tipo de entidad debemos elegir uno o varios que identifiquen unívoca o mínimamente cada una de las ocurrencias de ese tipo
+        de entidad (atributo principal). Puede que exista más de un atributo que cumple con esta condición (atributo identificador candidato), de los cuales se elige
+        uno como principal y los otros como alternativos.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/tiposAtributo.png" alt="Tipos de Atributo" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.7. Tipos de Atributo</p>
+        </div>
+      </div>
+      <p class="post-contenido tetx-justify">
+        Tal como en los tipos de entidad, los tipos de relación pueden tener también atributos. Por ejemplo.
+      </p>
+      <div class="thumbnail">
+        <img src="img/modeloER/atributosEntidad.png" alt="Entidades con varios Atributos" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2.8. Entidades con varios Atributos</p>
         </div>
       </div>
     </article>
@@ -152,8 +201,7 @@
         relación es por ejemplo: <em>"C.J. Date ha escrito el documento Introducción a los Sistemas de Bases de Datos."</em>
       </p>
       <p class="post-contenido text-justify">
-        Para la notación Chen se representa la relación mediante un rombo etiquetado con el nombre, unido mediante arcos a los tipos de entidad que asocia. En
-        Crow's Foot se representa con una línea etiquetada con el nombre, que une las entidades.
+        Se representa la relación mediante un rombo etiquetado con el nombre, unido mediante arcos a los tipos de entidad que asocia.
       </p>
       <div class="thumbnail">
         <img src="img/modeloER/relacion.png" alt="Relacion" class="imgcenter img-rounded img-responsive">
@@ -181,66 +229,15 @@
             <b>Tipo de Correspondecia:</b> Número máximo de ocurrencias de un tipo de entidad que pueden intervenir por cada ocurrencia del otro tipo de entidad
             asociado en la relación. El tipo de correspondencia es <b>1:1</b> cuando en la relación sólo puede aparecer, como máximo, una ocurrencia del tipo de entidad
             por cada ocurrencia del otro. Será <b>1:N</b> si para uno de los tipos de entidad puede haber un número indefinido (mayor que 1) de ocurrencias. Será
-            <b>N:M</b> si esto último ocurre para ambos tipos de entidad. Para representarlo gráficamente:
+            <b>N:M</b> si esto último ocurre para ambos tipos de entidad. Para representarlo gráficamente, se puede poner una etiqueta que lo indique al lado del
+            rombo que representa el tipo de relación o una punta de flecha hacia el tipo de entidad que participa con más de una ocurrencia en la relación.
           </p>
-          <ul>
-            <li>
-              <p class="text-justify">
-                En Chen se pone una etiqueta que lo indique al lado del
-                rombo que representa el tipo de relación o una punta de flecha hacia el tipo de entidad que participa con más de una ocurrencia en la relación.
-              </p>
-            </li>
-            <li>
-              <p class="text-justify">
-                Para Crow's Foot se utilizan terminales para las lineas de la relación de acuerdo al número de ocurrencias.
-              </p>
-              <div class="table-responsive">
-                <table class="table table-hover table-bordered">
-                  <thead>
-                    <tr class="active">
-                      <th>Símbolo</th>
-                      <th>Ocurrencia</th>
-                      <th>Descripción</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><img src="img/modeloER/cuervo1.png" alt="cuervo 1" class="imgcenter img-rounded img-responsive"></td>
-                      <td>0:N</td>
-                      <td>Cero a muchos</td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/modeloER/cuervo2.png" alt="cuervo 2" class="imgcenter img-rounded img-responsive"></td>
-                      <td>1:N</td>
-                      <td>Uno a muchos</td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/modeloER/cuervo3.png" alt="cuervo 3" class="imgcenter img-rounded img-responsive"></td>
-                      <td>1:1</td>
-                      <td>Uno a uno</td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/modeloER/cuervo4.png" alt="cuervo 4" class="imgcenter img-rounded img-responsive"></td>
-                      <td>0:1</td>
-                      <td>Cero a uno</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </li>
-          </ul>
         </li>
       </ul>
       <div class="thumbnail">
         <img src="img/modeloER/correspondencia1.png" alt="Ejemplo Correspondencia" class="imgcenter img-rounded img-responsive">
         <div class="caption">
-          <p class="caption text-center">Figura 2.4. Ejemplo Tipos de Correspondencia: Notación Chen</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <img src="img/modeloER/correspondencia2.png" alt="Ejemplo Correspondencia" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.5. Ejemplo Tipos de Correspondencia: Notación Crow's Foot</p>
+          <p class="caption text-center">Figura 2.4. Ejemplo Tipos de Correspondencia</p>
         </div>
       </div>
       <p class="post-contenido text-justify">
@@ -249,77 +246,12 @@
       <div class="thumbnail">
         <img src="img/modeloER/entidadRelacion1.png" alt="Ejemplo Correspondencia" class="imgcenter img-rounded img-responsive">
         <div class="caption">
-          <p class="caption text-center">Figura 2.6. Ejemplo de Entidad con más de una Relación: Notación Chen</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <img src="img/modeloER/entidadRelacion2.png" alt="Ejemplo Correspondencia" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.7. Ejemplo de Entidad con más de una Relación: Notación Crow's Foot</p>
+          <p class="caption text-center">Figura 2.5. Ejemplo de Entidad con más de una Relación</p>
         </div>
       </div>
     </article>
 
-    <article class="tema clearfix">
-      <h2>Atributo</h2>
-      <p class="post-contenido tetx-justify">
-        Es cada una de las propiedades o características que tiene un tipo de entidad o de relación. Así, el tipo de entidad <b>AUTOR</b> tiene como atributos
-        el <em>Nombre</em>, la <em>Nacionalidad</em>, la <em>Fecha_nac</em>, la <em>Bibliografía</em>, etc.; y los atributos del tipo de entidad <b>DOCUMENTO</b>
-        son, entre otros, <em>Título</em> y <em>Resumen</em>. El tipo de relación <b>Escribe</b> entre <b>AUTOR</b> y <b>DOCUMENTO</b> tiene como atributo
-        <em>Orden_de_firma</em>.
-      </p>
-      <p class="post-contenido tetx-justify">
-        El conjunto de posibles valores que puede tomar un atributo recibe el nombre de <b>dominio</b>. El dominio tiene un nombre y una existencia propia con
-        independencia de cualquier atributo o entidad. Por ejemplo, podemos definir un dominio de <b>Nacionalidades</b>, cuyos valores serán mexicana, francesa,
-        italiana, etc. El atributo <em>Nacionalidad</em> de <b>AUTOR</b> estará definido sobre este dominio y tomará de él sus valores. La existencia del
-        atributo <em>Nacionalidad</em> va unida a la existencia del tipo de entidad <b>AUTOR</b>, mientras que el dominio <em>Nacionalidades</em> existe por sí mismo.
-      </p>
-      <p class="post-contenido tetx-justify">
-        Para la notación Chen, el dominio se representa con un círculo u óvalo en cuyo interior aparece su nombre, mientras que el nombre del atributo se escribe
-        sobre el arco que une el dominio con el tipo  de entidad o de relación a la que pertenece dicho atributo.
-      </p>
-      <div class="thumbnail">
-        <img src="img/modeloER/atributo1.png" alt="Ejemplo de Atributo" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.8. Ejemplo de Atributo: Notación Chen</p>
-        </div>
-      </div>
-      <p class="text-justify">
-        Para la notación Crow's Foot se utiliza una tabla donde la primer columna corresponde al nombre del atributo y las siguientes a los atributos.
-      </p>
-      <div class="thumbnail">
-        <img src="img/modeloER/atributo2.png" alt="Ejemplo de Atributo" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.9. Ejemplo de Atributo: Notación Crow's Foot</p>
-        </div>
-      </div>
-      <p class="post-contenido tetx-justify">
-        Entre todos los atributos de un tipo de entidad debemos elegir uno o varios que identifiquen unívoca o mínimamente cada una de las ocurrencias de ese tipo
-        de entidad (atributo principal). Puede que exista más de un atributo que cumple con esta condición (atributo identificador candidato), de los cuales se elige
-        uno como principal y los otros como alternativos.
-      </p>
-      <div class="thumbnail">
-        <img src="img/modeloER/tiposAtributo1.png" alt="Tipos de Atributo" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.10. Tipos de Atributo: Notación Chen</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <img src="img/modeloER/tiposAtributo2.png" alt="Tipos de Atributo" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.11. Tipos de Atributo: Notación Crow's Foot</p>
-        </div>
-      </div>
-      <p class="post-contenido tetx-justify">
-        Tal como en los tipos de entidad, los tipos de relación pueden tener también atributos. Por ejemplo.
-      </p>
-      <div class="thumbnail">
-        <img src="img/modeloER/atributosEntidad.png" alt="Entidades con varios Atributos" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.12. Entidades con varios Atributos</p>
-        </div>
-      </div>
-    </article>
+
 
     <article class="tema clearfix">
       <h2>Cardinalidad</h2>
@@ -335,15 +267,9 @@
         y como máximo muchos documentos (n), mientras que un documento puede ser escrito por ningún autor (0) (si es anónimo) o por muchos (n).
       </p>
       <div class="thumbnail">
-        <img src="img/modeloER/cardinalidad1.png" alt="Ejemplo de Cardinalidad" class="imgcenter img-rounded img-responsive">
+        <img src="img/modeloER/cardinalidad.png" alt="Ejemplo de Cardinalidad" class="imgcenter img-rounded img-responsive">
         <div class="caption">
-          <p class="caption text-center">Figura 2.13. Ejemplo de Cardinalidad: Notación Chen</p>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <img src="img/modeloER/cardinalidad2.png" alt="Ejemplo de Cardinalidad" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 2.14. Ejemplo de Cardinalidad: Notación Crow's Foot</p>
+          <p class="caption text-center">Figura 2.9. Ejemplo de Cardinalidad</p>
         </div>
       </div>
     </article>
