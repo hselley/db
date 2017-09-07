@@ -90,7 +90,7 @@
         </li>
       </ul>
       <p class="post-contenido text-justify">
-        Si O es un operador, el paso de un estado origen de la base de datos (BDi) a un estado objetivo (BDj) se puede expresar:
+        Si <code>O</code> es un operador, el paso de un estado origen de la base de datos (BDi) a un estado objetivo (BDj) se puede expresar:
       </p>
       <p class="codigo">
         <br>
@@ -188,9 +188,7 @@
           </p>
         </li>
       </ul>
-    <!-- </article>
 
-    <article class="tema clearfix"> -->
       <br>
       <h3>Operación de asignación y renombrado de atributos</h3>
 
@@ -238,6 +236,7 @@
       <p class="post contenido text-justify">
         Ejemplo:
       </p>
+      <h3 class="text-center">Editor1</h3>
       <table class="table table-hover table-bordered">
         <thead>
           <tr class="active">
@@ -264,12 +263,1011 @@
           </tr>
         </tbody>
       </table>
-      <p class="post contenido text-justify"></p>
-      <p class="post contenido text-justify"></p>
-      <p class="post contenido text-justify"></p>
-      <p class="post contenido text-justify"></p>
-      <p class="post contenido text-justify"></p>
-      <p class="post contenido text-justify"></p>
+      <p class="codigo">
+        <br>
+          EDITOR(Nombre, Nacionalidad, Institución) &lt;- EDITOR1
+        <br>
+        <br>
+      </p>
+      <h3 class="text-center">Editor</h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th class="textoTabla">Nombre</th>
+            <th class="textoTabla">Nacionalidad</th>
+            <th class="textoTabla">Organización</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textoTabla">Date, C.J.</td>
+            <td class="textoTabla">Norteamericana</td>
+            <td class="textoTabla">Relational Institute</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Saltor, F.</td>
+            <td class="textoTabla">Española</td>
+            <td class="textoTabla">U.P.C.</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Ceri, S.</td>
+            <td class="textoTabla">Italiana</td>
+            <td class="textoTabla">Politécnico de Milán</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="text-center">Tabla 5.1. Ejemplo de renombrado de atributos de una relación</h5>
+      <br>
+
+      <h3>Operadores Primitivos</h3>
+      <ol>
+        <li>
+          <p class="text justify">
+            <b>Unarios</b>.
+          </p>
+          <p class="text-justify">
+            Los operadores unarios tienen como operando una única relación, para su definición utilizaremos la siguiente notación:
+            Sea R(A) el esquema de relación cuyo contexto es el conjunto de atributos A definidos sobre el conjunto de dominios D:
+          </p>
+          <p class="codigo">
+            <br>
+              R(A) = R( A<sub>1</sub>:D<sub>1</sub>, A<sub>2</sub>:D<sub>2</sub>, ..., A<sub>n</sub>:D<sub>n</sub> )
+            <br>
+            <br>
+          </p>
+          <p class="text-justify">
+            la relación <code>r(R)</code>, definida sobre el esquema <code>R</code>, de grado <code>n</code> y cardinalidad <code>m</code>
+            estará construida por un conjunto de <code>m</code> tuplas:
+          </p>
+          <p class="codigo">
+            <br>
+              r(R) = { t<sub>i</sub> }<sub>i=1</sub><sup>m</sup>
+            <br>
+            <br>
+          </p>
+          <p class="text-justify">
+            donde
+          </p>
+          <p class="codigo">
+            <br>
+              t<sub>i</sub> = < v<sub>i1</sub>, v<sub>i2</sub>, ..., v<sub>in</sub> > / v<sub>ij</sub> &isin; D<sub>j</sub>
+            <br>
+            <br>
+          </p>
+          <p class="post contenido text-justify">
+            Los operadores unarios son la restricción y la proyección.
+          </p>
+          <ul>
+            <li>
+              <b>Restricción (&sigma;)</b>
+              <p class="text-justify">
+                La restricción, también llamada selección, de una relación mediante una expresión lógica, da como resultado una relación formada por el
+                subconjunto de tuplas que satisfacen dicha expresión. La relación resultante constituye un subconjunto horizontal de <code>r(R)</code>.
+                A continuación aparece la relación resultante de aplicar el operador de restricción sobre el atributo nacionalidad a la tabla AUTOR.
+              </p>
+              <h3 class="text-center">AUTOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ramos, I.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">UPV</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">&sigma;<sub>nacionalidad="española"</sub>(AUTOR)</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ramos, I.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">UPV</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <b>Proyección (&pi;)</b>
+              <p class="text-justify">
+                La proyección de una relación sobre un subconjunto de sus atributos es una relación definida sobre ellos, eliminando las tuplas duplicadas
+                que hubieran podido resultar; es por tanto, un subconjunto vertical de la relación a la que se aplica el operador.
+              </p>
+              <h3 class="text-center">&pi;<sub>nacionalidad</sub>(AUTOR)</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nacionalidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Norteamericana</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Española</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Italiana</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <b>Binarios</b>
+          <p class="post-contenido text-justify">
+            Los operadores binarios se aplican a dos relaciones, y algunos de ellos exigen que las dos relaciones involucradas sean compatibles. Se dice que
+            dos esquemas de relación <code>R1 ( A1i : D1i )</code> y <code>R2 ( A2i : D2i )</code>, con cardinalidades <code>m1</code> y <code>m2</code>, son
+            compatibles a efectos de dichos operadores, cuando ambos están definidos sobre el mismo conjunto de dominios, cumpliendose:
+          </p>
+          <br>
+          <img class="imgcenter img-rounded img-responsive" src="img/modeloRelacional/operacionBinaria.png" alt="Operación Binaria">
+          <br>
+          <p class="post-contenido text-justify">
+            es decir, <code>R1</code> y <code>R2</code> son semánticamente equivalentes, lo que no quiere decir que los nombres de los atributos sean los mismos,
+            sino que han de estar definidos sobre los mismos dominios.
+          </p>
+          <p class="post-contenido text-justify">
+            Si los nombres de los atributos de las dos relaciones son distintos o están en distinto orden, es decir, no hay correspondencia uno a uno entre
+            los nombres de los atributos de los esquemas <code>R1</code> y <code>R2</code>, será precisa una operación de renombrado de los atributos del
+            esquema de la relación resultante.
+          </p>
+          <p class="post-contenido text-justify">
+            Supongamos, por ejemplo que tenemos las dos relaciones de la figura, que son compatibles en sus esquemas al estar sus atributos definidos sobre los
+            mismos dominios; sin embargo, los nombres de los atributos no coinciden.
+          </p>
+          <h3 class="text-center">AUTOR</h3>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr class="active">
+                <th class="textoTabla">Nombre</th>
+                <th class="textoTabla">Nacionalidad</th>
+                <th class="textoTabla">Institución</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="textoTabla">Date, C.J.</td>
+                <td class="textoTabla">Norteamericana</td>
+                <td class="textoTabla">Relational Institute</td>
+              </tr>
+              <tr>
+                <td class="textoTabla">Saltor, F.</td>
+                <td class="textoTabla">Española</td>
+                <td class="textoTabla">U.P.C.</td>
+              </tr>
+              <tr>
+                <td class="textoTabla">Ceri, S.</td>
+                <td class="textoTabla">Italiana</td>
+                <td class="textoTabla">Politécnico de Milán</td>
+              </tr>
+              <tr>
+                <td class="textoTabla">Ramos, I.</td>
+                <td class="textoTabla">Española</td>
+                <td class="textoTabla">UPV</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 class="text-center">EDITOR1</h3>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr class="active">
+                <th class="textoTabla">Nombre</th>
+                <th class="textoTabla">Nacionalidad</th>
+                <th class="textoTabla">Organización</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="textoTabla">Date, C.J.</td>
+                <td class="textoTabla">Norteamericana</td>
+                <td class="textoTabla">Relational Institute</td>
+              </tr>
+              <tr>
+                <td class="textoTabla">Saltor, F.</td>
+                <td class="textoTabla">Española</td>
+                <td class="textoTabla">U.P.C.</td>
+              </tr>
+              <tr>
+                <td class="textoTabla">Ceri, S.</td>
+                <td class="textoTabla">Italiana</td>
+                <td class="textoTabla">Politécnico de Milán</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-contenido text-justify">
+            Se puede proceder a la siguiente operación de renombrado de <code>EDITOR1</code>:
+          </p>
+          <p class="codigo">
+            <br>
+              EDITOR(Nombre, Nacionalidad, Institución) &larr; EDITOR1
+            <br>
+            <br>
+          </p>
+          <ul>
+            <li>
+              <b>Unión (&cup;)</b>
+              <p class="post-contenido text-justify">
+                La unión de dos relaciones <code>r1</code> y <code>r2</code> con esquemas compatibles es otra relación definida sobre el mismo esquema de relación y cuya extensión estará
+                constituida por el conjunto de tuplas que pertenecen a <code>r1</code> o <code>r2</code> (se eliminarán las tuplas duplicadas dado que se trata de un conjunto).
+              </p>
+              <h3 class="text-center">AUTOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">EDITOR1</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ramos, I.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">UPV</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">AUTOR &cup; EDITOR1</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ramos, I.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">UPV</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-contenido text-justify">
+                Sean dos relaciones <code>r1</code> y <code>r2</code> con esquemas <code>R1</code> y <code>R2</code> compatibles, la unión de ambas, denotada por:
+              </p>
+              <p class="codigo">
+                <br>
+                  R1 &cup; R2
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                será una relación con esquema <code>R</code> (<code>R</code> es igual a <code>R1</code> o <code>R2</code> ya que ambos son equivalentes) y con extensión <code>r</code>:
+              </p>
+              <p class="codigo">
+                <br>
+                  r(R) = { t<sub>i</sub> / t<sub>i</sub> &isin; r<sub>1</sub> &or; t<sub>i</sub> &isin; r<sub>2</sub> }
+                <br>
+                <br>
+              </p>
+            </li>
+            <li>
+              <b>Diferencia (&minus;)</b>
+              <p class="post-contenido text-justify">
+                La diferencia de dos relaciones <code>r<sub>1</sub></code> y <code>r<sub>2</sub></code> con esquemas compatibles <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code> es
+                otra relación definida sobre el mismo esquema de relación y cuya extensión estará constituida por el conjunto de tuplas que pertenecen a <code>r<sub>1</sub></code> pero
+                no a <code>r<sub>2</sub></code>.
+              </p>
+              <h3 class="text-center">AUTOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">EDITOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Chen, P.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">ER Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Yao, L.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">U.N.Y.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">AUTOR &minus; EDITOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-contenido text-justify">
+                Sean dos relaciones compatibles, con esquemas <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code>, la diferencia de ambas denotada por:
+              </p>
+              <p class="codigo">
+                <br>
+                  R<sub>1</sub> - R<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                será una relación con esquema <code>R</code> y con extensión <code>r</code>:
+              </p>
+              <p class="codigo">
+                <br>
+                  r(R) = { t<sub>i</sub> / t<sub>i</sub> &isin; r<sub>1</sub> &and; t<sub>i</sub> &notin; r<sub>2</sub> }
+                <br>
+                <br>
+              </p>
+            </li>
+            <li>
+              <b>Producto Cartesiano Generalizado (&times;)</b>
+              <p class="post-contenido text-justify">
+                El producto cartesiano generalizado de dos relaciones de cardinalidades <code>m<sub>1</sub></code> y <code>m<sub>2</sub></code> es una relación definida sobre la unión
+                de los atributos de ambas relacionales y cuya extensión estará constituida por las <code>m<sub>1</sub> &times; m<sub>2</sub></code> tuplas formadas concatenando cada
+                tupla de la primera relación con cada una de las tuplas de la segunda.
+              </p>
+              </table>
+              <h3 class="text-center">SOCIO</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Código</th>
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Dirección</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">1</td>
+                    <td class="textoTabla">Elena Manrique</td>
+                    <td class="textoTabla">Villovela, 25</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">2</td>
+                    <td class="textoTabla">Manuel García</td>
+                    <td class="textoTabla">P. Vergara, 56</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">LIBRO</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Libro</th>
+                    <th class="textoTabla">Autor</th>
+                    <th class="textoTabla">Editorial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">DB Systems</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Basi di Dati</td>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Clup</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">SQL Standard</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">SOCIO &times; LIBRO</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Código</th>
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Dirección</th>
+                    <th class="textoTabla">Libro</th>
+                    <th class="textoTabla">Autor</th>
+                    <th class="textoTabla">Editorial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">1</td>
+                    <td class="textoTabla">Elena Manrique</td>
+                    <td class="textoTabla">Villovela, 25</td>
+                    <td class="textoTabla">DB Systems</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">1</td>
+                    <td class="textoTabla">Elena Manrique</td>
+                    <td class="textoTabla">Villovela, 25</td>
+                    <td class="textoTabla">Basi di Dati</td>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Clup</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">1</td>
+                    <td class="textoTabla">Elena Manrique</td>
+                    <td class="textoTabla">Villovela, 25</td>
+                    <td class="textoTabla">SQL Standard</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">2</td>
+                    <td class="textoTabla">Manuel García</td>
+                    <td class="textoTabla">P. Vergara, 56</td>
+                    <td class="textoTabla">DB Systems</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">2</td>
+                    <td class="textoTabla">Manuel García</td>
+                    <td class="textoTabla">P. Vergara, 56</td>
+                    <td class="textoTabla">Basi di Dati</td>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Clup</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">2</td>
+                    <td class="textoTabla">Manuel García</td>
+                    <td class="textoTabla">P. Vergara, 56</td>
+                    <td class="textoTabla">SQL Standard</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-contenido text-justify">
+                Sean las relaciones <code>r<sub>1</sub></code> y <code>r<sub>2</sub></code> con esquemas <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code> el producto de ambas denotando:
+              </p>
+              <p class="codigo">
+                <br>
+                  R<sub>1</sub> &times; R<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                será una relación de grado <code>n<sub>1</sub> + n<sub>2</sub></code> cuyo esquema <code>R</code> estará formado por los <code>n<sub>1</sub> + n<sub>2</sub></code> atributos:
+              </p>
+              <p class="codigo">
+                <br>
+                  A<sub>1</sub> &cup; A<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                es decir:
+              </p>
+              <p class="codigo">
+                <br>
+                  ( A<sub>1i</sub> : D<sub>1i</sub>, ..., A<sub>1n<sub>1</sub></sub> : D<sub>1n<sub>1</sub></sub>, A<sub>2i</sub> : D<sub>2i</sub>, ...,
+                  A<sub>1n<sub>2</sub></sub> : D<sub>1n<sub>2</sub></sub> )
+                <br>
+                <br>
+              </p>
+            </li>
+            <li>
+              <b>Combinación (⋈)</b>
+              <p class="post-contenido text-justify">
+                La combinación (denotada por ⋈) de dos relaciones respecto a una cierta condición de combinación, es otra relación constituida por todos los pares de tuplas
+                <code>t<sub>i</sub></code> y <code>t<sub>j</sub></code> concatenadas tal que, en cada par las correspondientes tuplas satisfacen la condición especificada. La forma
+                general de expresar la combinación de dos relaciones:
+              </p>
+              <p class="codigo">
+                <br>
+                  R<sub>1</sub>(A<sub>11</sub>, A<sub>12</sub>, ..., A<sub>1n<sub>1</sub></sub>) y R<sub>2</sub>(A<sub>21</sub>, A<sub>22</sub>, ...,A<sub>2n<sub>2</sub></sub>) es:
+                  R<sub>1</sub> ⋈ R<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                La condición de combinación, en el caso más sencillo, está referida a dos atributos <code>A<sub>1i</sub></code> y <code>A<sub>2j</sub></code>, cada uno de los cuales
+                pertenece a una de las dos relaciones unidos por un operador de comparación <code>&theta;</code>.
+              </p>
+              <p class="codigo">
+                <br>
+                  A<sub>1i</sub> &theta; A<sub>2j</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                La combinación <code>&theta;</code> de las dos relaciones de esquemas <code>R<sub>1</sub>(A<sub>1</sub>)</code> y <code>R<sub>2</sub>(A<sub>2</sub>)</code> respecto de
+                sus columnas <code>k</code> y <code>l</code>, denotada:
+              </p>
+              <p class="codigo">
+                <br>
+                  R<sub>1</sub> ⋈ R<sub>2</sub> <br>
+                  k &theta; l
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                es otra relación de grado <code>n<sub>1</sub> + n<sub>2</sub></code> cuyo esquema <code>R</code> estará formado por los <code>n<sub>1</sub> + n<sub>2</sub></code> atributos:
+              </p>
+              <p class="codigo">
+                <br>
+                  A<sub>1</sub> &cup; A<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                es decir:
+              </p>
+              <p class="codigo">
+                <br>
+                  (A<sub>11</sub>, A<sub>12</sub>, ..., A<sub>1n<sub>1</sub></sub>, A<sub>21</sub>, A<sub>22</sub>, ...,A<sub>2n<sub>2</sub></sub>)
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                y cuya extensión <code>r(R)</code>, de cardinalidad <code>≤ m<sub>1</sub> x m<sub>2</sub></code> será:
+              </p>
+              <p class="codigo">
+                <br>
+                  < V<sub>1i<sub>1</sub></sub> ... V<sub>1i<sub>n<sub>1</sub></sub></sub> V<sub>2j<sub>1</sub></sub> ... V<sub>2j<sub>n<sub>2</sub></sub></sub> > /
+                  ∀ i, j ( < V<sub>1i<sub>1</sub></sub> ... V<sub>1i<sub>n<sub>1</sub></sub></sub> > &isin; r(R<sub>1</sub>) ⋀ < V<sub>2j<sub>1</sub></sub> ...
+                  V<sub>2j<sub>n<sub>2</sub></sub></sub> > &isin; r(R<sub>2</sub>) ⋀ V<sub>1i<sub>k</sub></sub> θ V<sub>2j<sub>l</sub></sub>)
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                La llamada combinación natural (a la que denotamos <code>*</code>) es una combinación por igualdad donde se han eliminado, en la relación resultante, uno de los dos atributos
+                cuyos valores son idénticos. Es el caso más utilizado de combinación para relaciones que tienen un atributo en común.
+              </p>
+              <h3 class="text-center">AUTOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">LIBRO</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Libro</th>
+                    <th class="textoTabla">Autor</th>
+                    <th class="textoTabla">Editorial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">DB Systems</td>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Basi di Dati</td>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Clup</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">SQL Standard</td>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">AUTOR * LIBRO</h3>
+              <h3 class="text-center">(AUTOR.nombre = LIBRO.autor)</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                    <th class="textoTabla">Libro</th>
+                    <th class="textoTabla">Editorial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                    <td class="textoTabla">DB Systems</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                    <td class="textoTabla">Basi di Dati</td>
+                    <td class="textoTabla">Clup</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                    <td class="textoTabla">SQL Standard</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <b>Intersección (&cap;)</b>
+              <p class="post-contenido text-justify">
+                La intersección de dos relaciones <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code> compatibles en su esquema es otra relación definida sobre el mismo esquema de
+                relación y cuya extensión estará construida por las tuplas que pertenecen a ambas relaciones.
+              </p>
+              <h3 class="text-center">AUTOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Relational Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">U.P.C.</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">EDITOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Chen, P.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">ER Institute</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Yao, L.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">U.N.Y.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">AUTOR &cap; EDITOR</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Institución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Politécnico de Milán</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-contenido text-justify">
+                Sean dos relaciones compatibles con esquemas <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code>, la intersección de ambas, denotada por:
+              </p>
+              <p class="codigo">
+                <br>
+                  R<sub>1</sub> &cap; R<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                será una relación <code>r</code> con esquema <code>R</code> (igual a <code>R<sub>1</sub></code> o <code>R<sub>2</sub></code> ya que ambos son equivalentes) y con extensión:
+              </p>
+              <p class="codigo">
+                <br>
+                  r(R) = { t<sub>i</sub> / t<sub>i</sub> &isin; r<sub>1</sub> &and; t<sub>i</sub> &isin; r<sub>2</sub> }
+                <br>
+                <br>
+              </p>
+            </li>
+            <li>
+              <b>División (:)</b>
+              <p class="post-contenido text-justify">
+                La división de una relación <code>R<sub>1</sub></code> (dividendo) por otra <code>R<sub>2</sub></code> (divisor) es una relación <code>R</code> (cociente) tal que, al realizarse
+                su combinación con el divisor, todas las tuplas resultantes se encuentran en el dividendo.
+              </p>
+              <h3 class="text-center">AUTOR_EDITORIAL</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                    <th class="textoTabla">Editorial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Date, C.J.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Cervera, J.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">Rama</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Saltor, F.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">Paraninfo</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Ceri, S.</td>
+                    <td class="textoTabla">Italiana</td>
+                    <td class="textoTabla">Clup</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Costilla, C.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">Diaz de los Santos</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Codd, E.</td>
+                    <td class="textoTabla">Norteamericana</td>
+                    <td class="textoTabla">Prentice Hall</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Cervera, J.</td>
+                    <td class="textoTabla">Española</td>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">EDITORIAL</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Editorial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Addison</td>
+                  </tr>
+                  <tr>
+                    <td class="textoTabla">Rama</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="text-center">AUTOR_EDITORIAL : EDITORIAL</h3>
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr class="active">
+                    <th class="textoTabla">Nombre</th>
+                    <th class="textoTabla">Nacionalidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="textoTabla">Cervera, J.</td>
+                    <td class="textoTabla">Española</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-contenido text-justify">
+                Sean dos relaciones con esquemas <code>R<sub>1</sub>(A<sub>1</sub>)</code> y <code>R<sub>2</sub>(A<sub>2</sub>)</code> de grados <code>n<sub>1</sub></code> y
+                <code>n<sub>2</sub></code> respectivamente, donde <code>A<sub>2</sub> ⊂ A<sub>1</sub></code>, por lo tanto <code>n<sub>2</sub> < n<sub>1</sub></code>.
+                La división de ambas relaciones, denotada por:
+              </p>
+              <p class="codigo">
+                <br>
+                  R<sub>1</sub> : R<sub>2</sub>
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                será una relación <code>r</code> de grado <code>n<sub>1</sub> - n<sub>2</sub></code> cuyo esquema <code>R</code> estará formado por los
+                <code>n<sub>1</sub> - n<sub>2</sub></code> atributos <code>A<sub>1</sub> - A<sub>2</sub></code>:
+              </p>
+              <p class="codigo">
+                <br>
+                  (A<sub>11</sub>, A<sub>12</sub>, ..., A<sub>1n<sub>1</sub></sub>) - (A<sub>21</sub>, A<sub>22</sub>, ...,A<sub>2n<sub>2</sub></sub>)
+                <br>
+                <br>
+              </p>
+              <p class="post-contenido text-justify">
+                cuya extensión será:
+              </p>
+              <p class="codigo">
+                <br>
+                  r(R) = { < V<sub>i1</sub>, ..., V<sub>i(n<sub>1</sub>-n<sub>2</sub>)</sub> > } / ∀ { < V<sub>i(n<sub>1</sub>-n<sub>2</sub>+1)</sub>, ..., V<sub>in<sub>2</sub></sub> >
+                  &isin; r<sub>2</sub>
+                  <br>
+                  ∃ < V<sub>i1</sub>, ..., V<sub>i(n<sub>1</sub>-n<sub>2</sub>)</sub> V<sub>i(n<sub>1</sub>-n<sub>2</sub>+1)</sub>, ..., V<sub>in</sub> > &isin; r<sub>1</sub> }
+                <br>
+                <br>
+              </p>
+            </li>
+          </ul>
+
+        </li>
+
+
+      </ol>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+
     </article>
 
   </section>
