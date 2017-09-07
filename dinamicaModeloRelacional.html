@@ -71,7 +71,7 @@
       <h2>Introducción</h2>
 
       <p class="post-contenido text-justify">
-        El modelo relacional, como todo modelo de datos, lleva asociado a su parte estática (estructura y restricciones) una dinámica que permite la transformación
+        El modelo relacional, como todo modelo de datos, lleva asociado a su parte estática (estructura y restricciones) y una dinámica que permite la transformación
         entre estados de la base de datos. Esta transformación de un estado origen a un estado objetivo se realiza aplicando un conjunto de operadores, mediante los
         cuales se llevan a cabo las siguientes operaciones:
       </p>
@@ -90,7 +90,7 @@
         </li>
       </ul>
       <p class="post-contenido text-justify">
-        Si <code>O</code> es un operador, el paso de un estado origen de la base de datos (BDi) a un estado objetivo (BDj) se puede expresar:
+        Si <code>O</code> es un operador, el paso de un estado origen de la base de datos (BD<sub>i</sub>) a un estado objetivo (BD<sub>j</sub>) se puede expresar:
       </p>
       <p class="codigo">
         <br>
@@ -130,9 +130,10 @@
       <h2>Álgebra relacional</h2>
       <p class="post-contenido text-justify">
         La dinámica del modelo relacional, en lo que al álgebra se refiere, la constituye una colección de operadores de alto nivel que, aplicados a las relaciones,
-        dan como resultado nuevas relaciones. Sean R y R’ dos relaciones y O un operador cualquiera del álgebra relacional. Una operación del álgebra relacional
-        consiste en aplicar O a la relación R, obteniéndose R’. Al ser el resultado de la operación otra relación, se cumple con la propiedad de cierre (cerradura),
-        es decir, si O<sub>1</sub>, O<sub>2</sub>, ..., O<sub>n</sub> representan operadores, se cumple:
+        dan como resultado nuevas relaciones. Sean <code>R</code> y <code>R'</code> dos relaciones y <code>O</code> un operador cualquiera del álgebra relacional.
+        Una operación del álgebra relacional consiste en aplicar <code>O</code> a la relación <code>R</code>, obteniéndose <code>R'</code>. Al ser el resultado de la
+        operación otra relación, se cumple con la propiedad de cierre (propiedad de la cerradura), es decir, si <code>O<sub>1</sub>, O<sub>2</sub>, ..., O<sub>n</sub></code>
+        representan operadores, se cumple:
       </p>
 
       <p class="codigo">
@@ -194,7 +195,7 @@
 
       <p class="post contenido text-justify">
         Antes de empezar a definir los operadores del álgebra relacional, vamos a introducir una operación auxiliar: la asignación, mediante la cual también se
-        puede llevar a cabo el renombrado de atributos. La operación de asignación se utiliza para almacenar el resultado de una consulta en una nueva relación
+        puede llevar a cabo el renombrado de atributos. La operación de <b>asignación</b> se utiliza para almacenar el resultado de una consulta en una nueva relación
         o para denominar resultados intermedios cuando se desea dividir una única operación compleja en una secuencia de operaciones más simples; también se
         emplea para asignar un nombre a una relación existente. El símbolo con el que se suele representar la operación asignación es una flecha que señala
         hacia la nueva relación a la que se asignará el resultado de la operación:
@@ -202,7 +203,7 @@
 
       <p class="codigo">
         <br>
-        RELACION_NUEVA &lt;- O(R)
+        RELACION_NUEVA &larr; O(R)
         <br>
         <br>
       </p>
@@ -214,13 +215,13 @@
 
       <p class="codigo">
         <br>
-        R' &lt;- R
+        R' &larr; R
         <br>
         <br>
       </p>
 
       <p class="post contenido text-justify">
-        La operación de renombrado consiste en asignar nuevos nombres a los atributos de una relación, es una operación necesaria en ciertos casos en los que
+        La operación de <b>renombrado</b> consiste en asignar nuevos nombres a los atributos de una relación, es una operación necesaria en ciertos casos en los que
         intervienen operadores binarios, y a veces es preciso cambiar los nombres de los atributos de las relaciones de los operandos. La forma de llevar a cabo
         el renombrado de los atributos es realizando una operación de asignación en la cual se especifican los nombres de los atributos de la relación que se
         encuentra a la izquierda del símbolo de asignación:
@@ -228,7 +229,7 @@
 
       <p class="codigo">
         <br>
-        RELACION_NUEVA(A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>n</sub>) &lt;- O(R)
+        RELACION_NUEVA(A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>n</sub>) &larr; O(R)
         <br>
         <br>
       </p>
@@ -265,7 +266,7 @@
       </table>
       <p class="codigo">
         <br>
-          EDITOR(Nombre, Nacionalidad, Institución) &lt;- EDITOR1
+          EDITOR(Nombre, Nacionalidad, Institución) &larr; EDITOR1
         <br>
         <br>
       </p>
@@ -275,7 +276,7 @@
           <tr class="active">
             <th class="textoTabla">Nombre</th>
             <th class="textoTabla">Nacionalidad</th>
-            <th class="textoTabla">Organización</th>
+            <th class="textoTabla">Institución</th>
           </tr>
         </thead>
         <tbody>
@@ -307,7 +308,8 @@
           </p>
           <p class="text-justify">
             Los operadores unarios tienen como operando una única relación, para su definición utilizaremos la siguiente notación:
-            Sea R(A) el esquema de relación cuyo contexto es el conjunto de atributos A definidos sobre el conjunto de dominios D:
+            Sea <code>R(A)</code> el esquema de relación cuyo contexto es el conjunto de atributos <code>A</code> definidos sobre el
+            conjunto de dominios <code>D</code>:
           </p>
           <p class="codigo">
             <br>
@@ -335,7 +337,7 @@
             <br>
           </p>
           <p class="post contenido text-justify">
-            Los operadores unarios son la restricción y la proyección.
+            Los operadores unarios son la <b>restricción</b> y la <b>proyección</b>.
           </p>
           <ul>
             <li>
@@ -343,7 +345,7 @@
               <p class="text-justify">
                 La restricción, también llamada selección, de una relación mediante una expresión lógica, da como resultado una relación formada por el
                 subconjunto de tuplas que satisfacen dicha expresión. La relación resultante constituye un subconjunto horizontal de <code>r(R)</code>.
-                A continuación aparece la relación resultante de aplicar el operador de restricción sobre el atributo nacionalidad a la tabla AUTOR.
+                A continuación aparece la relación resultante de aplicar el operador de restricción sobre el atributo nacionalidad a la tabla <code>AUTOR</code>.
               </p>
               <h3 class="text-center">AUTOR</h3>
               <table class="table table-hover table-bordered">
@@ -432,21 +434,22 @@
         <li>
           <b>Binarios</b>
           <p class="post-contenido text-justify">
-            Los operadores binarios se aplican a dos relaciones, y algunos de ellos exigen que las dos relaciones involucradas sean compatibles. Se dice que
-            dos esquemas de relación <code>R1 ( A1i : D1i )</code> y <code>R2 ( A2i : D2i )</code>, con cardinalidades <code>m1</code> y <code>m2</code>, son
-            compatibles a efectos de dichos operadores, cuando ambos están definidos sobre el mismo conjunto de dominios, cumpliendose:
+            Los operadores binarios se aplican a dos relaciones, y algunos de ellos exigen que las dos relaciones involucradas sean <b>compatibles</b>. Se dice que
+            dos esquemas de relación <code>R<sub>1</sub> ( A<sub>1i</sub> : D<sub>1i</sub> )</code> y <code>R<sub>2</sub> ( A<sub>2i</sub> : D<sub>2i</sub> )</code>,
+            con cardinalidades <code>m1</code> y <code>m2</code>, son compatibles a efectos de dichos operadores, cuando <b>ambos están definidos sobre el mismo
+              conjunto de dominios</b>, cumpliendose:
           </p>
           <br>
           <img class="imgcenter img-rounded img-responsive" src="img/modeloRelacional/operacionBinaria.png" alt="Operación Binaria">
           <br>
           <p class="post-contenido text-justify">
-            es decir, <code>R1</code> y <code>R2</code> son semánticamente equivalentes, lo que no quiere decir que los nombres de los atributos sean los mismos,
-            sino que han de estar definidos sobre los mismos dominios.
+            es decir, <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code> son semánticamente equivalentes, lo que no quiere decir que los nombres de los atributos
+            sean los mismos, sino que han de estar definidos sobre los mismos dominios.
           </p>
           <p class="post-contenido text-justify">
             Si los nombres de los atributos de las dos relaciones son distintos o están en distinto orden, es decir, no hay correspondencia uno a uno entre
-            los nombres de los atributos de los esquemas <code>R1</code> y <code>R2</code>, será precisa una operación de renombrado de los atributos del
-            esquema de la relación resultante.
+            los nombres de los atributos de los esquemas <code>R<sub>1</sub></code> y <code>R<sub>2</sub></code>, será precisa una operación de renombrado de los
+            atributos del esquema de la relación resultante.
           </p>
           <p class="post-contenido text-justify">
             Supongamos, por ejemplo que tenemos las dos relaciones de la figura, que son compatibles en sus esquemas al estar sus atributos definidos sobre los
@@ -1257,17 +1260,8 @@
               </p>
             </li>
           </ul>
-
         </li>
-
-
       </ol>
-      <p class="post-contenido text-justify"></p>
-      <p class="post-contenido text-justify"></p>
-      <p class="post-contenido text-justify"></p>
-      <p class="post-contenido text-justify"></p>
-      <p class="post-contenido text-justify"></p>
-
     </article>
 
   </section>
