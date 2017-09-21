@@ -5,3 +5,5 @@ Maestría en Tecnologías de la Información - Business Intelligence
 
 Este sitio fue creado para el apoyo de la materia. 
 El contenido fue escrito por mi, basado en algunos libros y texto en línea.
+
+Sitio creado con fines meramente académicos y sin fines de lucro en lo absoluto.
