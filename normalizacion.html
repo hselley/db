@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Teoría de la Normalización</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
+              <li><a href="normalizacion.html">Teoría de Normalización</a></li>
+              <li><a href="sql.html">Lenguaje SQL</a></li>
+              <li><a href="html.html">HTML5</a></li>
+              <li><a href="php.html">PHP</a></li>
+              <li><a href="mysql.html">MySQL</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1mh27L3bGl8zVu5V390R73A03R5sr0Hc9n4K6mL4wLBc/edit?usp=sharing" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h2>Introducción</h2>
+      <p class="post-contenido text-justify">
+        La teoría de normalización ofrece un conjunto de reglas que nos permiten asegurar que un esquema relacional cumple con unas ciertas propiedades.
+      </p>
+      <p class="post-contenido text-justify">
+        Cuando una base de datos no ha sido diseñada adecuadamente, pueden surgir problemas conceptuales y operativos en el funcionamiento de la base.
+        Algunos de los problemas que puede presentar un esquema relacional cuando el diseño es inadecuado son los siguientes:
+      </p>
+      <ul>
+        <li>
+          <p class="post-contenido text-justify">
+            Incapacidad para almacenar ciertos hechos.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Redundancias y posibles inconsistencias.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Ambigüedades.
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Pérdida de información (aparición de tuplas espurias).
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Pérdida de ciertas restricciones de integridad que dan lugar a interdependencias entre los datos (dependencias funcionales).
+          </p>
+        </li>
+        <li>
+          <p class="post-contenido text-justify">
+            Aparición en la base de datos (como consecuencia de las redundancias) de estados que no son válidos en el mundo real; lo que
+            se llama anomalías de inserción, borrado o modificación.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        El esquema relacional debe ser analizado para comprobar que no presenta los problemas anteriormente citados, evitando así la pérdida de información
+        y la aparición de inconsistencias.
+      </p>
+      <p class="post-contenido text-justify">
+        Veamos un ejemplo de estos problemas derivados de un diseño inadecuado. En la figura se muestra la relación <code>ESCRIBE</code> que almacena datos sobre
+        <code>LIBRO (Cod_libro, Título, Editorial, Año)</code> y sobre <code>AUTOR (Autor, Nacionalidad)</code> que los han escrito. Si observamos esta relación, vemos
+        que presenta varios de los problemas enumerados anteriormente.
+      </p>
+      <p class="codigo">
+        <br>
+        LIBRO (Cod_libro, Título, Editorial, Año) <br>
+        AUTOR (Autor, Nacionalidad)
+        <br><br>
+      </p>
+      <h3 class="text-center"><b>ESCRIBE</b></h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th>AUTOR</th>
+            <th>NACIONALIDAD</th>
+            <th>COD_LIBRO</th>
+            <th>TÍTULO</th>
+            <th>EDITORIAL</th>
+            <th>AÑO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Date, C.</td>
+            <td>Norteamericana</td>
+            <td>23433</td>
+            <td>Databases</td>
+            <td>Addison-W.</td>
+            <td>1990</td>
+          </tr>
+          <tr>
+            <td>Date, C.</td>
+            <td>Norteamericana</td>
+            <td>54654</td>
+            <td>SQL Standard</td>
+            <td>Addison-W.</td>
+            <td>1986</td>
+          </tr>
+          <tr>
+            <td>Date, C.</td>
+            <td>Norteamericana</td>
+            <td>53235</td>
+            <td>Guide to Ingres</td>
+            <td>Addison-W.</td>
+            <td>1988</td>
+          </tr>
+          <tr>
+            <td>Codd, E.</td>
+            <td>Norteamericana</td>
+            <td>97875</td>
+            <td>Relational M.</td>
+            <td>Addison-W.</td>
+            <td>1990</td>
+          </tr>
+          <tr>
+            <td>Gardarin</td>
+            <td>Francesa</td>
+            <td>34245</td>
+            <td>Base de Datos</td>
+            <td>Parainfo</td>
+            <td>1986</td>
+          </tr>
+          <tr>
+            <td>Gardarin</td>
+            <td>Francesa</td>
+            <td>55366</td>
+            <td>Comparación BD</td>
+            <td>Eyrolles</td>
+            <td>1984</td>
+          </tr>
+          <tr>
+            <td>Valdurez</td>
+            <td>Francesa</td>
+            <td>86754</td>
+            <td>Comparación BD</td>
+            <td>Eyrolles</td>
+            <td>1984</td>
+          </tr>
+          <tr>
+            <td>Kim, W.</td>
+            <td>Norteamericana</td>
+            <td>32176</td>
+            <td>OO Databases</td>
+            <td>ACM Press</td>
+            <td>1989</td>
+          </tr>
+          <tr>
+            <td>Lochovsky</td>
+            <td>Canadiense</td>
+            <td>23456</td>
+            <td>OO Databases</td>
+            <td>ACM Press</td>
+            <td>1989</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="text-center">Tabla 5.1. Ejemplo de un diseño inadecuado</h5>
+
+      <p class="post-contenido text-justify">
+        Los principales problemas de esta relación se derivan de la gran cantidad de redundancia que presenta. Por ejemplo, la nacionalidad del autor se repite
+        por cada libro que ha escrito; y algo analógico sucede con la editorial y el año de la publicación, cuando un libro tiene más de un autor. Esta redundancia
+        produce a su vez:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>Anomalías de inserción</b>: dar de alta un libro obliga a insertar en la base de datos tantas tuplas como autores tenga el libro.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Anomalías de modificación</b>: cambiar la editorial de un libro obliga a modificar todas las tuplas que corresponden al libro.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Anomalías de borrado</b>: el borrado de un libro obliga a borrar varias tuplas, tantas como autores tenga ese libro y viceversa. El borrado de un autor
+            nos lleva a borrar tantas tuplas como libros haya escrito este autor.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Vemos que la actualización (alta, baja o modificación) de un solo libro o de un solo autor nos puede obligar a actualizar más de una tupla, dejándose la integridad
+        de la base de datos en manos del usuario. Al riesgo de la posible pérdida de integridad hay que añadir la ineficiencia asociada a estas múltiples actualizaciones.
+      </p>
+      <p class="post-contenido text-justify">
+        Además de estas anomalías de inserción, borrado y modificación, existen otros problemas adicionales como la imposibilidad de almacenar ciertos hechos o la desaparición
+        de información que desearíamos mantener en la base de datos. Por ejemplo, si se quisiera incluir información sobre un autor del que no existiera ningún libro en la base
+        de datos, no sería posible ya que el atributo cod_libro forma parte de la clave primaria de la relación; ni tampoco podríamos introducir obras anónimas. Por otro lado,
+        al dar de baja un libro se pierden también los datos de los autores y viceversa, si borramos un autor desaparecen de la base de datos los libros escritos por él.
+      </p>
+      <p class="text-center">
+        <b>"Hechos distintos se deben almacenar en objetos distintos"</b>
+      </p>
+      <p class="post-contenido text-justify">
+        La teoría de normalización evita las redundancias y las anomalías de actualización, obteniendo relaciones más estructuradas que no presenten los problemas comentados
+        anteriormente.
+      </p>
+      <p class="post-contenido text-justify">
+        Para solucionar los problemas del ejemplo anterior se puede optar por este diseño de esquema relacional:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBRO (Cod_libro, Título, Editorial, Año) <br>
+        AUTOR (Nombre, Nacionalidad) <br>
+        ESCRIBE (Cod_libro, Nombre)
+        <br><br>
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Noción intuitiva de las formas normales</h2>
+      <p class="post-contenido text-justify">
+        La teoría de la normalización se centra en lo que se conoce como formas normales. Se dice que un esquema de relación está en una determinada forma normal si satisface
+        un conjunto específico de restricciones.
+      </p>
+      <p class="post-contenido text-justify">
+        La primera forma normal 1FN fue introducida por Codd, es una restricción inherente al modelo relacional por lo que su cumplimiento es obligatorio. Consiste en la
+        prohibición de que  en una relación existan grupos repetidos, es decir, de que un atributo puede tomar más de un valor del dominio subyacente. En realidad se debe
+        decir que una tabla está normalizada sólo con que se encuentra en 1FN, aunque a menudo esta expresión no se aplica con la debida precisión y se afirma que una tabla
+        no está normalizada porque no está en formas normales a la primera.
+      </p>
+      <p class="post-contenido text-justify">
+        Codd, también definió la segunda forma normal 2FN y la tercera forma normal 3FN. Posteriormente, otros autores propusieron nuevas formas normales como la Forma Normal
+        de Boyce y Codd FNBC, y la cuarta y quinta forma normal 4FN y 5FN debidas a Fagin.
+      </p>
+      <p class="post-contenido text-justify">
+        En la figura se muestra que de todo el universo de las relaciones en 1FN, sólo algunas se encuentran en 2FN, y de ellas solo algunas se encuentran en 3FN y así
+        sucesivamente; es decir, la 2FN impone más restricciones que 1FN, la 3FN más restricciones que 2FN y así sucesivamente siendo la 5FN la que impone más restricciones
+        más fuertes.
+      </p>
+      <div class="thumbnail">
+        <img src="img/normalizacion/universoFormasNormales.png" alt="Universo de las Formas Normales" class="imgcenter img-rounded img-responsive" style="height:400px;">
+        <div class="caption">
+          <p class="caption text-center">Figura 5.1. Universo de las Formas Normales</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        La teoría de la normalización se basa en ciertas restricciones definidas sobre los atributos de una relación, las cuales son conocidas con el nombre de dependencias.
+        Existen varios tipos de dependencias, encontrándose relacionadas las 2a, 3a y FNBC con las dependencias funcionales, la 4a con las dependencias multivaluadas y la
+        5a con las dependencias de proyección-combinación.
+      </p>
+      <p class="post-contenido text-justify">
+        Podemos decir que un esquema de relación se encuentra en 2FN si, además de estar en 1FN, todos los atributos que no forman parte de ninguna clave candidata suministran
+        información acerca de la clave completa, no de una parte de la clave.
+      </p>
+      <p class="post-contenido text-justify">
+        Ésta es la causa por la cual la relación <b>ESCRIBE</b> de la figura 5.1 presenta tantas anomalías, y es también el origen de los mismos problemas en la relación
+        <b>PRÉSTAMO</b> del siguiente ejemplo:
+      </p>
+      <p class="codigo">
+        <br>
+        PRESTAMO (Num_socio, DNI_socio, Cod_libro, Fecha_prestamo, Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        donde las claves candidatas son:
+      </p>
+      </p>
+      <p class="codigo">
+        <br>
+        (Num_socio, Cod_libro) <br>
+        (DNI_socio, Cod_libro)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        Se puede observar que ciertos atributos que no forman parte de ninguna clave candidata, como <code>Editorial</code>, nos dan información acerca del libro pero
+        no tienen nada que ver con el socio, por lo que no constituyen una información acerca de la clave completa sino únicamente de una parte de la clave, luego la
+        relación <b>PRÉSTAMO</b> no se encuentra en 2FN.
+      </p>
+      <p class="post-contenido text-justify">
+        La solución es descomponerla en dos:
+      </p>
+      <p class="codigo">
+        <br>
+        PRÉSTAMO1 (Num_socio, DNI_socio, Cod_libro, Fecha_préstamo) <br>
+        LIBROS (Cod_libro, Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        en el primer esquema existen dos claves <code>(Num_socio, Cod_libro y DNI_socio, Cod_libro)</code>, y el único atributo <code>(Fecha_préstamo)</code> que no forma
+        parte de ninguna clave suministra información acerca de la totalidad de ambas claves candidatas; por otra parte, en <b>LIBROS</b> la clave es <code>Cod_libro</code>,
+        y los dos atributos que no son clave también suministran información acerca de la clave completa, ya que en este caso es simple. Por lo tanto, ambas relaciones se
+        encuentran en 2FN.
+      </p>
+      <p class="post-contenido text-justify">
+        De lo que acabamos de exponer se deduce que toda la relación cuya clave está formada por un único atributo está, al menos en 2FN.
+      </p>
+      <p class="post-contenido text-justify">
+        Una relación se encuentra en 3FN si además de las dos restricciones anteriores (1FN y 2FN), se cumple que los atributos que no forman parte de ninguna clave candidata
+        facilitan información sólo acerca de la(s) clave(s) y no acerca de otros atributos.
+      </p>
+      <p class="post-contenido text-justify">
+        Así, por ejemplo, en <b>PRESTAMO1</b> el atributo <code>Fecha_préstamo</code> sólo facilita información acerca de las claves, ya que no existe ningún otro atributo
+        no clave, por lo que dicha relación está en 3FN. Sin embargo, en la relación <b>LIBROS</b> el atributo <code>País</code> facilita información acerca de la Editorial,
+        no encontrándose por tanto en 3FN.
+      </p>
+      <p class="post-contenido text-justify">
+        Para resolver los problemas (redundancias, inconsistencias, etc.) que presenta esta relación, conviene descomponerla en:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBROS1 (Cod_libro, Editorial) <br>
+        EDITORIALES (Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        que están en 3FN, ya que todo atributo no clave sólo facilita información acerca de la clave.
+      </p>
+      <p class="post-contenido text-justify">
+        En resumen, para que una relación se encuentre en 3FN, ha de estar en 1FN y además todos sus atributos que no forman parte de ninguna clave candidata "<em>deben ser
+          información referida a la clave, la clave completa y nada más que la clave</em>".
+      </p>
+      <p class="post-contenido text-justify">
+        Al descomponer la relación inicial (que no estaba en 2FN) en tres relaciones que están en 3FN, hemos evitado muchas de las anomalías anteriormente expuestas.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Dependencias Funcionales</h2>
+      <p class="post-contenido text-justify">
+        La teoría de la normalización se basa en el concepto de dependencias, hasta el punto de que se le conoce como <em>teoría de las dependencias</em>.
+      </p>
+      <p class="post-contenido text-justify">
+        Las dependencias son propiedades inherentes al contenido semántico de los datos que se han de cumplir para cualquier extensión del esquema de relación y forman
+        parte de las restricciones de usuario del modelo relacional.
+      </p>
+      <p class="post-contenido text-justify">
+        Las dependencias nos muestran algunas importantes interrelaciones existentes entre los atributos del mundo real, cuya semántica tratamos de incorporar a nuestra
+        base de datos, por lo que son invariantes en el tiempo siempre que no cambie el mundo real del cual proceden.
+      </p>
+      <p class="post-contenido text-justify">
+        Las dependencias funcionales son un tipo especial de dependencias que es el más extendido en la práctica, en el cual se basan las primeras formas normales.
+      </p>
+      <p class="post-contenido text-justify">
+        Sea el esquema de relación <b>R</b> definido sobre el conjunto de atributos <code>A</code> y sean <code>X</code> y <code>Y</code> subconjuntos de <code>A</code>
+        llamados descriptores. Se dice que <code>Y</code> depende funcionalmente de <code>X</code>, o lo que es igual, que <code>X</code> determina o implica a <code>Y</code> si y sólo
+        si cada valor de <code>X</code> tiene asociado en todo momento un único valor de <code>Y</code>. Representamos esta dependencia de la siguiente forma:
+      </p>
+      <p class="codigo">
+        <br>
+        X ➝ Y
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        Llamamos <em>determinante</em> o <em>implicante</em> al descriptor que se encuentra a la izquierda del símbolo de implicación, e <em>implicando</em> al descriptor
+        que se encuentra a la derecha.
+      </p>
+      <p class="post-contenido text-justify">
+        Sea por ejemplo la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBRO (Cod_libro, Título, Idioma, ...)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        podemos decir que el código de un libro determina el título del mismo:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Título
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        En el ejemplo <code>Cod_libro</code> es el implicante (o determinante) en la anterior dependencia y <code>Título</code> es el implicado. Esta dependencia también
+        nos dice que el título es una información acerca del libro, ya que una dependencia funcional se puede interpretar diciendo que el implicado es un hecho (en
+        realidad una información) acerca del implicante.
+      </p>
+      <p class="post-contenido text-justify">
+        Una herramienta muy útil para describir las dependencias funcionales es el <b>grafo</b> o <b>diagrama de dependencias funcionales</b>, mediante el cual se
+        representa un conjunto de atributos y las dependencias funcionales existentes entre ellos. En el grafo aparecen los nombres de los atributos unidos por flechas,
+        las cuales indican las dependencias funcionales y parten del implicante hacia el implicado. Cuando el  implicante de una dependencia no es único atributo, es decir,
+        se trata de un <em>implicante compuesto</em>, los atributos que lo componen se encierran en un recuadro y la flecha parte de éste, no de cada atributo.
+      </p>
+      <p class="post-contenido text-justify">
+        La figura 5.2 es un ejemplo de cómo se visualizan las dependencias. Podemos observar que <code>Cod_libro</code> determina funcionalmente el <code>Título</code>
+        del libro y la Editorial. <code>Num_socio</code> determina <code>Nombre</code>, <code>Domicilio</code> y <code>Teléfono</code> del socio. Ambos atributos en
+        conjunto, <code>Cod_libro</code> y <code>Num_socio</code>, determinan <code>Fecha_prestamo</code> y <code>Fecha_dev</code>, lo que se indica haciendo que la
+        flecha parta del recuadro que los incluye.
+      </p>
+      <div class="thumbnail">
+        <img src="img/normalizacion/diagramaDependenciasFuncionales.png" alt="Ejemplo de diagrama de dependencias funcionales" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 5.2. Ejemplo de diagrama de dependencias funcionales</p>
+        </div>
+      </div>
+      <h3>Dependencia funcional plena o completa</h3>
+      <p class="post-contenido text-justify">
+        Sea un descriptor compuesto <code>X</code>:
+      </p>
+      <p class="codigo">
+        <br>
+        X (X1, X2)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        se dice que <code>Y</code> tiene dependencia funcional completa o plena de <code>X</code> si depende funcionalmente de <code>X</code> pero no depende de ningún
+        subconjunto del mismo, esto es:
+      </p>
+      <p class="codigo">
+        <br>
+        X ➝ Y <br>
+        X1 ↛ Y <br>
+        X2 ↛ Y
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        lo que se representa por:
+      </p>
+      <p class="codigo">
+        <br>
+        X ⇒ Y
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        Supongamos que la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        PRESTA (Cod_libro, Título, Editorial, Num_socio, Nombre, Domicilio, Teléfono, Fecha_préstamo, Fecha_dev)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        cuyas dependencias funcionales aparecen en la figura 5.2, la dependencia funcional:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro, Num_socio ➝ Fecha_préstamo
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        indica que, dado un determinado código de libro y un número de socio, existe una única fecha de préstamo. Ni código de libro ni número de socio implican
+        por sí solos la fecha de préstamo, ya que tanto un libro se puede prestar varias fechas como un socio puede recibir libros prestados en varias fechas.
+        Por lo tanto la dependencia funcional anterior es completa, lo que se representa:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro, Num_socio ⇒ Fecha_préstamo
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        ya que:
+      </p>
+      <p class="codigo">
+        <br>
+        Código_libro ↛ Fecha_préstamo
+        Num_socio ↛ Fecha_préstamo
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        lo que intuitivamente se puede interpretar que <code>Fecha_préstamo</code> constituye una información sobre el conjunto de libro y socio, pero esta información
+        no atañe a un libro o a un socio por separado.
+      </p>
+      <p class="post-contenido text-justify">
+        Por el contrario, la dependencia:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro, Num_socio ➝ Editorial
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        no es plena, ya que:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Editorial
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        se dice que en esa dependencia, <code>Num_socio</code> es un atributo redundante o ajeno a la dependencia.
+      </p>
+
+      <h3>Dependencia funcional transitiva</h3>
+      <p class="post-contenido text-justify">
+        Sea la relación
+      </p>
+      <p class="codigo">
+        <br>
+        R (X, Y, Z)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        en la que existen las siguientes dependencias funcionales:
+      </p>
+      <p class="codigo">
+        <br>
+        X ➝ Y <br>
+        Y ➝ Z <br>
+        Y ↛ X
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        se dice entonces que <code>Z</code> tiene una <b>dependencia transitiva</b> respecto de <code>X</code> a través de <code>Y</code>, lo que se representa por:
+      </p>
+      <p class="codigo">
+        <br>
+        X -- ➝ Z
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        Si además, <code>Z ↛ Y</code>, se dice que la dependencia transitiva es <b>estricta</b>.
+      </p>
+      <p class="post-contenido text-justify">
+        En la figura 5.3 se presenta un diagrama de dependencias funcionales en el que la dependencia
+      </p>
+      <p class="codigo">
+        <br>
+        X -- ➝ Z
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        es transitiva.
+      </p>
+      <div class="thumbnail">
+        <img src="img/normalizacion/dependenciaFuncionalTransitiva.png" alt="Ejemplo de dependencia funcional transitiva" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 5.3. Ejemplo de dependencia funcional transitiva</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Si consideramos la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBROS (Cod_libro, Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        en donde tenemos para cada libro su código, la editorial y el país de la editorial (suponemos que una editorial tiene su sede en un único país), se tendrán las
+        siguientes dependencias:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Editorial <br>
+        Editorial ➝ País <br>
+        Cod_libro ➝ País
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        ninguna de las dependencias <code>Cod_libro ➝ Editorial</code> y <code>Título ➝ Editorial</code> son transitivas, al ser los atributos <code>Cod_libro</code>
+        y <code>Título</code> equivalentes (se implican mutuamente).
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Definición formal de las tres primeras formas normales</h2>
+      <h3>Primera Forma Normal 1FN</h3>
+      <p class="post-contenido text-justify">
+        Para que una tabla pueda ser considerada una relación, no debe admitir grupos repetitivos (los datos deben ser planos o atómicos), esto es, debe estar en
+        la <em>primera forma normal</em>. Se dice que una relación está en 1FN si cada atributo toma un único valor del dominio subyacente.
+      </p>
+      <h4 class="text-center"><b>LIBRO</b> (Código, Título, Autor)</h4>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <td>Código</td>
+            <td>Título</td>
+            <td>Autor</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="textoTabla">
+            <td>02154989</td>
+            <td>Data Models</td>
+            <td>Tsichiritzis <br> Lochovsky</td>
+          </tr>
+          <tr class="textoTabla">
+            <td>87654353</td>
+            <td>A guide to DB2</td>
+            <td>Date</td>
+          </tr>
+          <tr class="textoTabla">
+            <td>65465465</td>
+            <td>Base de Datos</td>
+            <td>Gardarin <br>Valduriez</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 class="text-center"><b>NO ESTÁ EN 1FN: Hay grupos repetitivos</b></h4>
+      <br>
+      <h4 class="text-center"><b>LIBRO</b> (Código, Título, Autor)</h4>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <td>Código</td>
+            <td>Título</td>
+            <td>Autor</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="textoTabla">
+            <td>02154989</td>
+            <td>Data Models</td>
+            <td>Tsichiritzis</td>
+          </tr>
+          <tr class="textoTabla">
+            <td>02154989</td>
+            <td>Data Models</td>
+            <td>Lochovsky</td>
+          </tr>
+          <tr class="textoTabla">
+            <td>87654353</td>
+            <td>A guide to DB2</td>
+            <td>Date</td>
+          </tr>
+          <tr class="textoTabla">
+            <td>65465465</td>
+            <td>Base de Datos</td>
+            <td>Gardarin</td>
+          </tr>
+          <tr class="textoTabla">
+            <td>65465465</td>
+            <td>Base de Datos</td>
+            <td>Valduriez</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="text-center">Tabla 5.2 Tabla con grupos repetitivos y relación en 1FN</h5>
+
+      <h3>Segunda forma Normal 2FN</h3>
+      <p class="post-contenido text-justify">
+        Se dice que una relación está en 2FN si:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            Está en 1FN
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Implica transitividad
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Cada atributo no principal tiene dependencia funcional completa respecto de cada una de sus claves.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Por ejemplo, si tenemos la relación: <code><b>PRESTA</b> (Cod_libro, Num_socio, Editorial)</code>, en la que existe la siguiente dependencia funcional:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Editorial
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        y cuya clave está constituida por el descriptor <code>Cod_libro</code>, <code>Num_socio</code>, esta relación no se encuentra en 2FN al venir la editorial
+        determinada sólo por el código del libro y no por la clave completa.
+      </p>
+
+      <h3>Tercera Forma Normal 3FN</h3>
+      <p class="post-contenido text-justify">
+        Se dice que una relación está en 3FN si:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            Está en 2FN
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            No existe ningún atributo no principal que depende transitivamente de alguna de las claves de relación.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        Por ejemplo, la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>SOCIO</b> (Num_socio, Ciudad, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        que presenta las siguientes dependencias funcionales:
+      </p>
+      <p class="codigo">
+        <br>
+        Num_socio ➝ Ciudad <br>
+        Ciudad ➝ País
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        y cuya clave es evidentemente <code>Num_socio</code>. Dicha relación no se encuentra en 3FN al depender <code>País</code> transitivamente de la clave a través
+        de <code>Ciudad</code>.
+      </p>
+      <p class="post-contenido text-justify">
+        En otras palabras, la 3FN  consiste en establecer los requerimientos de los datos del problema, de manera que se pueda determinar cuáles atributos dependen
+        funcionalmente de otros atributos dentro del dominio del problema.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Descomposición de relaciones</h2>
+      <p class="post-contenido text-justify">
+        La transformación de una relación que se encuentra en una determinada forma normal, en otra relación cuya forma normal es superior se realiza por medio del
+        operador <code>proyección</code> del álgebra relacional.
+      </p>
+      <p class="post-contenido text-justify">
+        Sea por ejemplo la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>PRESTA</b> (Cod_libro, Num_socio, Editorial)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        que se encuentra solo en 1FN (ya que su único atributo no principal <code>Editorial</code> no depende totalmente de la clave). Si quisiéramos llevar esta
+        relación a una forma normal más avanzada, sería preciso descomponer mediante proyecciones, obteniendo varias relaciones. Así, proyectando sobre
+        <code>Cod_libro</code>, <code>Num_socio</code> y sobre <code>Cod_libro</code>, <code>Editorial</code> obtendremos:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>PRESTA1</b> (Cod_libro, Num_socio) <br>
+        <b>PRESTA2</b> (Cod_libro, Editorial)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        Ambas relaciones están en 3FN y han desaparecido las redundancias y las inconsistencias a las que antes aludimos.
+      </p>
+      <p class="post-contenido text-justify">
+        Además, la combinación natural de <code>PRESTA1 * PRESTA2</code> (por el atributo común <code>Cod_libro</code>) nos devuelve la relación original.
+      </p>
+      <p class="post-contenido text-justify">
+        De manera análoga, la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>SOCIO</b> (Num_socio, Ciudad, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        que se encuentra en 2FN pero no en 3FN, podría descomponerse en dos proyecciones:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>SOCIO1</b> (Num_socio, Ciudad) <br>
+        <b>CIUDAD</b> (Ciudad, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        también:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>SOCIO1</b> * <b>CIUDAD</b> = <b>SOCIO</b>
+        <br><br>
+      </p>
+
+      <h3>Descomposición sin pérdida de información</h3>
+      <p class="post-contenido text-justify">
+        Se dice que una descomposición se ha realizado sin pérdida de información cuando la combinación natural se las proyecciones resultantes nos devuelve
+        la relación original.
+      </p>
+      <p class="post-contenido text-justify">
+        Sea la relación:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>LIBRO</b> (Cod_libro, Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        en la cual tiene lugar las siguientes dependencias funcionales:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Editorial <br>
+        Editorial ➝ País
+        <br><br>
+      </p>
+      <h3 class="text-center"><b>LIBRO</b></h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th class="textoTabla">Cod_libro</th>
+            <th class="textoTabla">Editorial</th>
+            <th class="textoTabla">País</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textoTabla">654654</td>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">665465</td>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">876545</td>
+            <td class="textoTabla">ParaInfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">987456</td>
+            <td class="textoTabla">Anaya</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">965842</td>
+            <td class="textoTabla">Addison-W.</td>
+            <td class="textoTabla">EEUU</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="text-center"><b>LIBRO1</b></h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th class="textoTabla">Cod_libro</th>
+            <th class="textoTabla">País</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textoTabla">654654</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">665465</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">876545</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">987456</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">965842</td>
+            <td class="textoTabla">EEUU</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="text-center"><b>EDITORIAL1</b></h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th class="textoTabla">Cod_libro</th>
+            <th class="textoTabla">País</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">ParaInfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Anaya</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">Addison-W.</td>
+            <td class="textoTabla">EEUU</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="text-center"><b>LIBRO1 * EDITORIAL1</b></h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th class="textoTabla">Cod_libro</th>
+            <th class="textoTabla">Editorial</th>
+            <th class="textoTabla">País</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textoTabla">654654</td>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="danger">
+            <td class="textoTabla">654654</td>
+            <td class="textoTabla">Parainfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="danger">
+            <td class="textoTabla">654654</td>
+            <td class="textoTabla">Parainfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">665465</td>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="warning">
+            <td class="textoTabla">665465</td>
+            <td class="textoTabla">Parainfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="warning">
+            <td class="textoTabla">665465</td>
+            <td class="textoTabla">Anaya</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="success">
+            <td class="textoTabla">876545</td>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">876545</td>
+            <td class="textoTabla">ParaInfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="success">
+            <td class="textoTabla">876545</td>
+            <td class="textoTabla">Anaya</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="info">
+            <td class="textoTabla">987456</td>
+            <td class="textoTabla">Ra-Ma</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr class="info">
+            <td class="textoTabla">987456</td>
+            <td class="textoTabla">ParaInfo</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">987456</td>
+            <td class="textoTabla">Anaya</td>
+            <td class="textoTabla">España</td>
+          </tr>
+          <tr>
+            <td class="textoTabla">965842</td>
+            <td class="textoTabla">Addison-W.</td>
+            <td class="textoTabla">EEUU</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="text-center">Tabla 5.3 Descomposición con pérdida de información (aparición de tuplas espúrias)</h5>
+      <p class="post-contenido text-justify">
+        Supongamos que descomponemos esta relación en:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBRO1 (Cod_libro, País) <br>
+        EDITORIAL1 (Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        cuyas extensiones aparecen en <b>LIBRO</b> de la figura 5.3. La combinación de las relaciones <code><b>LIBRO1</b> * <b>EDITORIAL1</b></code> da lugar a
+        la aparición de tuplas espurias.
+      </p>
+      <p class="post-contenido text-justify">
+        En cambio con la siguiente descomposición:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBRO2 (Cod_libro, País) <br>
+        EDITORIAL2 (Cod_libro, Editorial)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        es fácil comprobar que la combinación natural:
+      </p>
+      <p class="codigo">
+        <br>
+        <b>LIBRO</b> * <b>EDITORIAL2</b>
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        daría la relación original.
+      </p>
+      <p class="post-contenido text-justify">
+        La condición necesaria y suficiente para que una descomposición se produzca sin pérdida de información es que <b>el atributo común de las dos relaciones
+        sea clave al menos en una de ellas</b>, condición que no se cumple en el primer caso.
+      </p>
+
+      <h3>Descomposición sin pérdida de dependencias funcionales</h3>
+      <p class="post-contenido text-justify">
+        Las dependencias funcionales recogen la semántica del mundo real, por lo que es conveniente conservarlas en el proceso de descomposición.
+      </p>
+      <p class="post-contenido text-justify">
+        Sea la misma relación <b>LIBRO</b> del ejemplo anterior que hemos descompuesto en <b>LIBRO2</b> y <b>EDITORIAL2</b>, donde no ha habido pérdida de información,
+        dado que el atributo común <code>Cod_libro</code> es clave en ambas relaciones.
+      </p>
+      <p class="post-contenido text-justify">
+        Sin embargo, en esta descomposición se ha perdido una dependencia funcional, ya que en la relación <b>LIBRO2</b> la única dependencia funcional es:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ País
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        y en la <b>EDITORIAL2</b>, la única dependencia es:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Editorial
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        luego la dependencia <code>Editorial ➝ País</code> se ha perdido, y con ella también ha desaparecido en nuestro esquema parte de la semántica del mundo real,
+        la cual dice que dada una editorial ésta se encuentra en un único país.
+      </p>
+
+      <h3>Descomposición en proyecciones independientes</h3>
+      <p class="post-contenido text-justify">
+        La descomposición de una relación <b>R</b> en un conjunto de relaciones <b>{R<sub>i</sub>}</b> se dice que se ha realizado en proyecciones independientes si
+        no ha habido pérdida de información ni de dependencias funcionales.
+      </p>
+      <p class="post-contenido text-justify">
+        Si la relación <b>LIBRO</b> del ejemplo, la hubiésemos descompuesto en:
+      </p>
+      <p class="codigo">
+        <br>
+        LIBRO3 (Cod_libro, Editorial) <br>
+        EDITORIAL3 (Editorial, País)
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        estas dos proyecciones serían independientes, ya que el atributo común es clave de una de las relaciones (la segunda), por lo que no hay pérdida de información.
+        Además tampoco hay pérdida de dependencias funcionales, dado que <b>LIBRO3</b> tiene la dependencia:
+      </p>
+      <p class="codigo">
+        <br>
+        Cod_libro ➝ Editorial
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        y <b>EDITORIAL3</b> tiene:
+      </p>
+      <p class="codigo">
+        <br>
+        Editorial ➝ País
+        <br><br>
+      </p>
+      <p class="post-contenido text-justify">
+        Ésta es la mejor descomposición, ya que las relaciones resultantes son equivalentes a la relación original, y se han eliminado las anomalías de inserción,
+        borrado y modificación.
+      </p>
+      <p class="post-contenido text-justify">
+        A veces, el proceso de normalización se aplica a la denominada <b>relación universal</b>, que está constituida por el conjunto de atributos de universo del
+        discurso que se desea modelar y por el conjunto de dependencias funcionales.
+      </p>
+    </article>
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

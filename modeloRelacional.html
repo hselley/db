@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- Aquí va la cabecera -->
+  <!-- Aqui va la cabecera -->
     <div class="container-fluid cabecera" style="height:200px;">
       <div class="container">
         <h1 class="titulo-principal">Modelo Relacional: Estático</h1>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-  <!-- Barra superior de navegación -->
+  <!-- Barra superior de navagación -->
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
     <div class="container">
       <div class="navbar-header" id="logo">
@@ -43,10 +43,11 @@
               <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
               <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
               <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
-              <li><a href="">Teoría de Normalización</a></li>
-              <li><a href="">Lenguaje SQL</a></li>
-              <li><a href="">HTML5 + PHP</a></li>
-              <li><a href="">Diseño de una BD</a></li>
+              <li><a href="normalizacion.html">Teoría de Normalización</a></li>
+              <li><a href="sql.html">Lenguaje SQL</a></li>
+              <li><a href="html.html">HTML5</a></li>
+              <li><a href="php.html">PHP</a></li>
+              <li><a href="mysql.html">MySQL</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -141,12 +142,9 @@
     <article class="tema clearfix">
       <h2>Estructura del Modelo Relacional</h2>
       <p class="post-contenido text-justify">
-        La relación es el elemento básico del modelo relacional, y se puede representar como una tabla. Dado que una relación es una construcción matemática, será
-        más fácil pensar en una relación como una tabla. Desde el punto de vista del usuario, una tabla contiene un grupo de ocurrencias relacionadas, es decir,
-        un conjunto de entidades.
+        La relación es el elemento básico del modelo relacional, y se puede representar como una tabla.
       </p>
       <div class="table-responsive">
-        <h3>Nombre de la relación</h3>
         <table class="table table-bordered table-hover">
           <thead>
             <tr class="active">
@@ -191,34 +189,6 @@
         de columnas, denominadas <b>atributos</b>, que representan propiedades de la tabla y que también están caracterizadas por su nombre, y un conjunto de filas llamadas
         <b>tuplas</b>, que contienen los valores que toma cada uno de los atributos para cada elemento de la relación.
       </p>
-      <h3>Características de una Tabla Relacional</h3>
-      <ul>
-        <li>
-          <p class="text-justify">Una tabla es percibida como una estructura bidimensional compuesta de renglones y columnas.</p>
-        </li>
-        <li>
-          <p class="text-justify">Cada renglón (tupla) representa una ocurrencia dentro del conjunto de entidades.</p>
-        </li>
-        <li>
-          <p class="text-justify">Cada columna representa un atributo, y cada columna tiene un nombre distinto.</p>
-        </li>
-        <li>
-          <p class="text-justify">Cada intersección renglón-columna representa un valor de un dato individual.</p>
-        </li>
-        <li>
-          <p class="text-justify">Todos los valores en una sola columna deben tener el mismo formato de dato.</p>
-        </li>
-        <li>
-          <p class="text-justify">Cada columna tiene un conjunto específico de valores conocido como dominio de atributo.</p>
-        </li>
-        <li>
-          <p class="text-justify">El orden de los renglones y columnas es irrelevante para el SGDB.</p>
-        </li>
-        <li>
-          <p class="text-justify">Cada tabla debe tener un atributo (o una combinación de atributos) que identifique de forma única a cada renglón.</p>
-        </li>
-      </ul>
-
       <p class="post-contenido text-justify">
         En la Figura 3.1 se representa la relación <b>AUTOR</b>, en donde aparece la estructura del modelo relacional. En ella podemos observar el <b>nombre</b> de la relación
         (<em>AUTOR</em>); los <b>atributos</b> (<em>Nombre</em>, <em>Nacionalidad</em> e <em>Institución</em>); los <b>dominios</b> (de donde los atributos toman sus valores;
@@ -399,106 +369,28 @@
     </article>
 
     <article class="tema clearfix">
-      <h2>Llaves</h2>
+      <h2>Claves</h2>
       <p class="post-contenido text-justify">
-        Una <b>llave candidata</b> de una relación es un conjunto de atributos que identifican unívoca y mínimamente cada tupla de la relación. Por la propia definición
-        de relación, siempre hay, al menos, una llave candidata, ya que al ser una relación siempre tiene que identificar unívocamente a una tupla. Por ejemplo, la
-        relación <b>AUTOR</b> tiene una llave candidata: el atributo <b>Nombre</b>, ya que suponemos que no existen dos autores con el mismo nombre.
+        Una <b>clave candidata</b> de una relación es un conjunto de atributos que identifican unívoca y mínimamente cada tupla de la relación. Por la propia definición
+        de relación, siempre hay, al menos, una clave candidata, ya que al ser una relación siempre tiene que identificar unívocamente a una tupla. Por ejemplo, la
+        relación <b>AUTOR</b> tiene una clave candidata: el atributo <b>Nombre</b>, ya que suponemos que no existen dos autores con el mismo nombre.
       </p>
       <p class="post-contenido text-justify">
-        Una relación puede tener más de una llave candidata, entre las cuales se debe distinguir:
+        Una relación puede tener más de una clave candidata, entre las cuales se debe distinguir:
       </p>
       <ul>
         <li>
           <p class="post-contenido text-justify">
-            <b>Llave primaria:</b> es aquella llave candidata que el usuario escogerá, por consideraciones ajenas al modelo relacional, para identificar las tuplas de
-            la relación. Cuando solo existe una llave candidata, ésta será la llave primaria.
+            <b>Clave primaria:</b> es aquella clave candidata que el usuario escogerá, por consideraciones ajenas al modelo relacional, para identificar las tuplas de
+            la relación. Cuando solo existe una clave candidata, ésta será la clave primaria.
           </p>
         </li>
         <li>
           <p class="post-contenido text-justify">
-            <b>Llaves alternativas:</b> son aquellas llaves candidatas que no han sido escogidas como llave primaria.
+            <b>Claves alternativas:</b> son aquellas claves candidatas que no han sido escogidas como clave primaria.
           </p>
         </li>
       </ul>
-      <p class="post-contenido text-justify">
-        Estas no son las únicas llaves que se utilizan en el modelo relacional, a continuación se describen los diferentes tipos de llaves:
-      </p>
-      <div class="table-responsive">
-        <table class="table table-hover table-bordered">
-          <thead>
-            <tr class="active">
-              <th>Tipo de llave</th>
-              <th>Definición</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <tr>
-              <td>
-                <p class="text-justify">
-                  Super Llave
-                </p>
-              </td>
-              <td>
-                <p class="text-justify">
-                  Un atributo (o conjunto de atributos) que identifica de forma única (por sí sola) a cada tupla en la relación.
-                </p>
-              </td>
-            </tr> -->
-            <tr>
-              <td>
-                <p class="text-justify">
-                  Llave Candidata
-                </p>
-              </td>
-              <td>
-                <p class="text-justify">
-                  Una Llave mínima y atómica. Una llave sin atributos innecesarios.
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p class="text-justify">
-                  Llave Primaria
-                </p>
-              </td>
-              <td>
-                <p class="text-justify">
-                  Una llave candidata seleccionada para identificar de forma única a los valores de los atributos de una tupla en particular.
-                  No puede contener valores nulos.
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p class="text-justify">
-                  Llave Secundaria
-                </p>
-              </td>
-              <td>
-                <p class="text-justify">
-                  Un atributo (o conjunto de atributos) utilizados estríctamente para propósitos de recuperación de datos.
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p class="text-justify">
-                  Llave Foranea
-                </p>
-              </td>
-              <td>
-                <p class="text-justify">
-                  Un atributo (o conjunto de atributos) en una relación cuyos valores deben coincidir con la llave primaria de otra relación o
-                  bien ser nulos.
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
     </article>
 
     <article class="tema clearfix">
@@ -631,7 +523,7 @@
       <h5 class="text-center">Tabla 3.4. Relación obtenida normalizando la tabla AUTOR1</h3>
 
       <p class="post-contenido text-justify">
-        Existe otra restricción inherente que es la regla de integridad de entidad, la cual impone que: "Ningún atributo que forme parte de la llave primaria de una
+        Existe otra restricción inherente que es la regla de integridad de entidad, la cual impone que: "Ningún atributo que forme parte de la clave primaria de una
         relación puede tomar un valor nulo".
       </p>
     </article>
@@ -645,14 +537,14 @@
       <ul>
         <li>
           <p class="post-contenido text-justify">
-            <b>Llave primaria.</b> Permite declarar un atributo o un conjunto de atributos como llave primaria de una relación, por lo que sus valores no se podrán
+            <b>Llave primaria.</b> Permite declarar un atributo o un conjunto de atributos como clave primaria de una relación, por lo que sus valores no se podrán
             repetir ni se admitirán los nulos.
           </p>
         </li>
         <li>
           <p class="post-contenido text-justify">
             <b>Unicidad.</b> Mediante la cual se indica que los valores de un conjunto de atributos no pueden repetirse en una relación. Permite la definición de
-            llaves alternativas.
+            claves alternativas.
           </p>
         </li>
         <li>
@@ -662,8 +554,8 @@
         </li>
         <li>
           <p class="post-contenido text-justify">
-            <b>Integridad referencial.</b> Si la relación R<sub>2</sub> (relación que referencia) tiene un descriptor que es una llave candidata de la relación R<sub>1</sub>
-            (relación referenciada), todo valor de dicho descriptor debe concordar con un valor de la llave candidata referenciada de R<sub>1</sub> o bien ser nulo.
+            <b>Integridad referencial.</b> Si la relación R<sub>2</sub> (relación que referencia) tiene un descriptor que es una clave candidata de la relación R<sub>1</sub>
+            (relación referenciada), todo valor de dicho descriptor debe concordar con un valor de la clave candidata referenciada de R<sub>1</sub> o bien ser nulo.
           </p>
         </li>
       </ul>
@@ -677,12 +569,12 @@
         En la figura 3.5 se muestra una forma de representar las llaves ajenas.
       </p>
       <p class="post-contenido text-justify">
-        En el ejemplo 1, el atributo <b>Editorial</b> de la relación <b>LIBRO</b> es la llave ajena que referencia a <b>EDITORIAL</b>, de modo que sus valores deben concordar
-        con la llave primaria de la relación <b>EDITORIAL</b> o bien ser nulos (los libros deben pertenecer a una editorial existente o, si se desconoce la editorial, tendrán
+        En el ejemplo 1, el atributo <b>Editorial</b> de la relación <b>LIBRO</b> es la clave ajena que referencia a <b>EDITORIAL</b>, de modo que sus valores deben concordar
+        con la clave primaria de la relación <b>EDITORIAL</b> o bien ser nulos (los libros deben pertenecer a una editorial existente o, si se desconoce la editorial, tendrán
         valor nulo para ese atributo).
       </p>
       <p class="post-contenido text-justify">
-        En el ejemplo 2, la relación <b>ESCRIBE</b> posee dos llaves ajenas: Nombre que referencia a la relación <b>AUTOR</b> y <b>Cod_Libro</b> que referencia a la relación
+        En el ejemplo 2, la relación <b>ESCRIBE</b> posee dos claves ajenas: Nombre que referencia a la relación <b>AUTOR</b> y <b>Cod_Libro</b> que referencia a la relación
         <b>LIBRO</b>. En este caso ninguna de las dos llaves ajenas puede tomar valores nulos, ya que forman parte de la llave primaria de la relación <b>ESCRIBE</b>.
       </p>
       <div class="thumbnail">
@@ -693,64 +585,6 @@
       </div>
     </article>
 
-    <article class="tema clearfix">
-      <h2>Ejemplo</h2>
-      <p class="text-justify">
-        Se desea hacer un diseño de una base de datos en la cual se modele la estructura de datos acerca de videojuegos. Considere los siguientes hechos para
-        la construcción estructural de la base:
-      </p>
-      <ul>
-        <li>
-          <p class="text-justify">
-            Las consolas de videojuegos son fabricadas por una de diversas marcas.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Los juegos son desarrollados por un estudio de desarrollo.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Los juegos pueden tener una versión para diferentes consolas.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Los estudios de desarrollo hacen diversos juegos.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Cada versión de un juego funciona en una sola consola.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Las marcas fabrican accesorios para sus consolas de videojuegos.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Cada accesorio funciona con sólo una consola.
-          </p>
-        </li>
-        <li>
-          <p class="text-justify">Cada consola tiene diversos accesorios.</p>
-        </li>
-        <li>
-          <p class="text-justify">
-            Las marcas y estudios tiene oficinas centrales en algún país particular, con dirección única, teléfono y sitio web.
-          </p>
-        </li>
-      </ul>
-      <div class="thumbnail">
-        <img src="img/modeloRelacional/vg_relational.png" alt="Diseño del Sistema de Videjuego" class="imgcenter img-rounded img-responsive">
-        <div class="caption">
-          <p class="caption text-center">Figura 3.6. Diseño del Sistema de Videjuegos</p>
-        </div>
-      </div>
-    </article>
 
   </section>
 
