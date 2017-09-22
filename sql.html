@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilo.css">
   <link rel="stylesheet" href="../css/iconos.css">
+  <link rel="stylesheet" href="css/tomorrow-night.css">
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 
   <!-- Aqui va la cabecera -->
     <div class="container-fluid cabecera" style="height:200px;">
       <div class="container">
-        <h1 class="titulo-principal">Titulo</h1>
+        <h1 class="titulo-principal">Lenguaje SQL</h1>
         <p></p>
       </div>
     </div>
@@ -69,20 +72,746 @@
   <section class="main container">
 
     <article class="tema clearfix">
-      <h2>Titulo</h2>
-    </article>
-    <article class="tema clearfix">
+      <h2>Introducción</h2>
       <p class="post-contenido text-justify">
-        contenido
+        SQL es el DBMS (DataBase Management System) más comúnmente utilizado para consultar y modificar una base de datos relacional a través de un lenguaje llamado
+        SQL (Structured Query Language (Lenguaje Secuencial de Consultas)). Una de sus características es el manejo del álgebra y el cálculo relacional que permiten
+        efectuar consultas con el fin de recuperar de forma sencilla información de interés de una base de datos, así como hacer cambios en ellas.
       </p>
       <p class="post-contenido text-justify">
+        SQL:
       </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            SQL es el acrónimo de <em>Structured Query Language</em> (Lenguaje Secuencial de Consultas).
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            SQL permite tener acceso y manipular bases de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            SQL es un estándar ANSI (<em>American National Standards Institute</em> (Instituto de Estandres Nacionales Americanos))
+          </p>
+        </li>
+      </ul>
       <p class="post-contenido text-justify">
+        SQL es capaz de:
       </p>
-      <p class="post-contenido text-justify"></p>
-      <p class="post-contenido text-justify"></p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            Realizar consultas en una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Obtener información de una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Insertar registros en una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Borrar registros en una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Crear nuevas bases de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Crear nuevas tablas en una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Crear procedimientos de almacenamiento en una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Crear vistas en una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Asignar permisos en las tablas, procedimientos y vistas.
+          </p>
+        </li>
+      </ul>
     </article>
 
+    <article class="tema clearfix">
+      <h2>Historia</h2>
+      <p class="post-contenido text-justify">
+        Los orígenes de SQL están ligados a los de las bases de datos relacionales.
+      </p>
+      <p class="post-contenido text-justify">
+        En 1970 F. Codd propone el modelo relacional y asociado a este un sublenguaje de acceso a base de datos basado en el cálculo de predicados.
+      </p>
+      <p class="post-contenido text-justify">
+        Basándose en esas ideas, los laboratorios de IBM definieron el lenguaje SEQUEL (Structured English Query Language) que más tarde fue ampliamente implementado
+        por el sistema de gestión de bases de datos relacionales surgidos en los años siguientes y fue por fin estandarizado en 1986 por el ANSI, dando
+        lugar a la primera versión estándar de este lenguaje, el "SQL-86" o "SQL1".
+        Al año siguiente este estándar es también adoptado por la ISO.
+      </p>
+      <p class="post-contenido text-justify">
+        Al año siguiente este estándar es también adoptado por la ISO.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Características</h2>
+      <p class="post-contenido text-justify">
+        El SQL es un lenguaje de acceso a bases de datos que explota la flexibilidad y potencia de los sistemas relacionales y permite así gran variedad de operaciones.
+      </p>
+      <p class="post-contenido text-justify">
+        Es un lenguaje declarativo de "alto nivel" o "de no procedimiento" que, gracias a su fuerte base teórica y su orientación al manejo de conjuntos de registros
+        —y no a registros individuales— permite una alta productividad en codificación y la orientación a objetos.
+      </p>
+      <p class="post-contenido text-justify">
+        SQL tiene las siguientes características:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>Lenguaje de definición de datos:</b> El LDD de SQL proporciona comandos para la definición de esquemas de relación, borrado de relaciones y modificaciones
+            de los esquemas de relación.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Lenguaje interactivo de manipulación de datos:</b> El LMD de SQL incluye lenguajes de consultas basado tanto en álgebra relacional como en cálculo relacional
+            de tuplas.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Integridad:</b> El LDD de SQL incluye comandos para especificar las restricciones de integridad que deben cumplir los datos almacenados en la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Definición de vistas:</b> El LDD incluye comandos para definir las vistas.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Control de transacciones:</b> SQL tiene comandos para especificar el comienzo y el final de una transacción.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>SQL incorporado y dinámico:</b> Esto quiere decir que se pueden incorporar instrucciones de SQL en lenguajes de programación como: C++, C, Java, PHP,
+            Cobol, Pascal y Fortran.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>Autorización:</b> El LDD incluye comandos para especificar los derechos de acceso a las relaciones y a las vistas.
+          </p>
+        </li>
+      </ul>
+      <p class="post-contenido text-justify">
+        A pesar de que SQL es un estándar ANSI (American National Standards Institute), existen diferentes versiones del lenguaje.
+      </p>
+      <p class="post-contenido text-justify">
+        Para poder utilizar SQL en un sitio web, de manera que el sitio muestra información desde la base de datos, se necesita:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">
+            Un RDBMS (Sistema de Gestión de Bases de Datos Relacionales), por ejemplo: MS Access, MS SQL Server, MySQL, IBM DB2, Oracle SQL, etc.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Utilizar un lenguaje script del lado del servidor, por ejemplo: PHP o ASP.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Utilizar SQL para obtener la información que requiere.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Utilizar HTML / CSS.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sintaxis SQL</h2>
+      <h3>Tablas de la Base de Datos</h3>
+      <p class="post-contenido text-justify">
+        Una base de datos comúnmente contiene una o más tablas, donde cada tabla se identifica por un nombre. Las tablas contienen registros (renglones o filas)
+        con información. Por ejemplo, esta es una selección de la tabla <code>Costumers</code>.
+      </p>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="active">
+            <th>CustomerID</th>
+            <th>CustomerName</th>
+            <th>ContactName</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>PostalCode</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Obere Str. 57</td>
+            <td>Berlin</td>
+            <td>12209</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ana Trujillo Emparedados y helados</td>
+            <td>Ana Trujillo</td>
+            <td>Av. de la Constitución 2222</td>
+            <td>CDMX</td>
+            <td>05021</td>
+            <td>México</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Antonio Moreno Taquería</td>
+            <td>Antonio Moreno</td>
+            <td>Mataderos 2312</td>
+            <td>CDMX</td>
+            <td>05023</td>
+            <td>México</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Around the Horn</td>
+            <td>Thomas Hardy</td>
+            <td>120 Hanover Sq.</td>
+            <td>London</td>
+            <td>WA1 1DP</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Berglunds snabbköp</td>
+            <td>Christina Berglund</td>
+            <td>Berguvsvägen 8</td>
+            <td>Luleå</td>
+            <td>S-958 22</td>
+            <td>Sweden</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="post-contenido text-justify">
+        La tabla anterior contiene cinco registros (tuplas) y siete columnas (atributos).
+      </p>
+
+      <h3>Sentencias SQL</h3>
+      <p class="post-contenido text-justify">
+        Muchas de las acciones que se realizan en una base de datos se hacen mediante sentencias SQL. El siguiente ejemplo selecciona todos los registros
+        de la tabla <code>Customers</code>:
+      </p>
+      <p class="post-contenido text-justify">
+        <a href="https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all" target="_blank">Ejemplo 1</a>. Sentencia Select
+      </p>
+      <pre><code>
+      select * from Customers;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Tenga en mente que SQL no es sensible a las mayúsculas: select significa lo mismo que SELECT o inclusive SeLeCt.
+      </p>
+      <p class="post-contenido text-justify">
+        Algunos sistemas de bases de datos requieren un punto y coma al final de cada sentencia. El punto y coma es una forma estándar de separar sentencias SQL
+        en sistemas de base de datos que permiten más de una sola sentencia en una sola llamada al servidor.
+      </p>
+
+      <h3>Algunos de los comandos más importantes en SQL</h3>
+      <ul>
+        <li>
+          <p class="text-justify">
+            <b>SELECT:</b> Extrae información de la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>UPDATE:</b> Actualiza información de la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>DELETE:</b> Borra información de la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>INSERT INTO:</b> Insertar nueva información en la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>CREATE DATABASE:</b> Crea una nueva base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>ALTER DATABASE:</b> Modifica una base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>CREATE TABLE:</b> Crea una nueva tabla en la base de datos.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>ALTER TABLE:</b> Modifica una tabla.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>DROP TABLE:</b> Borra una tabla.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>CREATE INDEX:</b> Crea un índice (llave de búsqueda).
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            <b>DROP INDEX:</b> Borra un índice.
+          </p>
+        </li>
+      </ul>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia Select</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>SELECT</code> se utiliza para seleccionar información en una base de datos. El resultado se almacena en una tabla, llamada
+        "<em>conjunto resultado</em>".
+      </p>
+      <h3>Sintaxis Select</h3>
+      <pre><code>
+      SELECT nombre_columna, nombre_columna FROM nombre_tabla;
+      </code></pre>
+      <p class="post-contenido text-justify">
+      y
+      </p>
+      <pre><code>
+      SELECT * FROM nombre_tabla;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_columns&sa=D&ust=1506016043830000&usg=AFQjCNGYCt_msA5fAK_FdCkIxbhMi_1F2Q"
+          target="_blank">Ejemplo 2</a>. La siguiente sentencia SQL selecciona los atributos <code>CustomerName</code> y <code>City</code> de la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT CustomerName, City FROM Customers;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_all&sa=D&ust=1506016043831000&usg=AFQjCNFGqv-s2ESUBejG_wq-FTuv2rTOIg"
+          target="_blank">Ejemplo 3</a>. La siguiente sentencia SQL selecciona todos los atributos de la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT * FROM Customers;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Muchos de los sistemas de bases de datos permiten la navegación en el conjunto resultado con funciones programadas, como: ir al primer registro, obtener contenido
+        del registro, mover al siguiente registro, etc.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia SELECT DISTINCT</h2>
+      <p class="post-contenido text-justify">
+        En una tabla, una columna puede contener muchos valores duplicados y algunas veces puede necesitar solamente una lista de valores diferentes. La palabra clave
+        <code>DISTINCT</code> puede ser utilizada para devolver solamente valores diferentes.
+      </p>
+
+      <h3>Sintaxis</h3>
+      <pre><code>
+      SELECT DISTINCT column_name,column_name FROM table_name;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_distinct&sa=D&ust=1506016043834000&usg=AFQjCNEbQkcupU4YAKvOu8swJadfydtOtw"
+          target="_blank">Ejemplo 4</a>. La sentencia SQL solo selecciona los valores diferentes de la columna <code>City</code> de la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT DISTINCT City FROM Customers;
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia WHERE</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>WHERE</code> se utiliza para filtrar registros. Esta cláusula sólo devuelve aquellos registros que cumplen cierta condición especificada.
+      </p>
+
+      <h3>Sintaxis</h3>
+      <pre><code>
+      SELECT column_name,column_name
+      FROM table_name
+      WHERE column_name operator value;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_where&sa=D&ust=1506016043837000&usg=AFQjCNGrezPZDpxWm0wEKp0IHY7Rg3KZcw"
+        target="_blank">Ejemplo 5</a>. La sentencia SQL selecciona todos los clientes cuyo país sea <code>México</code> en la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT * FROM Customers WHERE Country='Mexico';
+      </code></pre>
+
+      <h3>Campos de Texto vs. Campos Numéricos</h3>
+      <p class="post-contenido text-justify">
+        SQL requiere de comillas sencillas alrededor de valores tipo texto (muchos sistemas de bases de datos también permiten comillas dobles). Sin embargo, los valores
+        numéricos no deben ir entre comillas.
+      </p>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_where_number&sa=D&ust=1506016043838000&usg=AFQjCNHjmHHAoEEzWZ7IP62llJcJSWceSg"
+        target="_blank">Ejemplo 6.</a>
+      </p>
+      <pre><code>
+      SELECT * FROM Customers WHERE CustomerID=1;
+      </code></pre>
+
+      <h3>Operadores válidos en la cláusula WHERE</h3>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="active">
+            <th>Operador</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>=</td>
+            <td>Igual a</td>
+          </tr>
+          <tr>
+            <td>&lt;&gt;</td>
+            <td>Diferente a. En algunas versiones de SQL el operador puede escribirse !=</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>Mayor que</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>Menor que</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>Mayor o igual que</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>Menor o igual que</td>
+          </tr>
+          <tr>
+            <td>BETWEEN</td>
+            <td>Dentro de un intervalo cerrado</td>
+          </tr>
+          <tr>
+            <td>LIKE</td>
+            <td>Búsqueda de un patrón</td>
+          </tr>
+          <tr>
+            <td>IN</td>
+            <td>Para especificar múltiples posibles valores para una columna</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Operadores AND y OR</h2>
+      <p class="post-contenido text-justify">
+        Los operadores <code>AND</code> y <code>OR</code> son utilizados para filtrar registros basados en más de una condición.
+      </p>
+      <p class="post-contenido text-justify">
+        El operador <code>AND</code> despliega un registro si las dos condiciones son verdaderas.
+      </p>
+      <p class="post-contenido text-justify">
+        El operador <code>OR</code> despliega un registro si alguna de las condiciones es verdadera.
+      </p>
+
+      <h3>Operador AND</h3>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_where_and&sa=D&ust=1506016043848000&usg=AFQjCNGQhA3Q-g_8dbX9hH9pVLMn4GgrEA"
+        target="_blank">Ejemplo 7</a>. La sentencia SQL selecciona todos los clientes cuyo país sea <code>Germany</code> y su ciudad sea <code>Berlín</code>
+        en la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT * FROM Customers WHERE Country='Germany' AND City='Berlin';
+      </code></pre>
+
+      <h3>Operador OR</h3>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_where_or&sa=D&ust=1506016043850000&usg=AFQjCNGRwSCiD29nkikdTdgCl_dRj6FX6g"
+        target="_blank">Ejemplo 8</a>. La sentencia SQL selecciona todos los clientes cuya ciudad sea <code>Berlín</code> o <code>München</code> en la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT * FROM Customers WHERE City='Berlin' OR City='München';
+      </code></pre>
+
+      <h3>Combinando AND y OR</h3>
+      <p class="post-contenido text-justify">
+        Es posible también combinar <code>AND</code> y <code>OR</code> para hacer un filtro específico de un conjunto de registros.
+      </p>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_where_and_or&sa=D&ust=1506016043852000&usg=AFQjCNHiwbaz0BCbvfC6UkQ2KqmqXsU8cA"
+        target="_blank">Ejemplo 9</a>. La sentencia SQL selecciona todos los clientes cuyo país sea <code>Germany</code> y la ciudad sea igual a <code>Berlin</code> o <code>München</code>
+        en la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      SELECT * FROM Customers WHERE Country='Germany' AND (City='Berlin' OR City='München');
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Palabra clave ORDER BY</h2>
+      <p class="post-contenido text-justify">
+        La palabra clave <code>ORDER BY</code> sirve para ordenar una o más columnas del conjunto resultado. Ésta palabra ordena los registros en forma ascendente por
+        defecto, para ordenarlas en orden descendente se usa la palabra <code>DESC</code>.
+      </p>
+      <h3>Sintaxis</h3>
+      <pre><code>
+      SELECT column_name, column_name FROM table_name ORDER BY column_name ASC|DESC, column_name ASC|DESC;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_select_orderby&sa=D&ust=1506016043855000&usg=AFQjCNFtatkT_I5DADdgrxBV3WlTF6_evw"
+        target="_blank">Ejemplo 10</a>. La sentencia SQL selecciona todos los clientes de la tabla <code>Customers</code> y los ordena por la columna <code>Country</code>.
+      </p>
+      <pre><code>
+      SELECT * FROM Customers ORDER BY Country;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Pruebe las siguientes consultas y explique su funcionamiento:
+      </p>
+      <pre><code>
+      SELECT * FROM Customers ORDER BY Country DESC;
+      </code></pre>
+      <pre><code>
+      SELECT * FROM Customers ORDER BY Country, CustomerName;
+      </code></pre>
+      <pre><code>
+      SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia INSERT INTO</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>INSERT INTO</code> se utiliza para insertar registros nuevos en una tabla.
+      </p>
+      <h3>Sintaxis</h3>
+      <p class="post-contenido text-justify">
+        Es posible utilizar la sentencia <code>INSERT INTO</code> de dos formas diferentes.
+      </p>
+      <p class="post-contenido text-justify">
+        En la primera forma no se especifican los nombres de las columnas donde los datos serán insertados, sólo sus valores:
+      </p>
+      <pre><code>
+      INSERT INTO table_name VALUES (value1,value2,value3,...);
+      </code></pre>
+      <p class="post-contenido text-justify">
+        La segunda forma se especifica el nombre de la columna y los valores que serán insertados.
+      </p>
+      <pre><code>
+      INSERT INTO table_name (column1,column2,column3,...) VALUES (value1,value2,value3,...);
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_insert_colname&sa=D&ust=1506016043860000&usg=AFQjCNEFNevM-ollSEUszzTo2c7u5f8L6A"
+        target="_blank">Ejemplo 11</a>. La sentencia SQL añade un nuevo registro a la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+        VALUES ('Cardinal','Tom B. Erichsen','Skagen 21','Stavanger','4006','Norway');
+      </code></pre>
+      <p class="post-contenido text-justify">
+        También es posible insertar datos en columnas específicas.
+      </p>
+      <p class="post-contenido text-justify">
+        La siguiente sentencia inserta un nuevo registro pero solamente inserta información en las columnas <code>CustomerName</code>, <code>City</code> y
+        <code>Country</code>. (el campo <code>CustomerID</code> se llena automáticamente).
+      </p>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_insert_cols&sa=D&ust=1506016043861000&usg=AFQjCNHzfH-slLcihp7nG8vYIqY6EdRDEg"
+          target="_blank">Ejemplo 12.</a>
+      </p>
+      <pre><code>
+      INSERT INTO Customers (CustomerName, City, Country)
+      VALUES ('Cardinal', 'Stavanger', 'Norway');
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia UPDATE</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>UPDATE</code> se utiliza para actualizar registros en una tabla.
+      </p>
+      <h3>Sintaxis</h3>
+      <pre><code>
+      UPDATE table_name
+      SET column1=value1,column2=value2,...
+      WHERE some_column=some_value;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Notese que la cláusula <code>WHERE</code> especifica que registro(s) será(n) actualizado(s), si se omite, todos los registros serán actualizados.
+      </p>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_update&sa=D&ust=1506016043864000&usg=AFQjCNEJ67EI_axU2Zj88cKY8IvZ0nsAVg"
+        target="_blank">Ejemplo 13</a>. La sentencia SQL actualiza información de un cliente.
+      </p>
+      <pre><code>
+      UPDATE Customers
+      SET ContactName='Alfred Schmidt', City='Hamburg'
+      WHERE CustomerName='Alfreds Futterkiste';
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Ejemplo 14. Omisión de <code>WHERE</code>
+      </p>
+      <pre><code>
+      UPDATE Customers
+      SET ContactName='Alfred Schmidt', City='Hamburg';
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia DELETE</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>DELETE</code> se utiliza para borrar registros en una tabla.
+      </p>
+
+      <h3>Sintaxis</h3>
+      <pre><code>
+      DELETE FROM table_name
+      WHERE some_column=some_value;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <a href="https://www.google.com/url?q=http://www.w3schools.com/sql/trysql.asp?filename%3Dtrysql_delete&sa=D&ust=1506016043869000&usg=AFQjCNGS5t1-thXgjGvWoSFQV_qQ0O2Dag"
+        target="_blank">Ejemplo 14</a>. La sentencia SQL borra al cliente <code>Alfreds Futterkiste</code> de la tabla <code>Customers</code>.
+      </p>
+      <pre><code>
+      DELETE FROM Customers
+      WHERE CustomerName='Alfreds Futterkiste' AND ContactName='Maria Anders';
+      </code></pre>
+
+      <h3>Borrar todos los datos</h3>
+      <p class="post-contenido text-justify">
+        Es posible borrar todos los renglones en una tabla sin borrar la tabla. Esto significa que la estructura de la tabla, atributos e índices quedarán intactos.
+      </p>
+      <pre><code>
+      DELETE FROM table_name;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        o
+      </p>
+      <pre><code>
+      DELETE * FROM table_name;
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia CREATE DATABASE</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>CREATE DATABASE</code> se utiliza para crear una base de datos.
+      </p>
+      <h3>Sintaxis</h3>
+      <pre><code>
+      CREATE DATABASE dbname;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        <b>Ejemplo 15</b>. La sentencia SQL crea una base de datos llamada <code>my_db</code>.
+      </p>
+      <pre><code>
+      CREATE DATABASE my_db;
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Sentencia CREATE TABLE</h2>
+      <p class="post-contenido text-justify">
+        La sentencia <code>CREATE TABLE</code> se utiliza para crear tablas en una base datos. Las tablas están organizadas en renglones y columnas y cada una
+        debe tener nombre.
+      </p>
+      <h3>Sintaxis</h3>
+      <pre><code>
+      CREATE TABLE table_name (
+        column_name1 data_type(size),
+        column_name2 data_type(size),
+        column_name3 data_type(size),
+        ...
+      );
+      </code></pre>
+      <p class="post-contenido text-justify">
+        El parámetro column_name especifica el nombre de la columna. El parámetro <code>data_type</code> especifica que tipo de dato almacena la columna
+        (varchar, integer, decimal, date, etc.). El parámetro <code>size</code> especifica el tamaño máximo de la columna.
+      </p>
+      <p class="post-contenido text-justify">
+        <b>Ejemplo 16</b>. Crear una tabla llamada <code>Persons</code> que contiene 5 columnas: <code>PersonID</code>, <code>LastName</code>, <code>FirstName</code>,
+        <code>Address</code> y <code>City</code>.
+      </p>
+      <pre><code>
+      CREATE TABLE Persons (
+        PersonID int,
+        LastName varchar(255),
+        FirstName varchar(255),
+        Address varchar(255),
+        City varchar(255)
+      );
+      </code></pre>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Restricción PRIMARY KEY</h2>
+      <p class="post-contenido text-justify">
+        La restricción <code>PRIMARY KEY</code> identifica de forma única cada registro en la tabla de la base de datos. La llave primaria debe contener valores
+        únicos en la tabla. Una columna de llave primaria no puede contener valores nulos. La mayoría de las tablas deberán tener una llave primaria, y cada
+        tabla puede tener solo una llave primaria.
+      </p>
+      <h3>Sintaxis MySQL</h3>
+      <pre><code>
+      CREATE TABLE Persons (
+        P_Id int NOT NULL,
+        LastName varchar(255) NOT NULL,
+        FirstName varchar(255),
+        Address varchar(255),
+        City varchar(255),
+        PRIMARY KEY (P_Id)
+      )
+      </code></pre>
+
+      <h3>PRIMARY KEY en ALTER TABLE</h3>
+      <pre><code>
+      ALTER TABLE Persons
+      ADD PRIMARY KEY (P_Id);
+      </code></pre>
+
+      <h3>DROP una PRIMARY KEY</h3>
+      <pre><code>
+      ALTER TABLE Persons
+      DROP PRIMARY KEY;
+      </code></pre>
+      <p class="post-contenido text-justify"></p>
+    </article>
   </section>
 
   <!-- Scripts que se necesitan para el sitio -->
