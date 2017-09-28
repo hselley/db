@@ -126,7 +126,7 @@
         <br><br>
       </p>
       <h3 class="text-center"><b>ESCRIBE</b></h3>
-      <table class="table table-hover table-bordered">
+      <table class="table table-hover table-bordered" id="Ej1">
         <thead>
           <tr class="active">
             <th>AUTOR</th>
@@ -181,7 +181,7 @@
           <tr>
             <td>Gardarin</td>
             <td>Francesa</td>
-            <td>55366</td>
+            <td>86754</td>
             <td>Comparación BD</td>
             <td>Eyrolles</td>
             <td>1984</td>
@@ -205,7 +205,7 @@
           <tr>
             <td>Lochovsky</td>
             <td>Canadiense</td>
-            <td>23456</td>
+            <td>32176</td>
             <td>OO Databases</td>
             <td>ACM Press</td>
             <td>1989</td>
@@ -242,17 +242,18 @@
         de la base de datos en manos del usuario. Al riesgo de la posible pérdida de integridad hay que añadir la ineficiencia asociada a estas múltiples actualizaciones.
       </p>
       <p class="post-contenido text-justify">
-        Además de estas anomalías de inserción, borrado y modificación, existen otros problemas adicionales como la imposibilidad de almacenar ciertos hechos o la desaparición
-        de información que desearíamos mantener en la base de datos. Por ejemplo, si se quisiera incluir información sobre un autor del que no existiera ningún libro en la base
-        de datos, no sería posible ya que el atributo cod_libro forma parte de la clave primaria de la relación; ni tampoco podríamos introducir obras anónimas. Por otro lado,
-        al dar de baja un libro se pierden también los datos de los autores y viceversa, si borramos un autor desaparecen de la base de datos los libros escritos por él.
+        Además de estas anomalías de inserción, borrado y modificación, existen otros problemas adicionales como la <b>imposibilidad de almacenar ciertos hechos</b> o
+        la <b>desaparición de información</b> que desearíamos mantener en la base de datos. Por ejemplo, si se quisiera incluir información sobre un autor del que no
+        existiera ningún libro en la base de datos, no sería posible ya que el atributo <code>cod_libro</code> forma parte de la llave primaria de la relación; ni tampoco podríamos
+        introducir obras anónimas. Por otro lado, al dar de baja un libro se pierden también los datos de los autores y viceversa, si borramos un autor desaparecen
+        de la base de datos los libros escritos por él.
       </p>
-      <p class="text-center">
+      <h3 class="text-center">
         <b>"Hechos distintos se deben almacenar en objetos distintos"</b>
-      </p>
+      </h3>
       <p class="post-contenido text-justify">
-        La teoría de normalización evita las redundancias y las anomalías de actualización, obteniendo relaciones más estructuradas que no presenten los problemas comentados
-        anteriormente.
+        La <b>teoría de normalización evita</b> las <b>redundancias</b> y las <b>anomalías de actualización</b>, obteniendo relaciones más estructuradas que no
+        presenten los problemas comentados anteriormente.
       </p>
       <p class="post-contenido text-justify">
         Para solucionar los problemas del ejemplo anterior se puede optar por este diseño de esquema relacional:
@@ -269,18 +270,18 @@
     <article class="tema clearfix">
       <h2>Noción intuitiva de las formas normales</h2>
       <p class="post-contenido text-justify">
-        La teoría de la normalización se centra en lo que se conoce como formas normales. Se dice que un esquema de relación está en una determinada forma normal si satisface
-        un conjunto específico de restricciones.
+        La teoría de la normalización se centra en lo que se conoce como <b>formas normales</b>. Se dice que un esquema de relación está en una determinada forma
+        normal si satisface un conjunto específico de restricciones.
       </p>
       <p class="post-contenido text-justify">
-        La primera forma normal 1FN fue introducida por Codd, es una restricción inherente al modelo relacional por lo que su cumplimiento es obligatorio. Consiste en la
-        prohibición de que  en una relación existan grupos repetidos, es decir, de que un atributo puede tomar más de un valor del dominio subyacente. En realidad se debe
-        decir que una tabla está normalizada sólo con que se encuentra en 1FN, aunque a menudo esta expresión no se aplica con la debida precisión y se afirma que una tabla
-        no está normalizada porque no está en formas normales a la primera.
+        La <b>primera forma normal 1FN</b> fue introducida por Codd, es una restricción inherente al modelo relacional por lo que su cumplimiento es obligatorio.
+        Consiste en la prohibición de que  en una relación existan <b>grupos repetidos</b>, es decir, de que un atributo puede tomar más de un valor del dominio subyacente.
+        En realidad se debe decir que una tabla está normalizada sólo con que se encuentra en 1FN, aunque a menudo esta expresión no se aplica con la debida precisión
+        y se afirma que una tabla no está normalizada porque no está en formas normales a la primera.
       </p>
       <p class="post-contenido text-justify">
-        Codd, también definió la segunda forma normal 2FN y la tercera forma normal 3FN. Posteriormente, otros autores propusieron nuevas formas normales como la Forma Normal
-        de Boyce y Codd FNBC, y la cuarta y quinta forma normal 4FN y 5FN debidas a Fagin.
+        Codd, también definió la <b>segunda forma normal 2FN</b> y la <b>tercera forma normal 3FN</b>. Posteriormente, otros autores propusieron nuevas formas normales
+        como la Forma Normal de Boyce y Codd FNBC, y la cuarta y quinta forma normal 4FN y 5FN debidas a Fagin.
       </p>
       <p class="post-contenido text-justify">
         En la figura se muestra que de todo el universo de las relaciones en 1FN, sólo algunas se encuentran en 2FN, y de ellas solo algunas se encuentran en 3FN y así
@@ -294,63 +295,68 @@
         </div>
       </div>
       <p class="post-contenido text-justify">
-        La teoría de la normalización se basa en ciertas restricciones definidas sobre los atributos de una relación, las cuales son conocidas con el nombre de dependencias.
-        Existen varios tipos de dependencias, encontrándose relacionadas las 2a, 3a y FNBC con las dependencias funcionales, la 4a con las dependencias multivaluadas y la
-        5a con las dependencias de proyección-combinación.
+        La teoría de la normalización se basa en ciertas <b>restricciones definidas sobre los atributos</b> de una relación, las cuales son conocidas con el nombre de
+        <b>dependencias</b>.
+        Existen varios tipos de dependencias, encontrándose relacionadas las 2a, 3a y FNBC con las <b>dependencias funcionales</b>, la 4a con las
+        <b>dependencias multivaluadas</b> y la 5a con las <b> dependencias de proyección-combinación</b>.
       </p>
       <p class="post-contenido text-justify">
-        Podemos decir que un esquema de relación se encuentra en 2FN si, además de estar en 1FN, todos los atributos que no forman parte de ninguna clave candidata suministran
-        información acerca de la clave completa, no de una parte de la clave.
+        Podemos decir que un esquema de <b>relación se encuentra en 2FN si</b>, además de estar en 1FN, todos <b>los atributos que no forman parte de ninguna llave
+        candidata suministran información acerca de la llave completa</b>, no de una parte de la llave.
       </p>
       <p class="post-contenido text-justify">
-        Ésta es la causa por la cual la relación <b>ESCRIBE</b> de la figura 5.1 presenta tantas anomalías, y es también el origen de los mismos problemas en la relación
+        Ésta es la causa por la cual la relación <b>ESCRIBE</b> de la <a href="#Ej1">Tabla 5.1</a> presenta tantas anomalías, y es también el origen de los mismos problemas en la relación
         <b>PRÉSTAMO</b> del siguiente ejemplo:
       </p>
       <p class="codigo">
         <br>
-        PRESTAMO (Num_socio, DNI_socio, Cod_libro, Fecha_prestamo, Editorial, País)
+        PRÉSTAMO (Num_socio, CURP_socio, Cod_libro, Fecha_prestamo, Editorial, País)
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        donde las claves candidatas son:
+        donde las llaves candidatas son:
       </p>
       </p>
       <p class="codigo">
         <br>
         (Num_socio, Cod_libro) <br>
-        (DNI_socio, Cod_libro)
+        (CURP_socio, Cod_libro)
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        Se puede observar que ciertos atributos que no forman parte de ninguna clave candidata, como <code>Editorial</code>, nos dan información acerca del libro pero
-        no tienen nada que ver con el socio, por lo que no constituyen una información acerca de la clave completa sino únicamente de una parte de la clave, luego la
-        relación <b>PRÉSTAMO</b> no se encuentra en 2FN.
+        Se puede observar que ciertos atributos que no forman parte de ninguna llave candidata, como <code>Editorial</code>, nos dan información acerca del libro pero
+        no tienen nada que ver con el socio, por lo que no constituyen una información acerca de la llave completa sino únicamente de una parte de la llave, razón
+        por la cual la relación <b>PRÉSTAMO</b> no se encuentra en 2FN.
       </p>
       <p class="post-contenido text-justify">
         La solución es descomponerla en dos:
       </p>
       <p class="codigo">
         <br>
-        PRÉSTAMO1 (Num_socio, DNI_socio, Cod_libro, Fecha_préstamo) <br>
+        PRÉSTAMO1 (Num_socio, CURP_socio, Cod_libro, Fecha_préstamo) <br>
         LIBROS (Cod_libro, Editorial, País)
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        en el primer esquema existen dos claves <code>(Num_socio, Cod_libro y DNI_socio, Cod_libro)</code>, y el único atributo <code>(Fecha_préstamo)</code> que no forma
-        parte de ninguna clave suministra información acerca de la totalidad de ambas claves candidatas; por otra parte, en <b>LIBROS</b> la clave es <code>Cod_libro</code>,
-        y los dos atributos que no son clave también suministran información acerca de la clave completa, ya que en este caso es simple. Por lo tanto, ambas relaciones se
-        encuentran en 2FN.
+        en el primer esquema existen dos llaves <code>(Num_socio, Cod_libro y CURP_socio, Cod_libro)</code>, y el único atributo <code>(Fecha_préstamo)</code> que no forma
+        parte de ninguna llave suministra información acerca de la totalidad de ambas llaves candidatas, es decir, <code>(Fecha_préstamo)</code> es un atributo que
+        proporciona información acerca del hecho almacenado en la relación <b>PRÉSTAMO1</b>. Por lo tanto, la relación <b>PRÉSTAMO1</b> se encuentra en 2FN.
       </p>
       <p class="post-contenido text-justify">
-        De lo que acabamos de exponer se deduce que toda la relación cuya clave está formada por un único atributo está, al menos en 2FN.
+        Por otra parte, en <b>LIBROS</b> la llave es <code>Cod_libro</code>,
+        y los dos atributos que no son llave también suministran información acerca de la llave completa, es decir al hecho almacenado en la relación <b>LIBRO</b>.
+        Por lo tanto, la relación <b>LIBRO</b> se encuentra en 2FN.
       </p>
       <p class="post-contenido text-justify">
-        Una relación se encuentra en 3FN si además de las dos restricciones anteriores (1FN y 2FN), se cumple que los atributos que no forman parte de ninguna clave candidata
-        facilitan información sólo acerca de la(s) clave(s) y no acerca de otros atributos.
+        De lo que acabamos de exponer se deduce que toda la relación cuya llave está formada por un único atributo está, al menos en 2FN.
       </p>
       <p class="post-contenido text-justify">
-        Así, por ejemplo, en <b>PRESTAMO1</b> el atributo <code>Fecha_préstamo</code> sólo facilita información acerca de las claves, ya que no existe ningún otro atributo
-        no clave, por lo que dicha relación está en 3FN. Sin embargo, en la relación <b>LIBROS</b> el atributo <code>País</code> facilita información acerca de la Editorial,
+        Una <b>relación se encuentra en 3FN</b> si además de las dos restricciones anteriores (1FN y 2FN), se cumple que <b>los atributos que no forman parte de
+        ninguna llave candidata</b> aportan información sólo acerca de la(s) llave(s) y no acerca de otros atributos.
+      </p>
+      <p class="post-contenido text-justify">
+        Así, por ejemplo, en <b>PRESTAMO1</b> el atributo <code>Fecha_préstamo</code> sólo aporta información acerca de las llaves, ya que no existe ningún otro atributo
+        no llave, por lo que dicha relación está en 3FN. Sin embargo, en la relación <b>LIBROS</b> el atributo <code>País</code> aporta información acerca de la Editorial,
         no encontrándose por tanto en 3FN.
       </p>
       <p class="post-contenido text-justify">
@@ -363,11 +369,11 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        que están en 3FN, ya que todo atributo no clave sólo facilita información acerca de la clave.
+        que están en 3FN, ya que todo atributo no llave sólo aporta información acerca de la llave.
       </p>
       <p class="post-contenido text-justify">
-        En resumen, para que una relación se encuentre en 3FN, ha de estar en 1FN y además todos sus atributos que no forman parte de ninguna clave candidata "<em>deben ser
-          información referida a la clave, la clave completa y nada más que la clave</em>".
+        En resumen, para que una relación se encuentre en 3FN, ha de estar en 1FN y además todos sus atributos que no forman parte de ninguna llave candidata "<em>deben ser
+          información referida a la llave, la llave completa y nada más que la llave</em>".
       </p>
       <p class="post-contenido text-justify">
         Al descomponer la relación inicial (que no estaba en 2FN) en tres relaciones que están en 3FN, hemos evitado muchas de las anomalías anteriormente expuestas.
@@ -380,7 +386,7 @@
         La teoría de la normalización se basa en el concepto de dependencias, hasta el punto de que se le conoce como <em>teoría de las dependencias</em>.
       </p>
       <p class="post-contenido text-justify">
-        Las dependencias son propiedades inherentes al contenido semántico de los datos que se han de cumplir para cualquier extensión del esquema de relación y forman
+        Las dependencias son <b>propiedades inherentes</b> al contenido semántico de los datos que se han de cumplir para cualquier extensión del esquema de relación y forman
         parte de las restricciones de usuario del modelo relacional.
       </p>
       <p class="post-contenido text-justify">
@@ -429,15 +435,15 @@
         Una herramienta muy útil para describir las dependencias funcionales es el <b>grafo</b> o <b>diagrama de dependencias funcionales</b>, mediante el cual se
         representa un conjunto de atributos y las dependencias funcionales existentes entre ellos. En el grafo aparecen los nombres de los atributos unidos por flechas,
         las cuales indican las dependencias funcionales y parten del implicante hacia el implicado. Cuando el  implicante de una dependencia no es único atributo, es decir,
-        se trata de un <em>implicante compuesto</em>, los atributos que lo componen se encierran en un recuadro y la flecha parte de éste, no de cada atributo.
+        se trata de un <em><b>implicante compuesto</b></em>, los atributos que lo componen se encierran en un recuadro y la flecha parte de éste, no de cada atributo.
       </p>
       <p class="post-contenido text-justify">
-        La figura 5.2 es un ejemplo de cómo se visualizan las dependencias. Podemos observar que <code>Cod_libro</code> determina funcionalmente el <code>Título</code>
-        del libro y la Editorial. <code>Num_socio</code> determina <code>Nombre</code>, <code>Domicilio</code> y <code>Teléfono</code> del socio. Ambos atributos en
-        conjunto, <code>Cod_libro</code> y <code>Num_socio</code>, determinan <code>Fecha_prestamo</code> y <code>Fecha_dev</code>, lo que se indica haciendo que la
-        flecha parta del recuadro que los incluye.
+        La <a href="#Fig-5.2">Figura 5.2</a> es un ejemplo de cómo se visualizan las dependencias. Podemos observar que <code>Cod_libro</code> determina funcionalmente
+        el <code>Título</code> del libro y la <code>Editorial</code>. <code>Num_socio</code> determina <code>Nombre</code>, <code>Domicilio</code> y <code>Teléfono</code>
+        del socio. Ambos atributos en conjunto, <code>Cod_libro</code> y <code>Num_socio</code>, determinan <code>Fecha_prestamo</code> y <code>Fecha_dev</code>, lo que
+        se indica haciendo que la flecha parta del recuadro que los incluye.
       </p>
-      <div class="thumbnail">
+      <div class="thumbnail" id="Fig-5.2">
         <img src="img/normalizacion/diagramaDependenciasFuncionales.png" alt="Ejemplo de diagrama de dependencias funcionales" class="imgcenter img-rounded img-responsive">
         <div class="caption">
           <p class="caption text-center">Figura 5.2. Ejemplo de diagrama de dependencias funcionales</p>
@@ -480,7 +486,7 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        cuyas dependencias funcionales aparecen en la figura 5.2, la dependencia funcional:
+        cuyas dependencias funcionales aparecen en la <a href="#Fig-5.2">Figura 5.2</a>, la dependencia funcional:
       </p>
       <p class="codigo">
         <br>
@@ -502,7 +508,7 @@
       </p>
       <p class="codigo">
         <br>
-        Código_libro ↛ Fecha_préstamo
+        Código_libro ↛ Fecha_préstamo <br>
         Num_socio ↛ Fecha_préstamo
         <br><br>
       </p>
@@ -561,7 +567,7 @@
         Si además, <code>Z ↛ Y</code>, se dice que la dependencia transitiva es <b>estricta</b>.
       </p>
       <p class="post-contenido text-justify">
-        En la figura 5.3 se presenta un diagrama de dependencias funcionales en el que la dependencia
+        En la <a href="#Fig-5.3">Figura 5.3</a> se presenta un diagrama de dependencias funcionales en el que la dependencia
       </p>
       <p class="codigo">
         <br>
@@ -571,13 +577,13 @@
       <p class="post-contenido text-justify">
         es transitiva.
       </p>
-      <div class="thumbnail">
+      <div class="thumbnail" id="Fig-5.3">
         <img src="img/normalizacion/dependenciaFuncionalTransitiva.png" alt="Ejemplo de dependencia funcional transitiva" class="imgcenter img-rounded img-responsive">
         <div class="caption">
           <p class="caption text-center">Figura 5.3. Ejemplo de dependencia funcional transitiva</p>
         </div>
       </div>
-      <p class="post-contenido text-justify">
+      <!-- <p class="post-contenido text-justify">
         Si consideramos la relación:
       </p>
       <p class="codigo">
@@ -599,7 +605,7 @@
       <p class="post-contenido text-justify">
         ninguna de las dependencias <code>Cod_libro ➝ Editorial</code> y <code>Título ➝ Editorial</code> son transitivas, al ser los atributos <code>Cod_libro</code>
         y <code>Título</code> equivalentes (se implican mutuamente).
-      </p>
+      </p> -->
     </article>
 
     <article class="tema clearfix">
@@ -694,7 +700,7 @@
         </li>
         <li>
           <p class="text-justify">
-            Cada atributo no principal tiene dependencia funcional completa respecto de cada una de sus claves.
+            Cada atributo no principal tiene dependencia funcional completa respecto de cada una de sus llaves.
           </p>
         </li>
       </ul>
@@ -707,8 +713,8 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        y cuya clave está constituida por el descriptor <code>Cod_libro</code>, <code>Num_socio</code>, esta relación no se encuentra en 2FN al venir la editorial
-        determinada sólo por el código del libro y no por la clave completa.
+        y cuya llave está constituida por el descriptor <code>Cod_libro</code>, <code>Num_socio</code>, esta relación no se encuentra en 2FN al venir la editorial
+        determinada sólo por el código del libro y no por la llave completa.
       </p>
 
       <h3>Tercera Forma Normal 3FN</h3>
@@ -723,7 +729,7 @@
         </li>
         <li>
           <p class="text-justify">
-            No existe ningún atributo no principal que depende transitivamente de alguna de las claves de relación.
+            No existe ningún atributo no principal que depende transitivamente de alguna de las llaves de relación.
           </p>
         </li>
       </ul>
@@ -745,7 +751,7 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        y cuya clave es evidentemente <code>Num_socio</code>. Dicha relación no se encuentra en 3FN al depender <code>País</code> transitivamente de la clave a través
+        y cuya llave es evidentemente <code>Num_socio</code>. Dicha relación no se encuentra en 3FN al depender <code>País</code> transitivamente de la llave a través
         de <code>Ciudad</code>.
       </p>
       <p class="post-contenido text-justify">
@@ -769,7 +775,7 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        que se encuentra solo en 1FN (ya que su único atributo no principal <code>Editorial</code> no depende totalmente de la clave). Si quisiéramos llevar esta
+        que se encuentra solo en 1FN (ya que su único atributo no principal <code>Editorial</code> no depende totalmente de la llave). Si quisiéramos llevar esta
         relación a una forma normal más avanzada, sería preciso descomponer mediante proyecciones, obteniendo varias relaciones. Así, proyectando sobre
         <code>Cod_libro</code>, <code>Num_socio</code> y sobre <code>Cod_libro</code>, <code>Editorial</code> obtendremos:
       </p>
@@ -833,7 +839,7 @@
         Editorial ➝ País
         <br><br>
       </p>
-      <h3 class="text-center"><b>LIBRO</b></h3>
+      <h3 class="text-center" id="Tab-5.3"><b>LIBRO</b></h3>
       <table class="table table-hover table-bordered">
         <thead>
           <tr class="active">
@@ -1020,7 +1026,7 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        cuyas extensiones aparecen en <b>LIBRO</b> de la figura 5.3. La combinación de las relaciones <code><b>LIBRO1</b> * <b>EDITORIAL1</b></code> da lugar a
+        cuyas extensiones aparecen en <b>LIBRO</b> de la <a href="#Tab-5.3">Tabla 5.3</a>. La combinación de las relaciones <code><b>LIBRO1</b> * <b>EDITORIAL1</b></code> da lugar a
         la aparición de tuplas espurias.
       </p>
       <p class="post-contenido text-justify">
@@ -1037,7 +1043,7 @@
       </p>
       <p class="codigo">
         <br>
-        <b>LIBRO</b> * <b>EDITORIAL2</b>
+        LIBRO2 * EDITORIAL2
         <br><br>
       </p>
       <p class="post-contenido text-justify">
@@ -1045,7 +1051,7 @@
       </p>
       <p class="post-contenido text-justify">
         La condición necesaria y suficiente para que una descomposición se produzca sin pérdida de información es que <b>el atributo común de las dos relaciones
-        sea clave al menos en una de ellas</b>, condición que no se cumple en el primer caso.
+        sea llave en al menos una de ellas</b>, condición que no se cumple en el primer caso.
       </p>
 
       <h3>Descomposición sin pérdida de dependencias funcionales</h3>
@@ -1054,7 +1060,7 @@
       </p>
       <p class="post-contenido text-justify">
         Sea la misma relación <b>LIBRO</b> del ejemplo anterior que hemos descompuesto en <b>LIBRO2</b> y <b>EDITORIAL2</b>, donde no ha habido pérdida de información,
-        dado que el atributo común <code>Cod_libro</code> es clave en ambas relaciones.
+        dado que el atributo común <code>Cod_libro</code> es llave en ambas relaciones.
       </p>
       <p class="post-contenido text-justify">
         Sin embargo, en esta descomposición se ha perdido una dependencia funcional, ya que en la relación <b>LIBRO2</b> la única dependencia funcional es:
@@ -1092,7 +1098,7 @@
         <br><br>
       </p>
       <p class="post-contenido text-justify">
-        estas dos proyecciones serían independientes, ya que el atributo común es clave de una de las relaciones (la segunda), por lo que no hay pérdida de información.
+        estas dos proyecciones serían independientes, ya que el atributo común es llave de una de las relaciones (la segunda), por lo que no hay pérdida de información.
         Además tampoco hay pérdida de dependencias funcionales, dado que <b>LIBRO3</b> tiene la dependencia:
       </p>
       <p class="codigo">
