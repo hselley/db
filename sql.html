@@ -784,13 +784,14 @@
       <h2>Restricción PRIMARY KEY</h2>
       <p class="post-contenido text-justify">
         La restricción <code>PRIMARY KEY</code> identifica de forma única cada registro en la tabla de la base de datos. La llave primaria debe contener valores
-        únicos en la tabla. Una columna de llave primaria no puede contener valores nulos. La mayoría de las tablas deberán tener una llave primaria, y cada
-        tabla puede tener solo una llave primaria.
+        únicos en la tabla. Una columna de llave primaria no puede contener valores nulos, por ello se agrega el término <code>NOT NULL</code>. Se añade
+        <code>AUTO_INCREMENT</code> para que el atributo tome un valor incremental en 1 automáticamente cada vez que se añade un registro a la tabla. La mayoría
+        de las tablas deberán tener una llave primaria, y cada tabla puede tener solo una llave primaria.
       </p>
       <h3>Sintaxis MySQL</h3>
       <pre><code>
       CREATE TABLE Persons (
-        P_Id int NOT NULL,
+        P_Id int NOT NULL AUTO_INCREMENT,
         LastName varchar(255) NOT NULL,
         FirstName varchar(255),
         Address varchar(255),
