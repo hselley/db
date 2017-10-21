@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+  <link rel="stylesheet" href="css/tomorrow-night.css">
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">XAMPP</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
+              <li><a href="normalizacion.html">Teoría de Normalización</a></li>
+              <li><a href="sql.html">Lenguaje SQL</a></li>
+              <li><a href="html.html">HTML5</a></li>
+              <li><a href="php.html">PHP</a></li>
+              <li><a href="mysql.html">MySQL</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1mh27L3bGl8zVu5V390R73A03R5sr0Hc9n4K6mL4wLBc/edit?usp=sharing" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h2>Introducción</h2>
+    </article>
+    <article class="tema clearfix">
+      <p class="post-contenido text-justify">
+        Para el desarrollo de aplicaciones Web que se comuniquen con una base de datos, se requiere de un servidor que contenga
+        todos los servicios necesarios configurados y en ejecución. Dichos servicios para nuestro caso son <code>Apache</code>,
+        <code>MySQL</code> y <code>PHP</code>, donde son el servidor Web, Gestor de Bases de Datos y el lenguaje PHP respectivamente.
+      </p>
+      <p class="post-contenido text-justify">
+        Para nuestro caso, no tenemos un servidor a nuestra disposición por lo que optaremos por utilizar un software que permita
+        que nuestra computadora actúe como servidor y cliente a la vez. Este software se llama
+        <a href="https://www.apachefriends.org/es/index.html" target="_blank">XAMPP</a>.
+      </p>
+      <p class="post-contenido text-justify">
+        XAMPP es una distribución de Apache completamente gratuita y fácil de instalar que contiene MariaDB (un equivalente a MySQL),
+        PHP y Perl. El paquete de instalación de XAMPP ha sido diseñado para ser increíblemente fácil de instalar y usar.
+      </p>
+      <p class="post-contenido text-justify">
+        La utilización de XAMPP es recomendable solamente en computadoras con Windows, en el caso de GNU/Linux o macOS es mejor
+        utilizar los servidores que vienen instalados y/o disponibles de forma nativa en el sistema operativo.
+      </p>
+      <p class="post-contenido text-justify">
+        Para el caso del servidor LAMP en macOS, sugiero que sigan
+        <a href="https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-macos-sierra/" target="_blank">esta guía</a>.
+        En el caso de alguna distribución GNU/Linux, deberán referirse a la documentación de la distribución que estén utilizando.
+      </p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>XAMPP en Windows</h2>
+      <p class="post-contenido text-justify">
+        En primer lugar, deben ingresar a la <a href="https://www.apachefriends.org/es/index.html" target="_blank">página del desarrollador
+        de XAMPP</a> y descargar la última versión del programa. Una vez que lo haya descargado, instale el programa.
+      </p>
+      <p class="post-contenido text-justify">
+        Una vez instalado, ejecute la aplicación y se abrirá el Panel de Control de la misma. Se debe ver similar a esta:
+      </p>
+      <div class="thumbnail">
+        <img src="img/xampp/panelControlXAMPP.png" alt="Panel de Control XAMPP" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 1. Panel de Control XAMPP</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Este panel de configuración permite iniciar, detener, configurar y ver registros de los servicios que ofrece XAMPP.
+        En este caso iniciaremos los servicios Apache y MySQL presionando el botón <code>Start</code> en ambos servicios.
+        El panel de control informará si los servicios fueron iniciados correctamente y los puertos en los que se encuentran
+        habilitados. La salida del panel deberá ser similar a esta:
+      </p>
+      <div class="thumbnail">
+        <img src="img/xampp/serviciosIniciados.png" alt="Inicio de Servicios XAMPP" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 2. Inicio de Servicios XAMPP</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Si los servicios no fueron iniciados correctamente, debe haber algún problema en la configuración de Windows o bien en
+        la instalación de XAMPP. Para resolver alguno de estos problemas, por favor consulte la documentación en la página de XAMPP
+        para mayor información y posibles soluciones a su problema.
+      </p>
+      <p class="post-contenido text-justify">
+        Los botones <code>Admin</code>, <code>Config</code> y <code>Logs</code> nos permiten adminstrar, configurar y ver las
+        bitácoras de algún servicio en XAMPP.
+      </p>
+      <p class="post-contenido text-justify">
+        Si por alguna razón desearamos detener los servicios, bastaría con presionar el botón <code>Stop</code> del servicio
+        en cuestión.
+      </p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>Servidor Apache</h2>
+      <p class="post-contenido text-justify">
+        Para saber si nuestro servidor Web se encuentra funcionando correctamente, basta con ingresar en el navegador
+        la dirección web <a href="http://localhost" target="_blank">http://localhost</a>, el resultado debería ser algo similar a esto:
+      </p>
+      <div class="thumbnail" id="Fig3">
+        <img src="img/xampp/localhost.png" alt="Pantalla de Bienvenida de Apache" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3. Pantalla de Bienvenida de Apache</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Si ve una pantalla similar a la anterior, significa que el servidor Apache está funcionando correctamente.
+      </p>
+      <p class="post-contenido text-justify">
+        El servidor Web Apache tiene una carpeta donde busca los archivos HTML de la página que sirve a las solicitudes de los clientes,
+        esta carpeta se llama raíz. Dicha carpeta se encuentra en la ubicación donde se instaló XAMPP en su computadora, por defecto es
+        <code>C:\xampp</code>.
+      </p>
+      <p class="post-contenido text-justify">
+        Dentro de la carpeta de instalación de XAMPP se encuentra el directorio <code>htdocs</code> que es el directorio raíz del servidor,
+        es decir, el servidor Apache buscará los archivos de la página web en su interior.
+      </p>
+      <div class="thumbnail" id="Fig4">
+        <img src="img/xampp/directorioRaiz.png" alt="Directorio Raiz de Apache" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 4. Directorio Raiz de Apache</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Observe que en este directorio se encuentran los archivos de la página de bienvenida que muestran en la <a href="#Fig3">Figura 3</a>.
+        El archivo que se muestra en esa bienvenida es <code>index.php</code>.
+      </p>
+      <p class="post-contenido text-justify">
+        Dentro de este directorio raíz haga una carpeta para el desarrollo de sus archivos, en mi caso fue una llamada <code>usuario</code>.
+        Observe en la <a href="#Fig4">Figura 4</a> que dicha carpeta ya ha sido creada.
+      </p>
+      <p class="post-contenido text-justify">
+        Haga un archivo HTML de prueba, el código puede ser el siguiente.
+      </p>
+      <pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Mi primera página&lt;/title&gt;
+      &lt;meta charset="UTF-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;p&gt;Hola Mundo!.&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Guarde el archivo como <code>ejemplo.html</code> dentro de la carpeta que creó, en mi caso <code>D:\xampp\usuario\ejemplo.html</code>.
+      </p>
+      <div class="thumbnail" id="Fig5">
+        <img src="img/xampp/ejemploArchivoHTML.png" alt="Archivo Prueba HTML" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 5. Archivo Prueba HTML</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Para abrir la página a través del servidor Web Apache, abra su navegador Web y escriba la dirección
+        <a href="http://localhost/usuario/ejemplo.html" target="_blank">http://localhost/usuario/ejemplo.html</a>. Si todo es correcto,
+        debería ver algo similar a esto:
+      </p>
+      <div class="thumbnail" id="Fig6">
+        <img src="img/xampp/ejemploHTML.png" alt="Prueba del archivo HTML a través del Servidor Web Apache" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 6. Prueba del archivo HTML a través del Servidor Web Apache</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Adicionalmente, puede ingresar la dirección <a href="http://localhost/usuario" target="_blank">http://localhost/usuario</a> en su
+        navegador y verá un listado de los archivos contenidos en el directorio que creó.
+      </p>
+      <div class="thumbnail" id="Fig7">
+        <img src="img/xampp/directorioRaiz2.png" alt="Directorio raíz a través del Servidor Web Apache" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 7. Directorio raíz a través del Servidor Web Apache</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Ahora podrá guardar todos los archivos <code>HTML</code> y/o <code>PHP</code> en ese directorio para sus desarrollos. Considere que
+        también puede crear tantas carptetas como deseé dentro del directorio raíz y acceder a ellas tal como lo hicimos con el ejemplo
+        llamado <code>usuario</code>.
+      </p>
+      <p class="post-contenido text-justify"></p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>PHP</h2>
+      <p class="post-contenido text-justify">
+        Para los archivos PHP basta con escribirlos y guardarlos dentro de la carpeta raíz de Apache, recuerde que PHP es un lenguaje preprocesado, es
+        decir que corre del lado del servidor por lo que el servidor Apache deberá ejecutarlo y enviar los resultados al cliente (el navegador).
+      </p>
+      <p class="post-contenido text-justify">
+        La primera prueba se realizará con una función de diagnóstico de PHP, para ello haga un archivo nuevo con el siguiente código:
+      </p>
+      <pre><code>
+    &lt;?php
+      phpinfo();
+    ?&gt;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Guarde el archivo con nombre <code>info.php</code> dentro de la carpeta que creó en el directorio raíz, en mi caso la carpeta <code>usuario</code>.
+        Ahora abra el archivo desde el navegador ingresando la dirección correspondiente, en mi caso es
+        <a href="http://localhost/usuario/info.php" target="_blank">http://localhost/usuario/info.php</a>. Si todo funciona correctamente deberìa ver el
+        resultado de la función diagnóstico, similar a esto:
+      </p>
+      <div class="thumbnail" id="Fig8">
+        <img src="img/xampp/phpinfo.png" alt="Función de diagnóstico de PHP" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 8. Función de diagnóstico de PHP</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Ahora hagamos un formulario en <code>HTML</code> que permita interactuar con el usuario, de manera que lo que el usuario ingrese a través de un campo de texto
+        sea impreso en la misma página utilizando <code>PHP</code>. Es decir, <code>PHP</code> tomará la información recaudada por un elemento <code>HTML</code> y
+        permitirá imprimir esa información en otro elemento <code>HTML</code>.
+      </p>
+      <p class="post-contenido text-justify">
+        El código es el siguiente:
+      </p>
+      <pre style="font-size: 1.1em;"><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Formulario HTML con PHP&lt;/title&gt;
+    &lt;?php
+      if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["nombre"];
+      }
+      else $name ="";
+    ?&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;"&gt;
+      &lt;input type="text" name="nombre" placeholder="Introduzca su nombre"&gt; &lt;br&gt;
+      &lt;input type="submit" name="" value="Enviar"&gt;
+    &lt;/form&gt;
+    &lt;p&gt;Su nombre es: &lt;?php echo $name; ?&gt;&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="post-contenido text-justify">
+        Guarde este archivo con cualquier nombre pero deberá tener extensión <code>.php</code>, en mi ejemplo el nombre es <code>test.php</code>.
+        Ahora abra el archivo en el navegador, mediante la dirección <a href="http://localhost/usuario/test.php" target="_blank">http://localhost/usuario/test.php</a>,
+        naturalmente use el nombre del archivo que usted haya decidido utilizar.
+      </p>
+      <p class="post-contenido text-justify">
+        Si todo funciona correctamente debería ver algo similar a esto:
+      </p>
+      <div class="thumbnail">
+        <img src="img/xampp/formularioPHP.png" alt="Formulario HTML dinámico a través de PHP" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 9. Formulario HTML dinámico a través de PHP</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Si todo funciona correctamente, escriba su nombre en el formulario y luego de hacer click en <code>Enviar</code>, deberá ver su nombre en la parte inferior.
+      </p>
+      <p class="post-contenido text-justify">
+        Utilice este código como base para los ejercicios de la <a href="src/practica8.pdf" target="_blank">Práctica 8</a>.
+      </p>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+    </article>
+
+    <article class="tema clearfix">
+      <h2>MySQL</h2>
+      <p class="post-contenido text-justify">
+        El botón <code>Shell</code> que se encuentra a la derecha en el panel de control de XAMPP, permitirá abrir una consola en
+        la que podemos entrar al gestor de la base de datos MariaDB. Abra la consola y escriba <code>mysql</code> para ingresar,
+        debería ver algo similar a esto:
+      </p>
+      <div class="thumbnail">
+        <img src="img/xampp/consolaMySQL.png" alt="Consola de MySQL" class="imgcenter img-rounded img-responsive">
+        <div class="caption">
+          <p class="caption text-center">Figura 3. Consola de MySQL</p>
+        </div>
+      </div>
+      <p class="post-contenido text-justify">
+        Ya en esta consola, podrá comunicarse directamente con el gestor a través del lenguaje SQL. Podrá realizar consultas, inserciones
+        y demás cosas que vimos en la parte del curso de SQL.
+      </p>
+    </article>
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
