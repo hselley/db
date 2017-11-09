@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+  <link rel="stylesheet" href="css/tomorrow-night.css">
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Bootstrap</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
+              <li><a href="normalizacion.html">Teoría de Normalización</a></li>
+              <li><a href="sql.html">Lenguaje SQL</a></li>
+              <li><a href="html.html">HTML5</a></li>
+              <li><a href="php.html">PHP</a></li>
+              <li><a href="mysql.html">MySQL</a></li>
+              <li><a href="bootstrap.html">Bootstrap</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="proyectoFinal.html">Proyecto Final</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1mh27L3bGl8zVu5V390R73A03R5sr0Hc9n4K6mL4wLBc/edit?usp=sharing" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema">
+      <h2>Introducción</h2>
+      <p class="text-justify">
+        <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> es el framework de HTML, CSS y JavaScript más popular para desarrollar sitios web responsivos y móviles.
+      </p>
+      <p class="text-justify">
+        Una página se dice responsiva si se ajusta automáticamente al dispositivo, ya sea un celular, una tableta o una computadora.
+      </p>
+      <p class="text-justify">
+        Características de Bootstrap:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">Hace que el desarrollo web sea más rápido y fácil. </p>
+        </li>
+        <li>
+          <p class="text-justify">Esta hecho para todo tipo de personas, dispositivos de cualquier forma y proyectos de cualquier tamaño.</p>
+        </li>
+        <li>
+          <p class="text-justify">Escala fácil y eficientemente un sitio web y aplicaciones con un código base simple, desde teléfonos, tabletas y computadoras con sentencias CSS.</p>
+        </li>
+        <li>
+          <p class="text-justify">En Bootstrap 3 existen estilos para dispositivos móviles que son parte del núcleo del framework.</p>
+        </li>
+        <li>
+          <p class="text-justify">Cuenta con una extensa documentación para elementos comunes HTML, docenas de elementos HTML personalizados, componentes CSS y plugins jQuery.</p>
+        </li>
+        <li>
+          <p class="text-justify">Es de código abierto. Está hospedado, desarrollado y mantenido en GitHub.</p>
+        </li>
+        <li>
+          <p class="text-justify">Es compatible con todos los navegadores modernos (Chrome, Firefox, Opera, Internet Explorer, Edge y Safari)</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        Existen muchos sitios web desarrollados con Bootstrap, algunos ejemplos de sitios reales se pueden ver <a href="http://expo.getbootstrap.com/" target="_blank">aquí</a>.
+      </p>
+      <p class="text-justify">
+        Bootstrap cuenta con muchos ejemplos y plantillas para comenzar a desarrollar un sitio web de forma sencilla. En el sitio <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a>
+        puede encontrar algunas plantillas básicas para comenzar a diseñar su sitio web.
+      </p>
+    </article>
+
+    <article class="tema">
+      <h2>Utilizando Bootstrap</h2>
+
+      <h3>Descarga</h3>
+      <p class="text-justify">
+        Si desea descargar directamente y utilizar Bootstrap, vaya a <a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a> y siga las instrucciones.
+      </p>
+
+      <h3>CDN (Content Delivery Network)</h3>
+      <p class="text-justify">
+        Si no desea descargar y hospedar Bootstrap usted mismo, puede ser incluido como un CDN. MaxCDN provee soporte CDN para CSS y JavaScript de Bootstrap. Puede incluirse también jQuery:
+      </p>
+      <pre><code>
+  &lt;!-- Latest compiled and minified CSS --&gt;
+  &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+
+  &lt;!-- jQuery library --&gt;
+  &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+
+  &lt;!-- Latest compiled JavaScript --&gt;
+  &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+      </code></pre>
+
+      <h3>Ventaja de utilizar Bootstrap desde un CDN:</h3>
+      <p class="text-justify">
+        Muchos usuarios habrán descargado Bootstrap desde MaxCDN al haber navegado en alguna otra página que lo utilice. Por esta razón, será cargado desde el caché cuando
+        visiten su sitio, lo que significa un tiempo menor de carga. También, la mayoría de los CDN se aseguran que  una vez que un usuario les solicita un archivo, le será
+        entregado a través del servidor más cercano, lo que significa un tiempo menor de carga.
+      </p>
+      <p class="text-justify">
+        Siempre puede conseguir la más reciente versión de Bootstrap desde el <a href="http://getbootstrap.com/getting-started/#download" target="_blank">sitio web oficial</a>.
+      </p>
+    </article>
+
+    <article class="tema">
+      <h2>Creando la primer página con Bootstrap</h2>
+
+      <h3>Añadir el doctype HTML5</h3>
+      <p class="text-justify">
+        Bootstrap utiliza elementos HTML y propiedades CSS que requieren HTML5.
+      </p>
+
+      <h3>Bootstrap 3 es responsivo</h3>
+      <p class="text-justify">
+        Bootstrap 3 está diseñado para ser responsivo en dispositivos móviles. Los estilos responsivos son parte del núcleo central de bootstrap. Para asegurarse del correcto
+        render de la página y el zoom táctil, añada la etiqueta <code>&lt;meta&gt;</code> dentro de <code>&lt;head&gt;</code>.
+      </p>
+      <pre><code>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+      </code></pre>
+      <p class="text-justify">
+        El atributo <code>width=device-width</code> configura el tamaño de la página de acuerdo al tamaño de la pantalla del dispositivo.
+      </p>
+      <p class="text-justify">
+        El atributo <code>initial-scale=1</code> configura el nivel de zoom inicial en la página la primera vez que es cargada.
+      </p>
+
+      <h3>Contenedores</h3>
+      <p class="text-justify">
+        Bootstrap requiere de elementos contenedores que envuelven el contenido del sitio.
+      </p>
+      <p class="text-justify">
+        Existen dos tipos de clases de contenedores:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">La clase <code>.container</code> ofrece un contendor responsivo y ancho fijo.</p>
+        </li>
+        <li>
+          <p class="text-justify">La clase <code>.container-fluid</code> ofrece un contenedor de ancho completo, que abarca el ancho completo del <code>viewport</code>.</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        Los contenedores no se pueden anidar, es decir, poner un contenedor dentro de otro.
+      </p>
+      <p class="text-justify">
+        <b>Ejemplo 1</b>. Página básica con contenedor de ancho responsivo y fijo
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+      &lt;p&gt;This is some text.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="text-justify">
+        <b>Ejemplo 2</b>. Paǵina básica con contenedor de ancho completo
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Bootstrap Example&lt;/title&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+      &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+      &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div class="container-fluid"&gt;
+        &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+        &lt;p&gt;This part is inside a .container class.&lt;/p&gt;
+        &lt;p&gt;The .container class provides a responsive fixed width container.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+    </article>
+
+    <article class="tema">
+      <h2>Tablas</h2>
+      <p class="text-justify">
+        Una tabla básica en bootstrap tiene un relleno ligero y solamente divisores horizontales. La clase <code>.table</code> añade el estilo básico a la tabla.
+      </p>
+      <p class="text-justify">
+        Estos son las clases de estilo que existen en bootstrap:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify"><code>.table</code>: Estilo básico de tabla.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.table-striped</code>: Estilo tipo zebra.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.table-bordered</code>: Añade bordes a todos los costados de la tabla y celdas.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.table-hover</code>: Habilita hover en los renglones de la tabla.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.table-condensed</code>: Hace la tabla más compacta al cortar a la mitad el espaciado entre celdas.</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        Considere que para agregar clases a una tabla, en primer lugar debe agregar la clase base <code>table</code>, seguido de la clase que desea añadir. Debe separarlas con
+        un espacio y estar dentro del mismo par de comillas dobles.
+      </p>
+      <p class="text-justify">
+        <b>Ejemplo 3</b>. Estilo básico de tablas. Pruebe los diferentes estilos.
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h2&gt;Basic Table&lt;/h2&gt;
+    &lt;p&gt;The .table class adds basic styling (light padding and only horizontal dividers) to a table:&lt;/p&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Firstname&lt;/th&gt;
+          &lt;th&gt;Lastname&lt;/th&gt;
+          &lt;th&gt;Email&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;John&lt;/td&gt;
+          &lt;td&gt;Doe&lt;/td&gt;
+          &lt;td&gt;john@example.com&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Mary&lt;/td&gt;
+          &lt;td&gt;Moe&lt;/td&gt;
+          &lt;td&gt;mary@example.com&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;July&lt;/td&gt;
+          &lt;td&gt;Dooley&lt;/td&gt;
+          &lt;td&gt;july@example.com&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="text-justify">
+        Las clases contextuales pueden ser utilizadas para darle color a los renglones y celdas de una tabla.
+      </p>
+      <p class="text-justify">
+        Las clases contextuales que pueden usar son:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify"><code>.active</code>: Aplica un color al renglón o celda.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.success</code>: Indica una acción positiva satisfactoria.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.info</code>: Indica un cambio o acción informativo neutral.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.warning</code>: Indica una advertencia que requiera su atención.</p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.danger</code>: Indica una acción peligrosa o potencialmente negativa.</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        <b>Ejemplo 4</b>. Estilo tipo zebra
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Contextual Classes&lt;/h2&gt;
+      &lt;p&gt;Contextual classes can be used to color table rows or table cells.&lt;/p&gt;
+      &lt;p&gt;The classes that can be used are: .active, .success, .info, .warning, and .danger.&lt;/p&gt;
+      &lt;table class="table"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Firstname&lt;/th&gt;
+            &lt;th&gt;Lastname&lt;/th&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr class="success"&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;Doe&lt;/td&gt;
+            &lt;td&gt;john@example.com&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="danger"&gt;
+            &lt;td&gt;Mary&lt;/td&gt;
+            &lt;td&gt;Moe&lt;/td&gt;
+            &lt;td&gt;mary@example.com&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="info"&gt;
+            &lt;td&gt;July&lt;/td&gt;
+            &lt;td&gt;Dooley&lt;/td&gt;
+            &lt;td&gt;july@example.com&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+    </article>
+
+    <article class="tema">
+      <h2>Jumbotron y Encabezado de Página</h2>
+      <p class="text-justify">
+        Los jumbotrones son grandes cajas que sirven para llamar la atención de algún tipo de contenido especial o relevante en la página. Un jumbotron
+        se despliega como un rectángulo gris con las esquinas redondeadas.
+      </p>
+      <p class="text-justify">
+        <b>Ejemplo 5</b>. Jumbotron
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="jumbotron"&gt;
+        &lt;h1&gt;Bootstrap Tutorial&lt;/h1&gt;
+        &lt;p&gt;Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive,
+          mobile-first projects on the web.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;p&gt;This is some text.&lt;/p&gt;
+      &lt;p&gt;This is another text.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="text-justify">
+        Si el jumbotron se utiliza fuera de un contenedor, se extenderá en todo el ancho de la página.
+      </p>
+      <p class="text-justify">
+        Un encabezado sirve para dividir secciones. La clase añade espacio extra alrededor del elemento.
+      </p>
+      <p class="text-justify">
+        <b>Ejemplo 6</b>. Encabezado de Página
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="page-header"&gt;
+        &lt;h1&gt;Example Page Header&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;p&gt;This is some text.&lt;/p&gt;
+      &lt;p&gt;This is another text.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+    </article>
+
+    <article class="tema">
+      <h2>Wells</h2>
+      <p class="text-justify">
+        La clase well, o pozo por su traducción literal al español, crea un rectángulo redondeado alrededor del elemento.
+      </p>
+      <p class="text-justify">
+        <b>Ejemplo 7</b>. Wells
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Case&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Well Size&lt;/h2&gt;
+      &lt;div class="well well-sm"&gt;Small Well&lt;/div&gt;
+      &lt;div class="well"&gt;Normal Well&lt;/div&gt;
+      &lt;div class="well well-lg"&gt;Large Well&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+    </article>
+
+    <article class="tema">
+      <h2>Botones</h2>
+      <p class="text-justify">
+        Bootstrap proporciona 7 estilos de botones
+      </p>
+      <div class="container">
+        <h2>Button Styles</h2>
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+      <p class="text-justify">
+        Para poder utilizar estos estilos, Bootstrap tiene las siguientes clases:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify"><code>.btn-default</code></p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.btn-primary</code></p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.btn-success</code></p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.btn-info</code></p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.btn-warning</code></p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.btn-danger</code></p>
+        </li>
+        <li>
+          <p class="text-justify"><code>.btn-link</code></p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        <b>Ejemplo 8</b>. Botones en Bootstrap
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Button Styles&lt;/h2&gt;
+      &lt;button type="button" class="btn btn-default"&gt;Default&lt;/button&gt;
+      &lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+      &lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
+      &lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
+      &lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+      &lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
+      &lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="text-justify">
+        Las clases botón pueden ser utilizadas en las etiquetas <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, o <code>&lt;input&gt;</code>:
+      </p>
+    </article>
+
+    <article class="tema">
+      <h2>Formularios</h2>
+      <p class="text-justify">
+        Los formularios con bootstrap automáticamente reciben estilo global por defecto. Todos los elementos de texto <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>,
+        and <code>&lt;select&gt;</code> con la clase <code>.form-control</code> tienen el 100% del ancho de la página.
+      </p>
+      <p class="text-justify">
+        Bootstrap proporciona tres tipos de estilo para los formularios:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">Vertical</p>
+        </li>
+        <li>
+          <p class="text-justify">Horizontal</p>
+        </li>
+        <li>
+          <p class="text-justify">Alineados</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        Las reglas estándar para estos tres estilos son las siguientes:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">Siempre utilizar <code>&lt;form role="form"&gt;</code></p>
+        </li>
+        <li>
+          <p class="text-justify">Encerrar las etiquetas y controles del formulario con <code>&lt;div class="form-group"&gt;</code></p>
+        </li>
+        <li>
+          <p class="text-justify">Añadir la clase <code>.form-control</code> a todos los elementos <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, y <code>&lt;select&gt;</code>.</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        Para los formularios alienados, todos los elementos están pegados a la izquierda, y las etiquetas están junto a cada campo. Una regla para los formularios alineados es:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">Añadir la clase <code>.form-inline</code> al elemento <code>&lt;form&gt;</code>.</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        Los formularios horizontales se colocan aparte de los demás formularios. Algunas reglas para utlizarlos son:
+      </p>
+      <ul>
+        <li>
+          <p class="text-justify">Añadir la clase <code>.form-horizontal</code> al elemento <code>&lt;form&gt;</code>.</p>
+        </li>
+        <li>
+          <p class="text-justify">Añadir la clase <code>.control-label</code> a todos los elementos <code>&lt;label&gt;</code>.</p>
+        </li>
+      </ul>
+      <p class="text-justify">
+        <b>Ejemplo 9</b>. Formularios en Bootstrap.
+      </p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h2&gt;Vertical (basic) form&lt;/h2&gt;
+    &lt;form role="form"&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" class="form-control" id="email" placeholder="Enter email"&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label for="pwd"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" class="form-control" id="pwd" placeholder="Enter password"&gt;
+      &lt;/div&gt;
+      &lt;div class="checkbox"&gt;
+        &lt;label&gt;&lt;input type="checkbox"&gt; Remember me&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  &lt;div class="container"&gt;
+    &lt;h2&gt;Inline form&lt;/h2&gt;
+    &lt;p&gt;Make the viewport larger than 768px wide to see that all of the form elements are inline,
+    left aligned, and the labels are alongside.&lt;/p&gt;
+    &lt;form class="form-inline" role="form"&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" class="form-control" id="email" placeholder="Enter email"&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label for="pwd"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" class="form-control" id="pwd" placeholder="Enter password"&gt;
+      &lt;/div&gt;
+      &lt;div class="checkbox"&gt;
+        &lt;label&gt;&lt;input type="checkbox"&gt; Remember me&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  &lt;div class="container"&gt;
+    &lt;h2&gt;Horizontal form&lt;/h2&gt;
+    &lt;form class="form-horizontal" role="form"&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label class="control-label col-sm-2" for="email"&gt;Email:&lt;/label&gt;
+        &lt;div class="col-sm-10"&gt;
+          &lt;input type="email" class="form-control" id="email" placeholder="Enter email"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label class="control-label col-sm-2" for="pwd"&gt;Password:&lt;/label&gt;
+        &lt;div class="col-sm-10"&gt;
+          &lt;input type="password" class="form-control" id="pwd" placeholder="Enter password"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;div class="col-sm-offset-2 col-sm-10"&gt;
+          &lt;div class="checkbox"&gt;
+            &lt;label&gt;&lt;input type="checkbox"&gt; Remember me&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;div class="col-sm-offset-2 col-sm-10"&gt;
+          &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+    </article>
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

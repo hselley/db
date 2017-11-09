@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Bases de Datos</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/iconos.css">
+</head>
+<body>
+
+  <!-- Aqui va la cabecera -->
+    <div class="container-fluid cabecera" style="height:200px;">
+      <div class="container">
+        <h1 class="titulo-principal">Proyecto Final</h1>
+        <p></p>
+      </div>
+    </div>
+
+  <!-- Barra superior de navagación -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header" id="logo">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+          <span class="sr-only">Desplegar / Ocultar Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">BD</a>
+      </div>
+      <!-- Inicia Menú-->
+      <div class="collapse navbar-collapse" id="navegacion-fm">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Contenido <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="introduccion.html">Introducción</a></li>
+              <li><a href="modeloER.html">Modelo Entidad/Relación</a></li>
+              <li><a href="modeloRelacional.html">Modelo Relacional: Estática</a></li>
+              <li><a href="dinamicaModeloRelacional.html">Dinámica del Modelo Relacional</a></li>
+              <li><a href="normalizacion.html">Teoría de Normalización</a></li>
+              <li><a href="sql.html">Lenguaje SQL</a></li>
+              <li><a href="html.html">HTML5</a></li>
+              <li><a href="php.html">PHP</a></li>
+              <li><a href="mysql.html">MySQL</a></li>
+              <li><a href="bootstrap.html">Bootstrap</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+              Más <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="practicas.html">Prácticas</a></li>
+              <li><a href="proyectoFinal.html">Proyecto Final</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1mh27L3bGl8zVu5V390R73A03R5sr0Hc9n4K6mL4wLBc/edit?usp=sharing" target="_blank">Lista de Calificaciones</a></li>
+              <li><a href="links.html">Enlaces de interés</a></li>
+              <li><a href="about.html">Acerca De ...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main container">
+
+    <article class="tema clearfix">
+      <h3>Objetivo General</h3>
+      <p class="post-contenido text-justify">
+        Crear un sistema de Bases de Datos Relacionales Normalizado que permita que el usuario o administrador pueda tener acceso y realizar consultas,
+        crear nuevos registros y eliminar información a través de un sistema Web.
+      </p>
+
+      <h3>Objetivos Particulares</h3>
+      <ul>
+        <li>
+          <p class="text-justify">Diseñar un sistema de base de datos relacional en la tercera forma normal.</p>
+        </li>
+        <li>
+          <p class="text-justify">Implementar el diseño de la base de datos en el gestor MySQL/MariaDB.</p>
+        </li>
+        <li>
+          <p class="text-justify">Crear un sistema web HTML que permita la consulta, inserción, modificación y búsqueda de información.</p>
+        </li>
+        <li>
+          <p class="text-justify">Utilizar CSS para el manejo de estilo del sistema web y Bootstrap para que el sitio sea responsivo.</p>
+        </li>
+        <li>
+          <p class="text-justify">Utilizar PHP para el manejo de la interacción del sistema web con la base de datos.</p>
+        </li>
+      </ul>
+
+      <h3>Requerimientos</h3>
+      <ol>
+        <li>
+          <p class="text-justify">
+            Se deberá elegir una temática particular para la información que se maneja en el sistema.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">Diseñar la base de datos relacional que contenga al menos 3 relaciones y 8 tablas en total.</p>
+          <ol type="a">
+            <li>
+              <p class="text-justify">Realizar la normalización a la tercera forma normal (3FN).</p>
+              <ol>
+                <li>
+                  <p class="text-justify">Para realizar la normalización deben definir con claridad sus relaciones, las entidades en cada una de ellas
+                    y las dependencias funcionales.</p>
+                </li>
+                <li>
+                  <p class="text-justify">Mientras más dependencias funcionales encuentren, menor redundancia habrá en la base de datos.</p>
+                </li>
+                <li>
+                  <p class="text-justify">El algoritmo de normalización entrega las tablas ya normalizadas de la relación en cuestión.</p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p class="text-justify">Realizar los diagramas de la base de datos relacional.</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p class="text-justify">
+            Implementar la base de datos en el gestor de base de datos MySQL creando las entidades, tablas y llaves correspondientes.
+          </p>
+          <ol type="a">
+            <li>
+              <p class="text-justify">Llenar la base de datos con algunos datos de prueba, de manera que se puedan realizar búsquedas posteriormente.</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p class="text-justify">Crear un sistema web con HTML5 + CSS3 + Bootstrap</p>
+          <ol>
+            <li>
+              <p class="text-justify">Utilizar elementos de HTML5.</p>
+            </li>
+            <li>
+              <p class="text-justify">Hacer un estilo básico del sistema a través de CSS.</p>
+            </li>
+            <li>
+              <p class="text-justify">Utilizar Bootstrap para que el sitio sea responsivo (en particular en tablas, formularios e imágenes).</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p class="text-justify">Utilizar PHP para la interacción del sistema web con la base de datos.</p>
+          <ol>
+            <li>
+              <p class="text-justify">
+                El sistema debe permitir inserción de registros, debe permitir seleccionar la entidad y tabla en la que se
+                hará dicha inserción. La inserción se debe hacer a través de un formulario de HTML.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                La consulta de información debe hacerse solicitando al usuario la entidad y tabla que desea mostrarse. Luego mostrar el contenido
+                de la tabla seleccionada en una tabla de HTML.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                La eliminación de la información se deberá hacer a través de un formulario de HTML, siendo necesario solamente el valor de la llave
+                primaria de la tupla a borrar.
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p class="text-justify">
+            Para fines del proyecto usar el programa XAMPP o alguna otra alternativa.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Seguir la estructura de archivos siguientes en el servidor, creando las carpetas y el archivo html correspondiente:
+          </p>
+          <img src="img/estructuraArchivos.png" alt="Estructura de Archivos" class="imgcenter img-rounded img-responsive">
+          <ol type="a">
+            <li>
+              <p class="text-justify"><b>css: </b>contiene todos los archivos de estilo CSS</p>
+            </li>
+            <li>
+              <p class="text-justify"><b>img: </b>contiene todos los archivos de imágenes en el sitio (si utilizan alguna) </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                <b>index.html</b> o <b>index.php: </b> el archivo inicial del sistema. Este archivo se encuentra en el llamado "directorio raíz del sistema",
+                en esta ubucación deberá colocar todos los archivos <code>html</code> y/o <code>php</code> que escriba para su sistema.
+              </p>
+            </li>
+          </ol>
+        </li>
+      </ol>
+
+      <h3>Entrega</h3>
+      <p class="post-contenido text-justify">
+        La entrega del proyecto consiste en un documento que contenga lo siguiente:
+      </p>
+      <ol>
+        <li>
+          <p class="text-justify"><b>Introducción: </b>Una breve descripción de lo que es y hace el sistema</p>
+        </li>
+        <li>
+          <p class="text-justify"><b>Diseño: </b>Los diagramas del diseño de la base de datos relacional. Esta es la parte central del proyecto,
+            ya que es uno de los principales objetivos de la materia.</p>
+        </li>
+        <li>
+          <p class="text-justify"><b>Normalización: </b>El procedimiento de normalización de la base de datos a 3FN.</p>
+        </li>
+        <li>
+          <p class="text-justify"><b>Conclusiones: </b>Unas breves palabras acerca de lo que aprendieron al realizar el proyecto final y todo el curso en sí.</p>
+        </li>
+      </ol>
+      <p class="post-contenido text-justify">
+        El código me lo entregarán por correo en un archivo comprimido.
+      </p>
+
+      <p class="post-contenido text-justify">
+        La fecha de entrega será el 30 de Novimembre del presente.
+      </p>
+      <ol>
+        <li>
+          <p class="text-justify">El Jueves 9 de Noviembre será nuestra última clase.</p>
+        </li>
+        <li>
+          <p class="text-justify">
+            Las clases del Jueves 16 y 23 de Novimembre serán sesiones opcionales de trabajo, avances y dudas sobre el desarrollo del proyecto final.
+            Atenderé personalmente a cada de los que decidan asistir.
+          </p>
+        </li>
+        <li>
+          <p class="text-justify">
+            El Jueves 9 de Noviembre a partir de las 18:00 hrs. estaré recibiendo sus entregas de proyecto. En esta sesión me entregarán su documento
+            de trabajo, y me demostrarán su proyecto.
+          </p>
+        </li>
+      </ol>
+
+      <h3>Evaluación</h3>
+      <table class="table table-responsive table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Rubro</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Normalización</td>
+            <td>Diagramas de las relaciones, entidades y dependencias funcionales</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>Diseño</td>
+            <td>Los diagramas del diseño: Grafo relacional y llaves ajenas.</td>
+            <td>40%</td>
+          </tr>
+          <tr>
+            <td>Implementación</td>
+            <td>La parte operativa. La implementación del diseño de la base de datos en MySQL/MariaDB y el sistema Web
+              (HTML + CSS + Bootstrap + PHP) que permite manejarlo.</td>
+            <td>40%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="post-contenido text-justify"></p>
+      <p class="post-contenido text-justify"></p>
+    </article>
+
+  </section>
+
+  <!-- Scripts que se necesitan para el sitio -->
+  <script src="../js/jquery.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
