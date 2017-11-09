@@ -73,8 +73,8 @@
     <article class="tema clearfix">
       <h3>Objetivo General</h3>
       <p class="post-contenido text-justify">
-        Crear un sistema de Bases de Datos Relacionales Normalizado que permita que el usuario o administrador pueda tener acceso y realizar consultas,
-        crear nuevos registros y eliminar información a través de un sistema Web.
+        Crear un sistema de Bases de Datos Relacionales Normalizado que permita que el usuario o administrador pueda tener acceso, realizar consultas,
+        busquedas con algún criterio, crear nuevos registros y eliminar información a través de un sistema Web.
       </p>
 
       <h3>Objetivos Particulares</h3>
@@ -100,12 +100,19 @@
       <ol>
         <li>
           <p class="text-justify">
-            Se deberá elegir una temática particular para la información que se maneja en el sistema.
+            Elegir una temática particular para la información que se maneja en el sistema.
           </p>
         </li>
         <li>
-          <p class="text-justify">Diseñar la base de datos relacional que contenga al menos 3 relaciones y 8 tablas en total.</p>
+          <p class="text-justify">Diseñar la base de datos relacional que contenga al menos 5 relaciones.</p>
           <ol type="a">
+            <li>
+              <p class="text-justify">Realizar los diagramas de diseño de la base de datos en el Modelo Entidad/Relación (Notación Crow's Foot).</p>
+            </li>
+            <li>
+              <p class="text-justify">Realizar los diagramas de diseño de la base de datos en el Modelo Relacional
+                (Diagrama de Relaciones y Diagrama de Llaves Foráneas).</p>
+            </li>
             <li>
               <p class="text-justify">Realizar la normalización a la tercera forma normal (3FN).</p>
               <ol>
@@ -116,14 +123,9 @@
                 <li>
                   <p class="text-justify">Mientras más dependencias funcionales encuentren, menor redundancia habrá en la base de datos.</p>
                 </li>
-                <li>
-                  <p class="text-justify">El algoritmo de normalización entrega las tablas ya normalizadas de la relación en cuestión.</p>
-                </li>
               </ol>
             </li>
-            <li>
-              <p class="text-justify">Realizar los diagramas de la base de datos relacional.</p>
-            </li>
+
           </ol>
         </li>
         <li>
@@ -131,6 +133,10 @@
             Implementar la base de datos en el gestor de base de datos MySQL creando las entidades, tablas y llaves correspondientes.
           </p>
           <ol type="a">
+            <li>
+              <p class="text-justify">Documentar las sentencias SQL necesarias para implementar el diseño de la base de datos en MySQL/MariaDB
+                (puede auxiliarse de MySQL Workbench si lo desea).</p>
+            </li>
             <li>
               <p class="text-justify">Llenar la base de datos con algunos datos de prueba, de manera que se puedan realizar búsquedas posteriormente.</p>
             </li>
@@ -180,7 +186,8 @@
         </li>
         <li>
           <p class="text-justify">
-            Seguir la estructura de archivos siguientes en el servidor, creando las carpetas y el archivo html correspondiente:
+            Seguir la estructura de archivos siguientes en el servidor, creando las carpetas (al menos estas dos, puede crear más si lo necesita) y el archivo
+            <code>index.html</code> o <code>index.php</code> correspondiente:
           </p>
           <img src="img/estructuraArchivos.png" alt="Estructura de Archivos" class="imgcenter img-rounded img-responsive">
           <ol type="a">
@@ -213,18 +220,25 @@
             ya que es uno de los principales objetivos de la materia.</p>
         </li>
         <li>
-          <p class="text-justify"><b>Normalización: </b>El procedimiento de normalización de la base de datos a 3FN.</p>
+          <p class="text-justify"><b>Normalización: </b>El procedimiento de normalización de la base de datos a 3FN con los diagramas de las dependencias
+            funcionales para cada relación en su sistema.</p>
+        </li>
+        <li>
+          <p class="text-justify"><b>SQL: </b>Sentencias SQL necesarias para la implementación del diseño y una breve descripción de cada una de ellas.</p>
+        </li>
+        <li>
+          <p class="text-justify"><b>Código: </b>Todo el código necesario para su sistema (se entrega de forma electrónica).</p>
         </li>
         <li>
           <p class="text-justify"><b>Conclusiones: </b>Unas breves palabras acerca de lo que aprendieron al realizar el proyecto final y todo el curso en sí.</p>
         </li>
       </ol>
       <p class="post-contenido text-justify">
-        El código me lo entregarán por correo en un archivo comprimido.
+        El código me lo entregarán por correo en un archivo comprimido, incluyendo el "<b>vaciado</b>" de su base de datos.
       </p>
 
       <p class="post-contenido text-justify">
-        La fecha de entrega será el 30 de Novimembre del presente.
+        <b>La fecha de entrega será el 30 de Novimembre</b> del presente.
       </p>
       <ol>
         <li>
@@ -233,7 +247,7 @@
         <li>
           <p class="text-justify">
             Las clases del Jueves 16 y 23 de Novimembre serán sesiones opcionales de trabajo, avances y dudas sobre el desarrollo del proyecto final.
-            Atenderé personalmente a cada de los que decidan asistir.
+            Atenderé personalmente a cada uno de los que decidan asistir.
           </p>
         </li>
         <li>
@@ -247,29 +261,45 @@
       <h3>Evaluación</h3>
       <table class="table table-responsive table-bordered table-hover">
         <thead>
-          <tr>
+          <tr class="active">
             <th>Rubro</th>
-            <th>Descripción</th>
-            <th>Valor</th>
+            <th class="text-center">Valor</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Normalización</td>
-            <td>Diagramas de las relaciones, entidades y dependencias funcionales</td>
-            <td>20%</td>
+            <td>Diagramas Modelo Entidad/Relación</td>
+            <td class="text-center">15%</td>
           </tr>
           <tr>
-            <td>Diseño</td>
-            <td>Los diagramas del diseño: Grafo relacional y llaves ajenas.</td>
-            <td>40%</td>
+            <td>Diagramas Modelo Relacional en 3FN</td>
+            <td class="text-center">15%</td>
           </tr>
           <tr>
-            <td>Implementación</td>
-            <td>La parte operativa. La implementación del diseño de la base de datos en MySQL/MariaDB y el sistema Web
-              (HTML + CSS + Bootstrap + PHP) que permite manejarlo.</td>
-            <td>40%</td>
+            <td>Diagramas Llaves Foráneas</td>
+            <td class="text-center">12.5%</td>
           </tr>
+          <tr>
+            <td>Diagramas de Dependencias Funcionales</td>
+            <td class="text-center">12.5%</td>
+          </tr>
+          <tr>
+            <td>SQL</td>
+            <td class="text-center">15%</td>
+          </tr>
+          <tr>
+            <td>HTML5 + CSS + Bootstrap</td>
+            <td class="text-center">15%</td>
+          </tr>
+          <tr>
+            <td>PHP + MySQL</td>
+            <td class="text-center">15%</td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Total</b></td>
+            <td class="text-center"><b>100%</b></td>
+          </tr>
+
         </tbody>
       </table>
       <p class="post-contenido text-justify"></p>
