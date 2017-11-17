@@ -738,6 +738,165 @@
       </div>
     </article>
 
+    <article class="tema">
+      <h2>Ejemplos</h2>
+      <p class="text-justify">
+        En la práctica 5 se hicieron scrpits en <code>PHP</code> que acceden a una base de datos, se hacen consultas e inserciones.
+        Ahora se muestran esos scripts pero utilizando elementos de bootstrap para hacer responsiva la página y con estilo básico.
+      </p>
+      <p class="text-justify"><b>Ejemplo 10</b>. Inserción a la base de datos desde un formulario, versión Bootstrap.</p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;Registro&lt;/title&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+      &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+      &lt;?php
+        // Conectar con la BD
+        $con = mysqli_connect("localhost", "root", "", "miBD");
+
+        // Verificar conexión
+        if (mysqli_connect_errno()) {
+          echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+
+        // Si la conexión pudo hacerse
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          // Recibir los valores del formulario
+          $nombre = $_POST['nombre'];
+          $apellido = $_POST['apellido'];
+          $correo = $_POST['correo'];
+          $fecha = $_POST['nacimiento'];
+          $edad = $_POST['edad'];
+
+          // Formar el query
+          $sql = "INSERT INTO Personas (nombre, apellido, correo, edad, fecha)
+            VALUES ('$nombre', '$apellido', '$correo', '$edad', '$fecha')";
+
+          // Insertar los valores del formulario en la Tabla de la BD
+          if (!mysqli_query($con,$sql)) {
+            die('Error: ' . mysqli_error($con));
+          }
+
+          // Cerrar conexión
+          mysqli_close($con);
+        }
+        // Si la conexión no pudo hacerse
+        else {
+          // Si el formulario está vacio se guarda nulo en las variables php
+          $nombre = null;
+          $apellido = null;
+          $correo = null;
+          $fecha = null;
+          $edad = null;
+        }
+      ?&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="jumbotron text-center"&gt;
+          &lt;h1&gt;Registro de Usuarios&lt;/h1&gt;
+          &lt;h2&gt;Ingrese la información solicitada&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;form role="form" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;" method="post"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;label for="number"&gt;Nombre:&lt;/label&gt;
+            &lt;input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre"&gt;
+          &lt;/div&gt;
+          &lt;div class="form-group"&gt;
+            &lt;label for="number"&gt;Apellido:&lt;/label&gt;
+            &lt;input type="text" class="form-control" name="apellido" placeholder="Ingrese su apellido"&gt;
+          &lt;/div&gt;
+          &lt;div class="form-group"&gt;
+            &lt;label for="number"&gt;Correo:&lt;/label&gt;
+            &lt;input type="email" class="form-control" name="correo" placeholder="Ingrese su correo"&gt;
+          &lt;/div&gt;
+          &lt;div class="form-group"&gt;
+            &lt;label for="number"&gt;Edad:&lt;/label&gt;
+            &lt;input type="number" class="form-control" name="edad" placeholder="Ingrese su edad"&gt;
+          &lt;/div&gt;
+          &lt;div class="form-group"&gt;
+            &lt;label for="number"&gt;Fecha de Ingreso:&lt;/label&gt;
+            &lt;input type="date" class="form-control" name="nacimiento" placeholder="Ingrese su fecha de nacimiento"&gt;
+          &lt;/div&gt;
+          &lt;button type="submit" class="btn btn-success"&gt;Enviar&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="text-justify"><b>Ejemplo 11</b>. Desplegado desde una base de datos en una tabla, versión Bootstrap.</p>
+      <pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;Desplegado&lt;/title&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+      &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+      &lt;?php
+        // Conectar con la BD
+        $con = mysqli_connect("localhost", "root", "", "miBD");
+
+        // Verificar conexión
+        if (mysqli_connect_errno()) {
+          echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+
+        // Formar el query
+        $sql = "SELECT * FROM Personas";
+
+        // Realizar la consulta en la BD
+        $result = mysqli_query($con, "SELECT * FROM Personas");
+
+        // Cerrar conexión
+        mysqli_close($con);
+      ?&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="jumbotron text-center"&gt;
+          &lt;h1&gt;Registro de Usuarios&lt;/h1&gt;
+          &lt;h2&gt;Información de los usuarios registrados&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;table class="table table-hover table-striped table-bordered"&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Nombre&lt;/th&gt;
+              &lt;th&gt;Apellido&lt;/th&gt;
+              &lt;th&gt;Correo&lt;/th&gt;
+              &lt;th&gt;Edad&lt;/th&gt;
+              &lt;th&gt;Fecha Ingreso&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;?php
+            while ($row = mysqli_fetch_array($result)) {
+              echo "&lt;tr&gt;";
+              echo "&lt;td&gt;" . $row['nombre'] . "&lt;/td&gt;";
+              echo "&lt;td&gt;" . $row['apellido'] . "&lt;/td&gt;";
+              echo "&lt;td&gt;" . $row['correo'] . "&lt;/td&gt;";
+              echo "&lt;td&gt;" . $row['edad'] . "&lt;/td&gt;";
+              echo "&lt;td&gt;" . $row['fecha'] . "&lt;/td&gt;";
+              echo "&lt;/tr&gt;";
+            }
+            ?&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+      </code></pre>
+      <p class="text-justify"></p>
+      <p class="text-justify"></p>
+    </article>
+
   </section>
 
   <!-- Scripts que se necesitan para el sitio -->
